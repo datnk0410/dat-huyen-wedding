@@ -36,6 +36,8 @@ export default defineConfig([
     '!**/plopfile.js',
     '!**/react-shim.js',
     '!**/tsup.config.ts',
+    '.next/**',
+    'next-env.d.ts',
   ]),
   eslintPluginPrettierRecommended,
   reactCompiler.configs.recommended,

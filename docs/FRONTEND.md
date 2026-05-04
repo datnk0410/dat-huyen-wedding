@@ -100,7 +100,10 @@ const StorySection = dynamic(() => import('@/components/story/story-section'), {
 
 ## RSVP Form
 
-- Fields: Name, Attending (Yes/No), Number of guests, Note
-- Submit via POST to Google Apps Script URL.
-- Show success/error feedback after submission.
-- No client-side validation beyond required fields.
+- Fields: Họ tên (name, required) + 2 event checkboxes:
+  - Đi ăn ngày 8/6 dương lịch (23/4 âm lịch Bính Ngọ) — tiệc đãi khách
+  - Đi đưa đón dâu ngày 9/6 dương lịch (24/4 âm lịch) — lễ thành hôn
+- Validation: name required, at least one event checkbox must be selected
+- Submit via POST to Google Apps Script URL (configured via NEXT_PUBLIC_APPS_SCRIPT_URL)
+- Show success/error feedback after submission
+- Vietnamese labels, light mode only

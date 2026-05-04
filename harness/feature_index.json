@@ -5,7 +5,7 @@
     {
       "id": "feat-001",
       "name": "Landing Page",
-      "description": "Hero section with couple names, event details (date, time, venue), Google Maps embed, and CTAs for RSVP and Our Story",
+      "description": "Hero section with couple names (Xuân Tùng & Vân Anh), event details (tiệc đãi khách 08/06/2026, lễ thành hôn 09/06/2026, Sân đình thôn Gia Lương, Đông Anh, Hà Nội), Google Maps embed, and CTAs for RSVP and Our Story",
       "dependencies": [],
       "status": "pending",
       "evidence": ""
@@ -13,7 +13,7 @@
     {
       "id": "feat-002",
       "name": "Our Story",
-      "description": "Chapter-based scroll storytelling with 5 chapters (2015-2025), each with title, images, text, and Framer Motion animations (fade-in, slide-up, zoom)",
+      "description": "Chapter-based scroll storytelling with 10 chapters covering 10 years (2016–2025), each with title, images, text, and Framer Motion animations (fade-in, slide-up, zoom)",
       "dependencies": [],
       "status": "pending",
       "evidence": ""
@@ -29,7 +29,7 @@
     {
       "id": "feat-004",
       "name": "RSVP System",
-      "description": "RSVP form (name, attending, guests, note) submitting to Google Apps Script, with success/error feedback. Google Sheets as data store",
+      "description": "RSVP form with name + 2 event checkboxes (tiệc đãi khách 8/6, lễ thành hôn 9/6), submitting to Google Apps Script, with success/error feedback",
       "dependencies": ["feat-001"],
       "status": "pending",
       "evidence": ""

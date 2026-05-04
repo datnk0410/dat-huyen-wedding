@@ -1,26 +1,67 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+/* ── Wedding Design Tokens ── */
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Primary palette: đỏ (red), kem (cream), be (beige) */
+  --color-wine: #8b1a2b;
+  --color-wine-light: #a63042;
+  --color-wine-dark: #6b0f1d;
+  --color-cream: #fff8f0;
+  --color-cream-dark: #f5ede0;
+  --color-beige: #e8dcc8;
+  --color-beige-dark: #d4c5a9;
+  --color-gold: #c9a96e;
+  --color-gold-light: #dfc08a;
+  --color-text-primary: #3d2b1f;
+  --color-text-secondary: #6b5344;
+  --color-text-muted: #9a8578;
+
+  /* Spacing */
+  --space-section: 6rem;
+
+  /* Typography */
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-serif: var(--font-noto-serif), Georgia, serif;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Colors */
+  --color-wine: var(--color-wine);
+  --color-wine-light: var(--color-wine-light);
+  --color-wine-dark: var(--color-wine-dark);
+  --color-cream: var(--color-cream);
+  --color-cream-dark: var(--color-cream-dark);
+  --color-beige: var(--color-beige);
+  --color-beige-dark: var(--color-beige-dark);
+  --color-gold: var(--color-gold);
+  --color-gold-light: var(--color-gold-light);
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-muted: var(--color-text-muted);
+
+  /* Fonts */
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* ── Base Styles ── */
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-cream);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+}
+
+/* ── Reduced Motion ── */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
