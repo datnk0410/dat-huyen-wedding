@@ -1,0 +1,38 @@
+{
+  "id": "feat-001",
+  "name": "Landing Page",
+  "description": "Hero section with couple names (Xuân Tùng & Vân Anh), event details (tiệc đãi khách 08/06/2026, lễ thành hôn 09/06/2026, Sân đình thôn Gia Lương, Đông Anh, Hà Nội), Google Maps embed, and CTAs for RSVP and Our Story",
+  "dependencies": [],
+  "status": "pending",
+  "evidence": "",
+  "acceptanceCriteria": [
+    "Hero section displays 'Xuân Tùng & Vân Anh' and wedding dates",
+    "Event details section shows venue 'Sân đình thôn Gia Lương, xã Đông Anh, TP Hà Nội' with Google Maps embed",
+    "CTA buttons for 'Xác nhận tham dự' (RSVP) and 'Xem hành trình' (Our Story)",
+    "Mobile-first responsive layout, light mode only",
+    "Page loads in <2s on 3G",
+    "Framer Motion entrance animations on hero section",
+    "Color palette: đỏ (wine), kem (cream), be (beige), gold accents",
+    "Fonts: Inter (body) + Noto Serif (headings)"
+  ],
+  "content": {
+    "coupleNames": "Xuân Tùng & Vân Anh",
+    "dates": {
+      "daiKhach": {
+        "duongLich": "08/06/2026",
+        "amLich": "23/4 âm lịch (Bính Ngọ)",
+        "label": "Tiệc đãi khách"
+      },
+      "thanhHon": {
+        "duongLich": "09/06/2026",
+        "amLich": "24/4 âm lịch",
+        "label": "Lễ thành hôn"
+      }
+    },
+    "venue": {
+      "name": "Sân đình thôn Gia Lương",
+      "address": "Xã Đông Anh, TP Hà Nội"
+    }
+  },
+  "notes": "Vietnamese language only. Light mode only. No dark mode."
+}

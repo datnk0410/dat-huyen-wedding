@@ -1,0 +1,83 @@
+{
+  "id": "feat-002",
+  "name": "Our Story",
+  "description": "Chapter-based scroll storytelling with 10 chapters covering 10 years (2016–2025), each with title, images, text, and Framer Motion animations (fade-in, slide-up, zoom)",
+  "dependencies": [],
+  "status": "pending",
+  "evidence": "",
+  "acceptanceCriteria": [
+    "10 story chapters displayed in scroll-based layout",
+    "Each chapter has: year, title, 1-2 paragraphs of text, 3-5 images",
+    "Framer Motion animations: fade-in, slide-up, zoom on scroll",
+    "prefers-reduced-motion support with reduced animation variant",
+    "Lazy-loaded via next/dynamic for performance",
+    "Mobile-first responsive layout",
+    "Max 40 images total across all chapters"
+  ],
+  "content": {
+    "template": "10 chapters for 10 years (2016-2025). Content TBD — create template with placeholder text and image slots.",
+    "chapters": [
+      {
+        "year": 2016,
+        "title": "PLACEHOLDER",
+        "text": "PLACEHOLDER",
+        "images": []
+      },
+      {
+        "year": 2017,
+        "title": "PLACEHOLDER",
+        "text": "PLACEHOLDER",
+        "images": []
+      },
+      {
+        "year": 2018,
+        "title": "PLACEHOLDER",
+        "text": "PLACEHOLDER",
+        "images": []
+      },
+      {
+        "year": 2019,
+        "title": "PLACEHOLDER",
+        "text": "PLACEHOLDER",
+        "images": []
+      },
+      {
+        "year": 2020,
+        "title": "PLACEHOLDER",
+        "text": "PLACEHOLDER",
+        "images": []
+      },
+      {
+        "year": 2021,
+        "title": "PLACEHOLDER",
+        "text": "PLACEHOLDER",
+        "images": []
+      },
+      {
+        "year": 2022,
+        "title": "PLACEHOLDER",
+        "text": "PLACEHOLDER",
+        "images": []
+      },
+      {
+        "year": 2023,
+        "title": "PLACEHOLDER",
+        "text": "PLACEHOLDER",
+        "images": []
+      },
+      {
+        "year": 2024,
+        "title": "PLACEHOLDER",
+        "text": "PLACEHOLDER",
+        "images": []
+      },
+      {
+        "year": 2025,
+        "title": "PLACEHOLDER",
+        "text": "PLACEHOLDER",
+        "images": []
+      }
+    ]
+  },
+  "notes": "Content to be provided later. Build template with 10 chapters for 10 years."
+}

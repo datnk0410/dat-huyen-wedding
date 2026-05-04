@@ -1,0 +1,18 @@
+{
+  "id": "feat-005",
+  "name": "Performance & Mobile Optimization",
+  "description": "Image optimization (WebP/AVIF, Next.js Image), dynamic imports for heavy components, mobile-first responsive design, <2s initial load target",
+  "dependencies": ["feat-001", "feat-002"],
+  "status": "pending",
+  "evidence": "",
+  "acceptanceCriteria": [
+    "All images use Next.js Image component with proper sizing",
+    "Images served in WebP/AVIF format",
+    "Heavy components (story sections, gallery) lazy-loaded with next/dynamic",
+    "Initial page load <2s on 3G throttle",
+    "Mobile-first responsive design verified on 375px, 414px, 768px viewports",
+    "No layout shifts on image load",
+    "Lighthouse performance score >90"
+  ],
+  "notes": "This is a cross-cutting feature. Apply optimizations incrementally as other features are built."
+}

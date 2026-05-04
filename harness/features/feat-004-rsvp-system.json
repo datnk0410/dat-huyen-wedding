@@ -1,0 +1,34 @@
+{
+  "id": "feat-004",
+  "name": "RSVP System",
+  "description": "RSVP form with name field and 2 event attendance checkboxes, submitting to Google Apps Script, with success/error feedback. Google Sheets as data store",
+  "dependencies": ["feat-001"],
+  "status": "pending",
+  "evidence": "",
+  "acceptanceCriteria": [
+    "RSVP form with fields: Họ tên (name) + 2 event checkboxes",
+    "Checkbox 1: Đi ăn ngày 8/6 dương lịch (23/4 âm lịch Bính Ngọ) — tiệc đãi khách",
+    "Checkbox 2: Đi đưa đón dâu ngày 9/6 dương lịch (24/4 âm lịch) — lễ thành hôn",
+    "Form submits via POST to Google Apps Script URL",
+    "Success feedback shown after submission",
+    "Error feedback shown on failure with retry option",
+    "Form validates required fields (name required, at least one event checkbox)",
+    "Mobile-friendly form layout",
+    "Google Apps Script code provided in docs/ for deployment"
+  ],
+  "content": {
+    "fields": {
+      "name": { "label": "Họ tên", "type": "text", "required": true },
+      "eventDaiKhach": {
+        "label": "Đi ăn ngày 8/6 dương lịch (23/4 âm lịch Bính Ngọ)",
+        "type": "checkbox"
+      },
+      "eventThanhHon": {
+        "label": "Đi đưa đón dâu ngày 9/6 dương lịch (24/4 âm lịch)",
+        "type": "checkbox"
+      }
+    },
+    "validation": "Name required. At least one event checkbox must be selected."
+  },
+  "notes": "Google Apps Script URL configured via NEXT_PUBLIC_APPS_SCRIPT_URL env var. Vietnamese labels. Light mode only."
+}

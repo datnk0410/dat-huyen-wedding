@@ -1,0 +1,46 @@
+{
+  "project": "tx-va-wedding",
+  "lastUpdated": "2026-05-04",
+  "features": [
+    {
+      "id": "feat-001",
+      "name": "Landing Page",
+      "description": "Hero section with couple names (Xuân Tùng & Vân Anh), event details (tiệc đãi khách 08/06/2026, lễ thành hôn 09/06/2026, Sân đình thôn Gia Lương, Đông Anh, Hà Nội), Google Maps embed, and CTAs for RSVP and Our Story",
+      "dependencies": [],
+      "status": "pending",
+      "evidence": ""
+    },
+    {
+      "id": "feat-002",
+      "name": "Our Story",
+      "description": "Chapter-based scroll storytelling with 10 chapters covering 10 years (2016–2025), each with title, images, text, and Framer Motion animations (fade-in, slide-up, zoom)",
+      "dependencies": [],
+      "status": "pending",
+      "evidence": ""
+    },
+    {
+      "id": "feat-003",
+      "name": "Guest Personalization",
+      "description": "URL-based guest personalization (?g=<id>), showing personalized greeting, message, and optional photo. Graceful fallback for unknown guests",
+      "dependencies": ["feat-001"],
+      "status": "pending",
+      "evidence": ""
+    },
+    {
+      "id": "feat-004",
+      "name": "RSVP System",
+      "description": "RSVP form with name + 2 event checkboxes (tiệc đãi khách 8/6, lễ thành hôn 9/6), submitting to Google Apps Script, with success/error feedback",
+      "dependencies": ["feat-001"],
+      "status": "pending",
+      "evidence": ""
+    },
+    {
+      "id": "feat-005",
+      "name": "Performance & Mobile Optimization",
+      "description": "Image optimization (WebP/AVIF, Next.js Image), dynamic imports for heavy components, mobile-first responsive design, <2s initial load target",
+      "dependencies": ["feat-001", "feat-002"],
+      "status": "pending",
+      "evidence": ""
+    }
+  ]
+}
