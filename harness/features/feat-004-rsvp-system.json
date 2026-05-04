@@ -1,0 +1,18 @@
+{
+  "id": "feat-004",
+  "name": "RSVP System",
+  "description": "RSVP form (name, attending, guests, note) submitting to Google Apps Script, with success/error feedback. Google Sheets as data store",
+  "dependencies": ["feat-001"],
+  "status": "pending",
+  "evidence": "",
+  "acceptanceCriteria": [
+    "RSVP form with fields: Name, Attending (Yes/No), Number of guests, Note",
+    "Form submits via POST to Google Apps Script URL",
+    "Success feedback shown after submission",
+    "Error feedback shown on failure with retry option",
+    "Form validates required fields (name, attending)",
+    "Mobile-friendly form layout",
+    "Google Apps Script code provided in docs/ for deployment"
+  ],
+  "notes": "Google Apps Script URL will be configured via environment variable. Vietnamese labels."
+}

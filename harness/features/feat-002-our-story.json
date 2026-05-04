@@ -1,0 +1,18 @@
+{
+  "id": "feat-002",
+  "name": "Our Story",
+  "description": "Chapter-based scroll storytelling with 5 chapters (2015-2025), each with title, images, text, and Framer Motion animations (fade-in, slide-up, zoom)",
+  "dependencies": [],
+  "status": "pending",
+  "evidence": "",
+  "acceptanceCriteria": [
+    "Story page at /story with 5 chapters",
+    "Each chapter has: year + event title, 3-5 images, 1-2 short text paragraphs",
+    "Scroll-triggered animations: fade-in, slide-up, zoom on images",
+    "prefers-reduced-motion support: animations disabled when preference set",
+    "Max 40 images total across all chapters",
+    "Smooth scroll transitions between chapters",
+    "Mobile-optimized layout"
+  ],
+  "notes": "Content is Vietnamese. Quality over quantity for images. Each section must have meaning."
+}

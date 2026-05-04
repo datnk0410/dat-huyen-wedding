@@ -17,11 +17,6 @@ Canonical standards index for agent execution and review.
 - `frontend/project-folder-structure.md`
 - `frontend/component-structure-pattern.md`
 - `frontend/naming-and-conventions-pattern.md`
-- `frontend/api-react-query-pattern.md`
-- `frontend/zustand-store-pattern.md`
-- `frontend/form-pattern.md`
-- `frontend/dialog-and-form-pattern.md`
-- `frontend/i18n-label-pattern.md`
 
 ## Maintenance Rules
 

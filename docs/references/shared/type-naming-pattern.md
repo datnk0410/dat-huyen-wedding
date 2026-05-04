@@ -1,60 +1,60 @@
-# Type Naming Pattern (DTO / Request / Response)
+# Type Naming Pattern
 
 ## 1) Required Rules
 
-- Data objects exchanged between FE/BE: suffix `DTO`.
-- Data types sent to API: suffix `Request`.
-- Data types received from API (beyond the common wrapper): suffix `Response`.
+- Data objects exchanged with Google Apps Script API: suffix `Payload` for outgoing, `Response` for incoming.
+- Form data types: suffix `FormData` (e.g., `RsvpFormData`).
+- Props types: suffix `Props` (e.g., `StoryChapterProps`).
+- Guest data types: descriptive names (e.g., `GuestData`, `GuestId`).
 
 ## 2) Naming Conventions
 
-- Entity DTO: `UserDTO`, `GoalDTO`, `JournalEntryDTO`.
-- API input: `CreateDeedRequest`, `UpdateMeRequest`, `GetGoalHistoryRequest`.
-- API business output: `AuthResponse`, `SessionResponse`, `GoalHistoryResponse`.
-- Common wrapper remains: `ApiResponse<T>`.
+- RSVP form: `RsvpFormData`, `RsvpPayload`, `RsvpApiResponse`.
+- Guest: `GuestData`, `GuestId`, `GuestMap`.
+- Story: `StoryChapter`, `StoryChapterProps`.
+- API wrapper: `ApiResponse<T>` for Google Apps Script responses.
 
 ## 3) Standard Template
 
 ```ts
-export type UserDTO = {
-  id: string
-  email: string
+// lib/guests.ts
+export type GuestId = string
+
+export type GuestData = {
   name: string
+  message: string
+  image?: string
 }
 
-export type UpdateMeRequest = {
-  name?: string
-  avatarUrl?: string
-}
-
-export type GoalHistoryResponse = {
-  items: GoalHistoryItemDTO[]
-  pagination: PaginationDTO
-}
+export type GuestMap = Record<GuestId, GuestData>
 ```
-
-## 4) Usage in API Functions
 
 ```ts
-export const updateMe = async (
-  payload: UpdateMeRequest,
-): Promise<ApiResponse<UserDTO>> => {
-  const response = await client.patch<ApiResponse<UserDTO>>(
-    API_ENDPOINTS.users.me,
-    payload,
-  )
-  return response.data
+// lib/api.ts
+export type RsvpFormData = {
+  name: string
+  attending: boolean
+  guests: number
+  note?: string
+}
+
+export type RsvpPayload = RsvpFormData
+
+export type ApiResponse<T> = {
+  status: 'success' | 'error'
+  data?: T
+  message?: string
 }
 ```
 
-## 5) Do Not Use
+## 4) Do Not Use
 
-- `UserData`, `GoalModel`, `Payload`, `Result` (ambiguous, non-standard).
-- Mixing DTO with Request/Response in the same type name.
+- `UserData`, `Model`, `Payload` (ambiguous, non-standard without context).
+- Mixing form data with API types in the same type definition.
 
-## 6) Quick Checklist
+## 5) Quick Checklist
 
-- [ ] Data exchange type objects have `DTO` suffix
-- [ ] API input types have `Request` suffix
-- [ ] API business output types have `Response` suffix
-- [ ] API functions return explicitly typed `Promise<ApiResponse<...>>`
+- [ ] API payload types have `Payload` suffix
+- [ ] API response types have `Response` suffix
+- [ ] Form data types have `FormData` suffix
+- [ ] Component props have `Props` suffix

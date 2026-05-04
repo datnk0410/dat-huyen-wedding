@@ -75,15 +75,16 @@ Strong success criteria reduce unnecessary clarification loops.
 
 # PRODUCT
 
-Personal & Family Expense Management System — Open Source, Long-term Maintenance
+Wedding Website — Modern, Personalized, Story-Driven Experience
 
-This repository supports a small team building a reliable expense management app for income, expenses, statistics, grouping, templates, habits, recurring deductions, categorization, and family group expense sharing.
+A wedding invitation website that tells a 10-year love story through interactive scroll-based storytelling, with guest personalization and RSVP management.
 
 ## Tech Stack
 
-- Frontend (`apps/web`): React 19, TypeScript, Next.js App Router, Tailwind CSS, shadcn UI, sonner, date-fns
-- Backend / Edge (`apps/worker`): Cloudflare Workers, Hono, D1, Wrangler, `zod`, `jose`, `ulid`
-- Tooling: `pnpm` monorepo, ESLint, Prettier, Vitest, TypeScript
+- Frontend: Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS v4, Framer Motion
+- Backend: Google Apps Script (Web App API) + Google Sheets (RSVP storage)
+- Deployment: Vercel (CI/CD from GitHub, CDN, SSL)
+- Tooling: pnpm, ESLint, Prettier, TypeScript
 
 ## Quick Start
 
@@ -91,7 +92,7 @@ Before writing or changing code:
 1. Read this file and [ARCHITECTURE.md](ARCHITECTURE.md).
 2. Run `./init.sh`.
 3. Review `harness/feature_index.json` and the relevant file in `harness/features/`.
-4. For plan or product-behavior context, read `docs/PLANS.md` and `docs/product-specs/` as needed.
+4. For product behavior context, read `docs/PRODUCT.md` and `docs/product-specs/` as needed.
 
 ## Session Rules
 
@@ -115,7 +116,7 @@ Before writing or changing code:
 
 A feature is done only when:
 - Implementation is complete and committed.
-- All verification steps pass: lint, type-check, tests, build.
+- All verification steps pass: lint, type-check, build.
 - Evidence is recorded in `harness/features/*.json` and reflected in `harness/feature_index.json`.
 - Progress is logged in `harness/progress.md`.
 - The repository can be restarted cleanly from the standard startup path.
@@ -126,97 +127,48 @@ A feature is done only when:
 # Full workspace initialization and verification
 ./init.sh
 
-# Frontend dev
-pnpm dev:web
+# Development
+pnpm dev
 
-# Worker dev
-pnpm dev:worker
+# Build
+pnpm build
 
-# Frontend build
-pnpm build:web
-
-# Worker deploy
-pnpm deploy:worker
+# Lint
+pnpm lint
 ```
 
-`./init.sh` is the default full-workspace verification path. It runs install, harness checks, lint, type-check, tests, and the web build.
+`./init.sh` is the default full-workspace verification path. It runs install, harness checks, lint, type-check, and the build.
 
 ## References
 
 Read these before deeper changes:
 - `ARCHITECTURE.md`: system map, layer model, dependency rules
-- `docs/PLANS.md`: plan lifecycle and execution policy
-- `docs/product-specs/`: product behavior and acceptance targets
-- `docs/FRONTEND.md`: frontend constraints, accessibility, and design system rules
-- `docs/BACKEND.md`: backend API, data, validation, and security rules
-- `docs/design-docs/shadcn-first-ui-web-guide.md`: web UI governance
-- `docs/design-docs/index.md`, `docs/QUALITY_SCORE.md`, `docs/RELIABILITY.md`, `docs/SECURITY.md`: supporting operational guidance
+- `docs/PRODUCT.md`: product specification and feature list
+- `docs/product-specs/`: per-feature acceptance criteria
+- `docs/FRONTEND.md`: frontend constraints, animation rules, and design system
 
 ## Frontend Requirements
 
-All frontend work in `apps/web` must follow `docs/FRONTEND.md` and the shadcn-first UI guide.
+All frontend work must follow `docs/FRONTEND.md`.
 
-Component decomposition is mandatory:
-1. Keep `views/*` pages as orchestrators for route, store, query, and top-level flow.
-2. Put feature-bounded smart components in `apps/web/src/components/<feature>/`.
-3. Put cross-feature reusable components in `apps/web/src/components/shared/`.
+Component decomposition:
+1. Keep `app/page.tsx` and route pages as orchestrators for layout and top-level flow.
+2. Put feature components in `components/<feature>/`.
+3. Put shared/reusable components in `components/shared/`.
 4. Split early when a component grows large or mixes concerns.
 5. Keep abstractions pragmatic and concrete.
 
-Before any UI task in `apps/web`, read:
-1. `.agents/skills/shadcn/SKILL.md`
-2. `.agents/skills/shadcn/rules/styling.md`
-3. `.agents/skills/shadcn/rules/forms.md`
-4. `.agents/skills/shadcn/rules/composition.md`
+## Animation Rules
 
-Skipping this pre-read is non-compliant.
+- Use Framer Motion for all animations (consistent API, React-friendly).
+- Keep animations subtle: fade-in, slide-up, zoom — no flashy effects.
+- Prefer scroll-triggered animations for story sections.
+- Always respect `prefers-reduced-motion` media query.
+- Lazy-load animation-heavy components with `next/dynamic`.
 
----
+## Performance Rules
 
-Always consult GitNexus before major code changes. Use it to understand architecture, dependencies, and impact, then design and apply the code edits.
-
----
-
-<!-- gitnexus:start -->
-# GitNexus — Code Intelligence
-
-This project is indexed by GitNexus as **household-finance-system** (5253 symbols, 7859 relationships, 151 execution flows). Use the GitNexus MCP tools to understand code, assess impact, and navigate safely.
-
-> If any GitNexus tool warns the index is stale, run `npx gitnexus analyze` in terminal first.
-
-## Always Do
-
-- **MUST run impact analysis before editing any symbol.** Before modifying a function, class, or method, run `gitnexus_impact({target: "symbolName", direction: "upstream"})` and report the blast radius (direct callers, affected processes, risk level) to the user.
-- **MUST run `gitnexus_detect_changes()` before committing** to verify your changes only affect expected symbols and execution flows.
-- **MUST warn the user** if impact analysis returns HIGH or CRITICAL risk before proceeding with edits.
-- When exploring unfamiliar code, use `gitnexus_query({query: "concept"})` to find execution flows instead of grepping. It returns process-grouped results ranked by relevance.
-- When you need full context on a specific symbol — callers, callees, which execution flows it participates in — use `gitnexus_context({name: "symbolName"})`.
-
-## Never Do
-
-- NEVER edit a function, class, or method without first running `gitnexus_impact` on it.
-- NEVER ignore HIGH or CRITICAL risk warnings from impact analysis.
-- NEVER rename symbols with find-and-replace — use `gitnexus_rename` which understands the call graph.
-- NEVER commit changes without running `gitnexus_detect_changes()` to check affected scope.
-
-## Resources
-
-| Resource | Use for |
-|----------|---------|
-| `gitnexus://repo/household-finance-system/context` | Codebase overview, check index freshness |
-| `gitnexus://repo/household-finance-system/clusters` | All functional areas |
-| `gitnexus://repo/household-finance-system/processes` | All execution flows |
-| `gitnexus://repo/household-finance-system/process/{name}` | Step-by-step execution trace |
-
-## CLI
-
-| Task | Read this skill file |
-|------|---------------------|
-| Understand architecture / "How does X work?" | `.agents/skills/gitnexus/gitnexus-exploring/SKILL.md` |
-| Blast radius / "What breaks if I change X?" | `.agents/skills/gitnexus/gitnexus-impact-analysis/SKILL.md` |
-| Trace bugs / "Why is X failing?" | `.agents/skills/gitnexus/gitnexus-debugging/SKILL.md` |
-| Rename / extract / split / refactor | `.agents/skills/gitnexus/gitnexus-refactoring/SKILL.md` |
-| Tools, resources, schema reference | `.agents/skills/gitnexus/gitnexus-guide/SKILL.md` |
-| Index, status, clean, wiki CLI commands | `.agents/skills/gitnexus/gitnexus-cli/SKILL.md` |
-
-<!-- gitnexus:end -->
+- Optimize images: WebP/AVIF format, proper sizing, lazy loading.
+- Dynamic import for heavy components (Framer Motion, gallery).
+- Target <2s initial load on mobile.
+- Test on 3G throttle during development.

@@ -1,98 +1,52 @@
-# Large Project Folder Structure (finalized per new proposal)
+# Project Folder Structure
 
-## 1) Standard Structure
+## Directory Layout
 
-```text
-src/
-  app.tsx
-  main.tsx
-
-  api/
-    client.ts
-    endpoints.ts
-    feature*/
-    ...
-
-  assets/
-
-  hooks/
-    shared/
-    feature*/
-    ...
-
-  components/
-    ui/
-    shared/
-    feature*/
-    ...
-
-  stores/
-    auth.store.ts       # feature*.store.ts (placed directly, no subfolders)
-    control.store.ts
-    types.ts
-    ...
-
-  lib/
-    constants/
-    forms/
-    i18n/
-    storages/
-    utils/
-
-  pages/
-    feature*/
-    ...
-
-  styles/
-  types/
+```
+tx-va-wedding/
+├── app/
+│   ├── page.tsx              → Landing page (hero, event info, CTA)
+│   ├── story/
+│   │   └── page.tsx          → Our Story (scroll storytelling)
+│   ├── layout.tsx            → Root layout (fonts, metadata, styles)
+│   └── globals.css           → Tailwind CSS v4 + custom properties
+├── components/
+│   ├── hero/                 → Hero section components
+│   ├── story/                → Story chapter components
+│   ├── rsvp/                 → RSVP form components
+│   ├── guest/                → Guest personalization components
+│   └── shared/               → Cross-feature reusable components
+├── lib/
+│   ├── guests.ts             → Guest data and lookup logic
+│   └── api.ts                → Google Apps Script API client
+├── public/
+│   ├── images/               → Optimized wedding photos (WebP/AVIF)
+│   └── guests/               → Guest-specific images
+├── docs/
+│   ├── PRODUCT.md            → Product specification
+│   ├── FRONTEND.md           → Frontend rules and design system
+│   ├── product-specs/        → Per-feature acceptance criteria
+│   ├── references/           → Canonical coding standards
+│   └── knowledge/            → Architecture and harness guides
+├── harness/
+│   ├── feature_index.json    → Feature index and status
+│   ├── features/             → Per-feature JSON records
+│   ├── progress.md           → Session continuity log
+│   └── session-handoff.md    → Session handoff template
+├── scripts/                  → Utility scripts
+├── AGENTS.md                 → Agent routing and rules
+├── ARCHITECTURE.md           → System map and invariants
+└── init.sh                   → Standard initialization script
 ```
 
-> `feature*` (replace with actual feature name).
+## Naming Conventions
 
-## 2) Strict Boundaries for `lib`
+- **Components**: PascalCase directories and files (`components/hero/HeroSection.tsx`)
+- **Utilities**: camelCase files (`lib/guests.ts`, `lib/api.ts`)
+- **Pages**: Next.js App Router convention (`app/page.tsx`, `app/story/page.tsx`)
+- **Assets**: kebab-case (`public/images/couple-photo.webp`)
 
-`lib` only contains **cross-feature reusable code** (usable by 2 or more features).
+## Import Aliases
 
-- `lib/constants`: app constants, config constants.
-- `lib/forms/*.schemas.ts`: Zod form schemas in the app.
-- `lib/i18n`: internationalization setup.
-- `lib/storages`: localStorage/sessionStorage/indexedDB wrappers.
-- `lib/utils`: pure utility functions shared across the entire app.
-
-Do not place in `lib`:
-
-- `hooks` (place in `src/hooks/shared` or `src/hooks/feature*`),
-- `stores` (place in `src/stores/feature*.store.ts`),
-- logic specific to 1 feature.
-
-Do not put in `lib`:
-
-- UI components for 1 feature,
-- API handlers for 1 feature.
-
-## 3) File Placement Rules by Layer
-
-- `api/<feature>`: HTTP calls only + endpoint mapping.
-- `hooks/shared`: hooks shared across multiple features.
-- `hooks/<feature>`: feature-specific hooks (including react-query hooks for the feature).
-- `stores/<feature>.store.ts`: zustand store per feature, placed **directly** in `stores/`, no subfolders.
-- `components/<feature>`: components belonging to that feature.
-- `pages/<feature>`: pages for the feature.
-- `types`: shared types or API contracts.
-
-## 4) Import Rules
-
-- Feature code should prioritize importing from within the same feature first.
-- Only promote to `lib` when proven reusable.
-- Shared hooks import from `hooks/shared`; feature-specific hooks import from `hooks/<feature>`.
-- Child components export via `index.ts` in each folder for clean imports.
-
-## 5) Application Checklist
-
-- [ ] Has `api/client.ts`, `api/endpoints.ts` as shared resources
-- [ ] Each feature has its own branch in `api/hooks/components/stores/pages`
-- [ ] `hooks` separates `shared/` and `feature*/`
-- [ ] `stores` placed outside `lib`, flat files as `stores/feature*.store.ts`
-- [ ] `lib` only contains `constants`, `forms`, `i18n`, `storages`, `utils`
-- [ ] `lib` is not used as a dumping ground for everything
-- [ ] Uses consistent import alias (`@/...`)
+- `@/*` maps to project root (configured in `tsconfig.json`)
+- Use `@/components/`, `@/lib/`, `@/public/` for absolute imports

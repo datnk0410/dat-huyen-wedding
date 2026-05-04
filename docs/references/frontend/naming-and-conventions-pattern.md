@@ -3,60 +3,43 @@
 ## 1) File Naming
 
 - Files use `kebab-case`.
-- Page: `<feature>-page.tsx`.
-- API Hook: `use-<feature>.ts`.
-- Store: `<feature>.store.ts`.
-- API: `<feature>.ts`, endpoint registry at `endpoints.ts`.
-- Mock: `<feature>.mock.ts` — placed in the same folder as `api/<feature>.ts`, **not** in components.
-- Barrel export: `index.ts` in large component/hook folders.
+- Page: `page.tsx` (Next.js App Router convention).
+- Component: `<component-name>.tsx` in feature folder.
+- Utility: `<name>.ts` in `lib/`.
+- Barrel export: `index.ts` in component folders with multiple exports.
 
 ## 2) Export Convention
 
-- Child component: `export const X = () => {}`.
-- Hook/store helpers: named export.
+- Component: `export const ComponentName = () => {}` or `export default function ComponentName()`.
+- Utility: named export.
 
-## 3) Type Naming Source
+## 3) Type Naming
 
-- Type naming rules are canonical in `../shared/type-naming-pattern.md`.
-- Do not redefine DTO/Request/Response naming in other docs.
+- Guest data types: `GuestData`, `GuestId`.
+- RSVP types: `RsvpFormData`, `RsvpResponse`.
+- Props types: `ComponentNameProps`.
+- Keep types co-located with their usage or in `lib/` for shared types.
 
-## 4) React Query Naming
+## 4) Constant Naming
 
-- Query key constant: `*_KEYS` (`DEED_KEYS`, `GOAL_KEYS`).
-- Standard key structure: `all`, `list`, `detail`.
-- Successful mutations must invalidate by key scope.
+- Route paths: `PATHS` object.
+- Text/copy: domain-specific objects (`HERO_COPY`, `STORY_COPY`, `RSVP_LABELS`).
+- General constants: `UPPER_SNAKE_CASE`.
 
-## 5) Constant Naming
-
-- Route paths use object `PATHS`.
-- Text/copy uses domain-specific objects (`INFO_COPY`, `LABEL_COPY`, `ONBOARDING_CONTENT`).
-- General constants use `UPPER_SNAKE_CASE` for single variables, `PascalCase` for types.
-
-## 6) Import Convention
+## 5) Import Convention
 
 - Prefer absolute alias: `@/...`.
-- Do not use long relative paths when alias is available.
-- Import child components via barrel `index.ts` if the folder has one.
-- **Required import order**: third-party first → blank line → internal `@/` alias. Do not mix the two groups.
-- **No duplicate imports from the same path** — merge into a single `import` statement:
+- Import components via barrel `index.ts` when folder has one.
+- Import order: third-party first → blank line → internal `@/`.
+- No duplicate imports from the same path — merge into one statement.
 
-```ts
-// ❌ Wrong
-import { A } from '@/stores/foo'
-import { B } from '@/stores/foo'
+## 6) Comment Convention
 
-// ✅ Correct
-import { A, B } from '@/stores/foo'
-```
+- All code comments in English.
+- Placeholder/mock: `// TODO: replace with real data`.
+- Stale comments must be updated when related values change.
 
-## 7) Comment Convention (required)
+## 7) Content Language
 
-- **All code comments must be written in English**.
-- Declarations for future features: `// planned: <feature description>`.
-- Placeholder/mock awaiting API: `// TODO: connect to <API_ENDPOINTS.x.y> once available`.
-- Temporary hardcoded values: `// TODO: replace with real data from <source> once <condition>`.
-- Stale comments must be updated immediately when related values/behavior change (interval, threshold, field name).
-
-## 8) Project References
-
-- Mock file pattern: `src/api/<feature>.mock.ts`
+- UI text and copy in Vietnamese.
+- Code, comments, and documentation in English.

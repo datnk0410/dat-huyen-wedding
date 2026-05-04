@@ -1,0 +1,17 @@
+{
+  "id": "feat-001",
+  "name": "Landing Page",
+  "description": "Hero section with couple names, event details (date, time, venue), Google Maps embed, and CTAs for RSVP and Our Story",
+  "dependencies": [],
+  "status": "pending",
+  "evidence": "",
+  "acceptanceCriteria": [
+    "Hero section displays couple names and wedding date",
+    "Event details section shows venue address with Google Maps embed",
+    "CTA buttons for 'Xác nhận tham dự' (RSVP) and 'Xem hành trình' (Our Story)",
+    "Mobile-first responsive layout",
+    "Page loads in <2s on 3G",
+    "Framer Motion entrance animations on hero section"
+  ],
+  "notes": "This is the main entry point. Keep it simple and emotional. Vietnamese language for content."
+}

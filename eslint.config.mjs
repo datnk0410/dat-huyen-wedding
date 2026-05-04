@@ -11,6 +11,7 @@ import tseslint from 'typescript-eslint'
 
 export default defineConfig([
   globalIgnores([
+    '.agents/**',
     '.now/*',
     '**/*.css',
     '**/.changeset',
