@@ -1,18 +1,177 @@
-import { defineConfig, globalIgnores } from "eslint/config";
-import nextVitals from "eslint-config-next/core-web-vitals";
-import nextTs from "eslint-config-next/typescript";
+import { defineConfig, globalIgnores } from 'eslint/config'
+import nextPlugin from '@next/eslint-plugin-next'
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
+import react from 'eslint-plugin-react'
+import reactHooks from 'eslint-plugin-react-hooks'
+import reactCompiler from 'eslint-plugin-react-compiler'
+import simpleImportSort from 'eslint-plugin-simple-import-sort'
+import unicorn from 'eslint-plugin-unicorn'
+import unusedImports from 'eslint-plugin-unused-imports'
+import tseslint from 'typescript-eslint'
 
-const eslintConfig = defineConfig([
-  ...nextVitals,
-  ...nextTs,
-  // Override default ignores of eslint-config-next.
+export default defineConfig([
   globalIgnores([
-    // Default ignores of eslint-config-next:
-    ".next/**",
-    "out/**",
-    "build/**",
-    "next-env.d.ts",
+    '.now/*',
+    '**/*.css',
+    '**/.changeset',
+    '**/dist',
+    'esm/*',
+    'public/*',
+    'tests/*',
+    'scripts/*',
+    '**/*.config.js',
+    '**/*.config.ts',
+    '**/*.config.mts',
+    '**/*.config.mjs',
+    '**/*.config.cjs',
+    '**/.DS_Store',
+    '**/node_modules',
+    '**/coverage',
+    '**/.next',
+    '**/build',
+    '!**/.commitlintrc.cjs',
+    '!**/.lintstagedrc.cjs',
+    '!**/jest.config.js',
+    '!**/plopfile.js',
+    '!**/react-shim.js',
+    '!**/tsup.config.ts',
   ]),
-]);
+  eslintPluginPrettierRecommended,
+  reactCompiler.configs.recommended,
+  {
+    plugins: {
+      '@next/next': nextPlugin,
+      react,
+      'react-hooks': reactHooks,
+      unicorn,
+      'unused-imports': unusedImports,
+      'simple-import-sort': simpleImportSort,
+      '@typescript-eslint': tseslint.plugin,
+    },
+    settings: {
+      react: {
+        version: 'detect',
+      },
+    },
+    rules: {
+      ...nextPlugin.configs.recommended.rules,
+      ...nextPlugin.configs['core-web-vitals'].rules,
 
-export default eslintConfig;
+      // General rules
+      indent: 'off',
+      semi: ['error', 'never'],
+      'no-console': 'warn',
+      'max-params': ['error', 5],
+      'max-lines-per-function': 'off',
+
+      // Unicorn rules
+      'unicorn/filename-case': ['error', { case: 'kebabCase' }],
+
+      // React rules
+      'react/prop-types': 'off',
+      'react/display-name': 'off',
+      'react/no-inline-styles': 'off',
+      'react/destructuring-assignment': 'off',
+      'react/require-default-props': 'off',
+      'react/jsx-uses-react': 'off',
+      'react/react-in-jsx-scope': 'off',
+      'react/self-closing-comp': 'warn',
+      'react/jsx-sort-props': [
+        'warn',
+        {
+          callbacksLast: true,
+          shorthandFirst: true,
+          noSortAlphabetically: false,
+          reservedFirst: true,
+        },
+      ],
+
+      // TypeScript rules
+      '@typescript-eslint/comma-dangle': 'off',
+      '@typescript-eslint/consistent-type-imports': [
+        'warn',
+        {
+          prefer: 'type-imports',
+          fixStyle: 'inline-type-imports',
+          disallowTypeAnnotations: true,
+        },
+      ],
+      '@typescript-eslint/no-unused-vars': 'off',
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-require-imports': 'off',
+      '@typescript-eslint/ban-ts-comment': 'off',
+
+      // React Hooks
+      'react-hooks/exhaustive-deps': 'off',
+
+      // Import rules
+      'import/prefer-default-export': 'off',
+
+      // Simple import sort
+      'simple-import-sort/imports': 'error',
+      'simple-import-sort/exports': 'error',
+
+      // Unused imports
+      'unused-imports/no-unused-imports': 'error',
+      'unused-imports/no-unused-vars': [
+        'error',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          caughtErrorsIgnorePattern: '^_',
+        },
+      ],
+
+      // Prettier
+      'prettier/prettier': 'warn',
+
+      // Misc
+      'no-empty': 'off',
+
+      // Padding lines (from old config)
+      'padding-line-between-statements': [
+        'warn',
+        { blankLine: 'always', prev: 'import', next: '*' },
+        { blankLine: 'any', prev: 'import', next: 'import' },
+        { blankLine: 'always', prev: 'multiline-expression', next: '*' },
+        { blankLine: 'always', prev: '*', next: 'multiline-expression' },
+        { blankLine: 'always', prev: '*', next: ['const', 'let', 'var'] },
+        {
+          blankLine: 'any',
+          prev: ['const', 'let', 'var'],
+          next: ['const', 'let', 'var'],
+        },
+        { blankLine: 'always', prev: '*', next: 'return' },
+      ],
+
+      'no-console': 'off',
+    },
+  },
+  {
+    files: ['**/*.ts', '**/*.tsx'],
+    plugins: {
+      '@typescript-eslint': tseslint.plugin,
+    },
+    languageOptions: {
+      parser: tseslint.parser,
+      parserOptions: {
+        project: './tsconfig.json',
+        tsconfigRootDir: import.meta.dirname,
+        sourceType: 'module',
+      },
+    },
+    rules: {
+      ...tseslint.configs.recommended.rules,
+      '@typescript-eslint/comma-dangle': 'off',
+      '@typescript-eslint/consistent-type-imports': [
+        'warn',
+        {
+          prefer: 'type-imports',
+          fixStyle: 'inline-type-imports',
+          disallowTypeAnnotations: true,
+        },
+      ],
+      'import/no-named-as-default-member': 'off',
+    },
+  },
+])
