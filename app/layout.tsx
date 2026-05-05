@@ -1,15 +1,22 @@
 import './globals.css'
 
 import type { Metadata } from 'next'
-import { Inter, Noto_Serif } from 'next/font/google'
+import { Be_Vietnam_Pro, Great_Vibes, Noto_Serif } from 'next/font/google'
 
-const inter = Inter({
-  variable: '--font-inter',
+const sans = Be_Vietnam_Pro({
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-sans',
   subsets: ['latin', 'vietnamese'],
 })
 
 const notoSerif = Noto_Serif({
   variable: '--font-noto-serif',
+  subsets: ['latin', 'vietnamese'],
+})
+
+const greatVibes = Great_Vibes({
+  weight: '400',
+  variable: '--font-great-vibes',
   subsets: ['latin', 'vietnamese'],
 })
 
@@ -53,9 +60,12 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      className={`${inter.variable} ${notoSerif.variable} h-full antialiased`}
+      suppressHydrationWarning
+      className={`${sans.variable} ${notoSerif.variable} ${greatVibes.variable} h-full antialiased`}
       lang='vi'>
-      <body className='flex min-h-full flex-col bg-cream font-sans text-wine'>
+      <body
+        suppressHydrationWarning
+        className='flex min-h-full flex-col bg-cream font-sans text-wine'>
         <a
           className='sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-lg focus:bg-wine focus:px-4 focus:py-2 focus:text-cream focus:outline-2 focus:outline-offset-2 focus:outline-gold-light'
           href='#main-content'>
