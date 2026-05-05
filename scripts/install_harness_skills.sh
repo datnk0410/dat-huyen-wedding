@@ -30,8 +30,8 @@ main() {
     dest_link="$DEST_DIR/$skill_name"
 
     rm -rf "$dest_link"
-    ln -s "$skill_dir" "$dest_link"
-    echo "[skill] linked: $skill_name"
+    cp -R "$skill_dir" "$dest_link"
+    echo "[skill] copied: $skill_name"
   done
 
   echo ""
