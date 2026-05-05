@@ -1,0 +1,17 @@
+{
+  "id": "feat-008",
+  "name": "Story Animation Polish",
+  "description": "Per-image reveal animations (fade-in, gentle zoom) for story chapter photos, replacing current static placeholder slots with scroll-triggered Framer Motion effects. Deferred from feat-005 for mobile performance",
+  "dependencies": ["feat-002", "feat-005"],
+  "status": "pending",
+  "acceptanceCriteria": [
+    "Story images animate into view with fade-in and gentle zoom on scroll (whileInView)",
+    "Animations are subtle and match wedding aesthetic (no flashy effects)",
+    "prefers-reduced-motion fully respected: animations disabled when user prefers reduced motion",
+    "Animation density stays performant on mobile (no per-card stagger that causes jank)",
+    "StoryImageSlot component no longer has unnecessary 'use client' directive if no client-side logic needed",
+    "Animations work with real images (next/image) and placeholder slots alike",
+    "pnpm lint, pnpm typecheck, pnpm build pass"
+  ],
+  "notes": "Originally part of feat-002 scope but deferred during feat-005 performance pass to avoid per-card animation overload on mobile. Re-enable with care: use Intersection Observer thresholds and consider stagger only on larger viewports. Keep animation count bounded per viewport."
+}

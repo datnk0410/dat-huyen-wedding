@@ -1,0 +1,20 @@
+{
+  "id": "feat-009",
+  "name": "Accessibility Compliance",
+  "description": "Comprehensive accessibility audit and fixes: ARIA labels, keyboard navigation, screen reader support, color contrast verification, focus management, and semantic HTML improvements across all pages",
+  "dependencies": ["feat-001", "feat-002", "feat-003"],
+  "status": "pending",
+  "acceptanceCriteria": [
+    "All interactive elements (buttons, links, form inputs) reachable via keyboard Tab navigation",
+    "Focus indicators visible and styled consistently with wedding palette",
+    "ARIA labels on landmark sections (hero, story chapters, RSVP form, venue map)",
+    "Skip-to-content link available for keyboard users",
+    "Color contrast ratios meet WCAG 2.1 AA (4.5:1 for normal text, 3:1 for large text)",
+    "Screen reader announces page structure correctly (headings, regions, lists)",
+    "Map iframe has accessible title and fallback content",
+    "Guest personalization announced correctly by screen readers",
+    "prefers-reduced-motion already handled (verified in feat-001/feat-002)",
+    "pnpm lint, pnpm typecheck, pnpm build pass"
+  ],
+  "notes": "Wedding guests will include elderly users and users with disabilities. Accessibility is not optional for a real product. Current reduced-motion support exists but broader a11y has not been audited. Focus on practical improvements, not theoretical perfection."
+}

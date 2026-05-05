@@ -1,0 +1,16 @@
+{
+  "id": "feat-006",
+  "name": "Error & Navigation Pages",
+  "description": "Custom 404 page, error boundary, and loading states for graceful user experience when routes are not found, components fail, or content is loading",
+  "dependencies": ["feat-001"],
+  "status": "pending",
+  "acceptanceCriteria": [
+    "Custom not-found page renders at /nonexistent-route with wedding-themed design and link back to home",
+    "Error boundary catches runtime errors and shows user-friendly message with retry option instead of white screen",
+    "Loading state renders for story page dynamic import with visible skeleton/spinner",
+    "All error/loading pages follow wedding palette and typography from globals.css",
+    "Error pages are mobile-friendly and match site aesthetic",
+    "pnpm lint, pnpm typecheck, pnpm build pass"
+  ],
+  "notes": "Next.js App Router provides not-found.tsx, error.tsx, and loading.tsx conventions. Use them. Error boundary must be a client component. Keep error UI simple and on-brand."
+}

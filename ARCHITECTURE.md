@@ -64,6 +64,7 @@ Browser → Next.js (SSG/CSR) → Google Apps Script → Google Sheets
 ## Cross-Cutting Concerns
 
 - **Animation**: Framer Motion with `prefers-reduced-motion` support. Lazy-loaded via `next/dynamic`.
-- **SEO**: Next.js metadata API for title, description, Open Graph images.
+- **SEO**: Next.js metadata API for title, description, Open Graph images. Sitemap and robots.txt via App Router conventions. JSON-LD structured data for WeddingEvent.
 - **Performance**: Next.js Image component, dynamic imports, WebP/AVIF, lazy loading.
-- **Accessibility**: Semantic HTML, ARIA labels, keyboard navigation, reduced-motion support.
+- **Accessibility**: Semantic HTML, ARIA labels, keyboard navigation, reduced-motion support, color contrast verification, focus management.
+- **Error Handling**: Custom 404 page, error boundary, loading states via Next.js App Router conventions.
