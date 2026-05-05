@@ -8,3 +8,4 @@ Do not move files between folders; update sections below to reflect status.
 
 ## Completed
 
+- **feat-001-landing-page** — Landing Page (hero, events, map, CTAs). Plan: `plans/feat-001-landing-page.md`

@@ -1,5 +1,32 @@
 # Progress Index
 
+## 2026-05-05 — feat-001 Landing Page Implementation
+
+- **Session**: feat-001-implement
+- **Status**: completed
+- **What was done**:
+  - Created `docs/product-specs/feat-001-landing-page.md`
+  - Built `components/shared/section-wrapper.tsx` with Framer Motion `whileInView` and reduced-motion support
+  - Built `components/hero/hero-copy.ts` and `components/hero/hero-section.tsx`
+  - Updated `app/page.tsx` to compose the new landing page hero
+  - Added `app/story/page.tsx` placeholder so `/story` CTA resolves to real route
+  - Added RSVP placeholder section with `#rsvp` anchor target
+  - Verified `pnpm lint`, `pnpm typecheck`, and `./init.sh`
+- **Blockers**: none
+- **Next steps**: Start feat-002 (Our Story) or feat-004 (RSVP System)
+
+## 2026-05-04 — feat-001 ExecPlan Creation
+
+- **Session**: feat-001-plan
+- **Status**: in-progress
+- **What was done**:
+  - Created ExecPlan at `docs/exec-plans/plans/feat-001-landing-page.md`
+  - Updated `harness/features/feat-001-landing-page.json` status to `in-progress`
+  - Updated `harness/feature_index.json` feat-001 status to `in-progress`
+  - Updated `docs/exec-plans/index.md` with active plan entry
+- **Blockers**: none
+- **Next steps**: Implement feat-001 per ExecPlan (create components, update page.tsx, verify build)
+
 ## 2026-05-04 — Boilerplate Cleanup & Content Setup
 
 - **Session**: setup-content
