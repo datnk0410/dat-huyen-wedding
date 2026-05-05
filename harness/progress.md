@@ -1,5 +1,36 @@
 # Progress Index
 
+## 2026-05-05 — feat-003 Guest Personalization Implementation
+
+- **Session**: feat-003-implement
+- **Status**: completed
+- **What was done**:
+  - Added `lib/guests.ts` with `GuestId`, `GuestData`, `GuestMap`, sample guest records, and `getGuestById()` lookup helper
+  - Updated `app/page.tsx` to await Next.js 16 `searchParams` and resolve `g` at route boundary
+  - Added `components/guest/guest-personalization.tsx` and `components/guest/index.ts`
+  - Updated `components/hero/hero-section.tsx` to render guest-specific invitation text, greeting/message card, and optional photo
+  - Updated `components/hero/hero-copy.ts` with invitation copy fragments for highlighted guest name path
+  - Added sample local asset `public/guests/anh-tu.svg` to exercise optional photo path safely
+  - Verified `pnpm lint`, `pnpm typecheck`, `pnpm build`, and `./init.sh`
+- **Blockers**: none
+- **Next steps**: Start feat-004 (RSVP System) or feat-005 (Performance & Mobile Optimization)
+
+## 2026-05-05 — feat-003 Guest Personalization ExecPlan Creation
+
+- **Session**: feat-003-plan
+- **Status**: in-progress
+- **What was done**:
+  - Identified `feat-003` as next pending feature from `harness/feature_index.json`
+  - Created ExecPlan at `docs/exec-plans/plans/feat-003-guest-personalization.md`
+  - Captured scope, layer impact, standards, validation path, risks, and harness update requirements for URL-based guest personalization
+  - Updated `docs/exec-plans/index.md` with active plan entry
+  - Updated `harness/features/feat-003-guest-personalization.json` status to `in-progress` and attached plan path
+  - Updated `harness/feature_index.json` feat-003 status to `in-progress`
+- **Blockers**:
+  - Need actual sample guest records and at least one valid photo asset path to fully exercise optional photo path during implementation
+- **Next steps**:
+  - Implement feat-003 per ExecPlan: add `lib/guests.ts`, wire `searchParams.g` in `app/page.tsx`, add guest UI block, and verify `/`, `/?g=<known-id>`, and `/?g=unknown`
+
 ## 2026-05-05 — feat-002 Our Story Implementation
 
 - **Session**: feat-002-implement
