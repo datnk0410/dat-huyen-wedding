@@ -1,5 +1,41 @@
 # Progress Index
 
+## 2026-05-05 — feat-005 Performance & Mobile Optimization ExecPlan Creation
+
+- **Session**: feat-005-plan
+- **Status**: in-progress
+- **What was done**:
+  - Identified `feat-005` scope from `harness/features/feat-005-performance-optimization.json`, `docs/PRODUCT.md`, and `docs/FRONTEND.md`
+  - Created ExecPlan at `docs/exec-plans/plans/feat-005-performance-mobile-optimization.md`
+  - Captured scope boundaries, layer impact, performance/mobile acceptance path, standards mapping, measurement expectations, and harness update requirements
+  - Updated `docs/exec-plans/index.md` with active plan entry
+  - Updated `harness/features/feat-005-performance-optimization.json` status to `in-progress` and attached plan path
+  - Updated `harness/feature_index.json` feat-005 status to `in-progress`
+- **Blockers**:
+  - `docs/PLANS.md` and `docs/knowledge/codex-exec-plan.md` are not present in repo, so plan structure relied on template and existing ExecPlans
+  - `public/images/` currently has no real production images, so implementation may need actual asset delivery or explicit deferred-image debt logging to satisfy full acceptance
+- **Next steps**:
+  - Implement feat-005 per ExecPlan: create product-spec acceptance doc, audit real media/render cost, convert shipped images to optimized `next/image` paths, verify mobile viewports, and capture Lighthouse/performance evidence
+
+## 2026-05-05 — feat-005 Performance & Mobile Optimization Implementation
+
+- **Session**: feat-005-implement
+- **Status**: in-progress
+- **What was done**:
+  - Added `docs/product-specs/feat-005-performance-mobile-optimization.md` to lock current asset inventory, acceptance scope, and manual measurement path
+  - Updated `components/guest/guest-personalization.tsx` to supply `sizes` for existing guest media rendered through `next/image`
+  - Updated `components/hero/hero-section.tsx` to defer Google Maps iframe load behind explicit user action while preserving stable layout height
+  - Updated `components/shared/section-wrapper.tsx` to support optional animation disablement for future bounded performance tuning without changing current reveal behavior
+  - Updated `components/story/story-image-slot.tsx` to remove per-slot Framer Motion cost from placeholder cards
+  - Logged deferred full WebP/AVIF rollout in `docs/exec-plans/tech-debt-tracker.md` because repo still lacks production landing/story photos
+  - Verified `pnpm lint`, `pnpm typecheck`, `pnpm build`, and `./init.sh`
+- **Blockers**:
+  - `public/images/` still has no real production photos, so full image-format acceptance cannot be completed honestly yet
+  - Lighthouse mobile score and <2s 3G evidence still need manual browser capture
+- **Next steps**:
+  - Capture manual viewport, throttled-load, and Lighthouse evidence
+  - Revisit deferred debt when final landing/story photography is delivered
+
 ## 2026-05-05 — feat-004 RSVP System ExecPlan Creation
 
 - **Session**: feat-004-plan
