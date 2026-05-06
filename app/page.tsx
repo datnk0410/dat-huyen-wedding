@@ -2,12 +2,14 @@ import type { Metadata } from 'next'
 
 import { CountdownSection } from '@/components/countdown/countdown-section'
 import { EventDetailsSection } from '@/components/event/event-details-section'
+import { GiftRegistrySection } from '@/components/event/gift-registry-section'
 import { MapSection } from '@/components/event/map-section'
 import { FamilySection } from '@/components/family/family-section'
 import { PhotoGallerySection } from '@/components/gallery/mini-gallery-section'
 import { HeroSection } from '@/components/hero'
 import { HERO_COPY } from '@/components/hero/hero-copy'
 import { RsvpSection } from '@/components/rsvp/rsvp-section'
+import { FloatingCta, Footer } from '@/components/shared'
 import { getGuestById } from '@/lib/guests'
 
 type HomePageProps = {
@@ -85,7 +87,10 @@ export default async function HomePage({ searchParams }: HomePageProps) {
       <EventDetailsSection />
       <PhotoGallerySection />
       <MapSection />
+      <GiftRegistrySection />
       <RsvpSection />
+      <Footer />
+      <FloatingCta />
     </main>
   )
 }

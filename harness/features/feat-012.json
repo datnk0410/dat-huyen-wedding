@@ -1,0 +1,9 @@
+{
+  "id": "feat-012",
+  "name": "Background Audio Player",
+  "description": "Background music player with toggle control, persistent across routes, using external MP3 source",
+  "dependencies": ["feat-001"],
+  "status": "done",
+  "evidence": "Implemented components/shared/audio-player.tsx in root layout. Volume 0.2, top-right floating button with spinning music note icon. Autoplay attempted on mount. Verified with ./init.sh on 2026-05-06.",
+  "updated_at": "2026-05-06"
+}
