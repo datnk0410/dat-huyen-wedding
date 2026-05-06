@@ -61,18 +61,18 @@ export const CountdownSection = () => {
           {/* Subtle glowing orb in background */}
           <div className='pointer-events-none absolute top-0 left-1/2 h-32 w-full max-w-md -translate-x-1/2 rounded-full bg-gold/10 blur-[60px]' />
 
-          <h2 className='relative mb-6 text-xs font-semibold tracking-[0.25em] text-gold-light uppercase sm:mb-8 sm:text-sm'>
+          <h2 className='relative mb-4 text-xs font-semibold tracking-wider text-gold-light uppercase sm:mb-8 sm:text-sm'>
             Đếm ngược tới ngày chung đôi
           </h2>
           <div className='relative flex justify-center gap-3 sm:gap-8'>
             {timeUnits.map((unit) => (
               <div
                 key={unit.label}
-                className='flex min-w-[50px] flex-col items-center sm:min-w-[80px]'>
-                <span className='font-serif text-4xl text-gold drop-shadow-sm sm:text-5xl lg:text-6xl'>
+                className='flex min-w-12.5 flex-col items-center sm:min-w-20'>
+                <span className='font-serif text-4xl font-bold text-gold-light drop-shadow-sm sm:text-5xl lg:text-6xl'>
                   {unit.value.toString().padStart(2, '0')}
                 </span>
-                <span className='mt-2 text-[10px] tracking-widest text-cream/80 uppercase sm:text-sm'>
+                <span className='mt-2 text-[10px] tracking-widest text-white uppercase sm:text-sm'>
                   {unit.label}
                 </span>
               </div>

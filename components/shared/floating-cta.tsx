@@ -27,7 +27,7 @@ export const FloatingCta = () => {
       initial={{ y: 150, opacity: 0 }}
       transition={{ type: 'spring', stiffness: 200, damping: 25 }}>
       <Link
-        className='flex w-full items-center justify-center rounded-full border border-gold-light/30 bg-wine px-6 py-4 text-center font-medium tracking-wide text-cream shadow-[0_8px_30px_rgb(0,0,0,0.25)] transition-transform active:scale-95'
+        className='mx-auto flex w-3/4 items-center justify-center rounded-full border border-gold-light/60 bg-wine/90 px-6 py-3 text-center text-sm font-medium tracking-wide text-cream shadow-[0_8px_20px_rgb(0,0,0,0.15)] backdrop-blur-xs transition-transform active:scale-95'
         href='/story'>
         Xem hành trình 10 năm
         <svg
