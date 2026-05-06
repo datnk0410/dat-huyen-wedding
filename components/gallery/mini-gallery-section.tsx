@@ -1,25 +1,85 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useState } from 'react'
 
-import { SectionWrapper } from '@/components/shared'
+import { ImageModal, SectionWrapper } from '@/components/shared'
 
 const photos = [
-  { id: 1, src: '/images/og-image.png', ratio: 'aspect-[4/5]' },
-  { id: 2, src: '/images/og-image.png', ratio: 'aspect-[1/1]' },
-  { id: 3, src: '/images/og-image.png', ratio: 'aspect-[4/5]' },
-  { id: 4, src: '/images/og-image.png', ratio: 'aspect-[3/2]' },
-  { id: 5, src: '/images/og-image.png', ratio: 'aspect-[1/1]' },
-  { id: 6, src: '/images/og-image.png', ratio: 'aspect-[4/5]' },
-  { id: 7, src: '/images/og-image.png', ratio: 'aspect-[1/1]' },
-  { id: 8, src: '/images/og-image.png', ratio: 'aspect-[3/4]' },
-  { id: 9, src: '/images/og-image.png', ratio: 'aspect-[4/5]' },
-  { id: 10, src: '/images/og-image.png', ratio: 'aspect-[1/1]' },
+  {
+    id: 1,
+    src: '/images/og-image.png',
+    ratio: 'aspect-[4/5]',
+    alt: 'Ảnh cưới 1',
+  },
+  {
+    id: 2,
+    src: '/images/og-image.png',
+    ratio: 'aspect-[1/1]',
+    alt: 'Ảnh cưới 2',
+  },
+  {
+    id: 3,
+    src: '/images/og-image.png',
+    ratio: 'aspect-[4/5]',
+    alt: 'Ảnh cưới 3',
+  },
+  {
+    id: 4,
+    src: '/images/og-image.png',
+    ratio: 'aspect-[3/2]',
+    alt: 'Ảnh cưới 4',
+  },
+  {
+    id: 5,
+    src: '/images/og-image.png',
+    ratio: 'aspect-[1/1]',
+    alt: 'Ảnh cưới 5',
+  },
+  {
+    id: 6,
+    src: '/images/og-image.png',
+    ratio: 'aspect-[4/5]',
+    alt: 'Ảnh cưới 6',
+  },
+  {
+    id: 7,
+    src: '/images/og-image.png',
+    ratio: 'aspect-[1/1]',
+    alt: 'Ảnh cưới 7',
+  },
+  {
+    id: 8,
+    src: '/images/og-image.png',
+    ratio: 'aspect-[3/4]',
+    alt: 'Ảnh cưới 8',
+  },
+  {
+    id: 9,
+    src: '/images/og-image.png',
+    ratio: 'aspect-[4/5]',
+    alt: 'Ảnh cưới 9',
+  },
+  {
+    id: 10,
+    src: '/images/og-image.png',
+    ratio: 'aspect-[1/1]',
+    alt: 'Ảnh cưới 10',
+  },
 ]
 
 export const PhotoGallerySection = () => {
+  const shouldReduceMotion = useReducedMotion()
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [selectedIndex, setSelectedIndex] = useState(0)
+
+  const openModal = (index: number) => {
+    setSelectedIndex(index)
+    setIsModalOpen(true)
+  }
+
   return (
     <div className='relative overflow-hidden bg-wine text-cream'>
       {/* Background glow effects */}
@@ -47,15 +107,25 @@ export const PhotoGallerySection = () => {
             {photos.map((photo, index) => (
               <motion.div
                 key={photo.id}
-                className={`group relative overflow-hidden rounded-2xl border border-gold/20 bg-wine-dark/50 shadow-lg`}
+                aria-label={`Mở ${photo.alt}`}
+                className={`group relative cursor-pointer overflow-hidden rounded-2xl border border-gold/20 bg-wine-dark/50 shadow-lg`}
                 initial={{ opacity: 0, y: 20 }}
+                role='button'
+                tabIndex={0}
                 transition={{ duration: 0.6, delay: index * 0.05 }}
                 viewport={{ once: true }}
-                whileInView={{ opacity: 1, y: 0 }}>
+                whileInView={{ opacity: 1, y: 0 }}
+                onClick={() => openModal(index)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault()
+                    openModal(index)
+                  }
+                }}>
                 <div className={`${photo.ratio} relative w-full`}>
                   <Image
                     fill
-                    alt={`Ảnh cưới ${photo.id}`}
+                    alt={photo.alt}
                     className='object-cover opacity-85 transition-all duration-700 group-hover:scale-110 group-hover:rotate-1 group-hover:opacity-100'
                     src={photo.src}
                   />
@@ -66,14 +136,38 @@ export const PhotoGallerySection = () => {
           </div>
 
           <div className='text-center'>
-            <Link
-              className='inline-flex min-h-12 items-center justify-center rounded-full border border-gold/50 bg-wine-dark/30 px-8 py-3 text-sm font-semibold text-gold backdrop-blur-sm transition-all hover:bg-gold hover:text-wine hover:shadow-[0_0_20px_rgba(212,175,55,0.3)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold'
-              href='/story'>
-              Xem hành trình 10 năm của chúng mình
-            </Link>
+            <motion.div
+              animate={
+                shouldReduceMotion
+                  ? undefined
+                  : {
+                      boxShadow: [
+                        '0 0 20px rgba(223,192,138,0.25)',
+                        '0 0 45px rgba(223,192,138,0.45)',
+                        '0 0 20px rgba(223,192,138,0.25)',
+                      ],
+                    }
+              }
+              className='inline-block rounded-full'
+              transition={{ duration: 3, ease: 'easeInOut', repeat: Infinity }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}>
+              <Link
+                className='inline-flex min-h-14 items-center justify-center rounded-full border-2 border-gold bg-gold-light px-10 py-4 text-base font-semibold text-wine backdrop-blur-sm transition-colors hover:bg-gold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold'
+                href='/story'>
+                Xem hành trình 10 năm của chúng mình
+              </Link>
+            </motion.div>
           </div>
         </motion.div>
       </SectionWrapper>
+
+      <ImageModal
+        images={photos}
+        initialIndex={selectedIndex}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </div>
   )
 }

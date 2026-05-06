@@ -1,5 +1,22 @@
 # Progress Index
 
+## 2026-05-05 — ImageModal Component + Gallery Button Enhancement
+
+- **Session**: gallery-modal-enhance
+- **Status**: completed
+- **What was done**:
+  - Created `components/shared/image-modal.tsx` — full-screen image modal with portal rendering, Framer Motion open/close animations, `useReducedMotion()` guard, backdrop blur, keyboard navigation (Escape, ArrowLeft, ArrowRight), prev/next navigation buttons, image counter, wheel zoom, pinch-to-zoom via touch events, double-click zoom toggle, panning when zoomed, and mobile-friendly touch handling
+  - Exported `ImageModal` and `ImageItem` type from `components/shared/index.ts`
+  - Updated `components/gallery/mini-gallery-section.tsx`:
+    - Added `alt` text to all photo entries for accessibility and `ImageModal` compatibility
+    - Wired `onClick` and `onKeyDown` (Enter/Space) on each masonry photo to open `ImageModal` at the clicked index
+    - Added `useState` for `isModalOpen` and `selectedIndex`
+    - Enhanced CTA button (lines 69-73): larger size (`min-h-14`, `px-10 py-4`, `text-base`), prominent gold styling (`bg-gold`, `text-wine`, `border-2 border-gold`), Framer Motion `whileHover={{ scale: 1.05 }}` and `whileTap={{ scale: 0.98 }}` spring animation, and enhanced glow shadow (`shadow-[0_0_30px_rgba(176,143,74,0.35)]` → `hover:shadow-[0_0_50px_rgba(176,143,74,0.55)]`)
+    - Integrated `<ImageModal images={photos} … />` at section root
+  - Verified `pnpm lint`, `pnpm typecheck`, `pnpm build`, and `./init.sh` all pass
+- **Blockers**: none
+- **Next steps**: Continue with feat-004 (RSVP System) or feat-005 (Performance & Mobile Optimization)
+
 ## 2026-05-05 — feat-009 Accessibility Compliance Implementation
 
 - **Session**: feat-009-implement
