@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, useReducedMotion, type Variants } from 'framer-motion'
-import { useEffect, useState } from 'react'
+import Image from 'next/image'
 
 import { GuestPersonalization } from '@/components/guest'
 import { SectionWrapper } from '@/components/shared'
@@ -15,12 +15,7 @@ type HeroSectionProps = {
 }
 
 export const HeroSection = ({ guest }: HeroSectionProps) => {
-  const [isMounted, setIsMounted] = useState(false)
   const shouldReduceMotion = useReducedMotion()
-
-  useEffect(() => {
-    setIsMounted(true)
-  }, [])
 
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -49,11 +44,11 @@ export const HeroSection = ({ guest }: HeroSectionProps) => {
         className='overflow-hidden bg-linear-to-b from-wine via-wine-dark to-wine px-6 py-16 text-cream sm:px-8 md:px-12 md:py-32'>
         <motion.div
           suppressHydrationWarning
-          animate={isMounted ? 'visible' : 'hidden'}
+          animate='visible'
           className='mx-auto flex max-w-6xl flex-col items-center gap-12 md:flex-row md:items-start md:justify-between'
           initial='hidden'
           variants={containerVariants}>
-          <div className='w-full space-y-12 md:max-w-2xl'>
+          <div className='w-full space-y-12 md:max-w-2xl md:pt-10'>
             <motion.div
               suppressHydrationWarning
               className='space-y-6'
@@ -66,7 +61,7 @@ export const HeroSection = ({ guest }: HeroSectionProps) => {
                   className='font-script text-6xl leading-tight font-normal text-balance sm:text-7xl md:text-8xl'
                   id='hero-heading'>
                   {s.groomName}
-                  <span className='mx-4 inline-block scale-65 align-middle text-gold-light opacity-80 md:mx-8'>
+                  <span className='mr-8 ml-2 inline-block scale-65 align-middle text-gold-light opacity-80 md:mr-12 md:ml-5'>
                     &
                   </span>
                   {s.brideName}
@@ -96,28 +91,24 @@ export const HeroSection = ({ guest }: HeroSectionProps) => {
           </div>
 
           <motion.div
-            className='relative aspect-3/4 w-full max-w-100 overflow-hidden rounded-2xl border border-cream/20 bg-cream/5 shadow-2xl md:w-2/5'
+            className='group relative aspect-4/5 w-full max-w-100 overflow-hidden rounded-2xl border border-white/10 bg-[#8b1a2b] shadow-[0_20px_50px_rgba(0,0,0,0.3)] md:w-2/5'
             variants={itemVariants}>
-            <div className='absolute inset-0 flex flex-col items-center justify-center gap-4 text-cream/30'>
-              <svg
-                className='h-12 w-12 opacity-50'
-                fill='none'
-                stroke='currentColor'
-                viewBox='0 0 24 24'>
-                <path
-                  d='M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth={1}
-                />
-              </svg>
-              <span className='text-xs font-medium tracking-widest uppercase'>
-                {s.heroPhotoPlaceholder}
-              </span>
-            </div>
-            {/* 
-              Future: Replace with <Image src="/images/hero-portrait.webp" ... />
-            */}
+            <Image
+              fill
+              priority
+              alt='Tùng & Vân — Ảnh cưới'
+              className='object-contain pb-4 transition-transform duration-700'
+              sizes='(max-width: 768px) 100vw, 40vw'
+              src='/images/hero-portrait.webp'
+            />
+            {/* Subtle color-correcting overlay to unify the red tones */}
+            <div className='pointer-events-none absolute inset-0 bg-wine/5 mix-blend-multiply' />
+
+            {/* Premium inner border decoration */}
+            <div className='pointer-events-none absolute inset-3 rounded-xl border border-gold/20' />
+
+            {/* Glossy overlay for a glass-like finish */}
+            <div className='pointer-events-none absolute inset-0 bg-linear-to-tr from-white/5 via-transparent to-white/10' />
           </motion.div>
         </motion.div>
       </SectionWrapper>
