@@ -2,7 +2,7 @@ import './globals.css'
 
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Be_Vietnam_Pro, Great_Vibes, Noto_Serif } from 'next/font/google'
 
 import { AudioPlayer } from '@/components/shared'
@@ -30,10 +30,19 @@ const greatVibes = Great_Vibes({
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL || 'https://tx-va-wedding.vercel.app'
 
+export const viewport: Viewport = {
+  themeColor: '#8b1a2b',
+}
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: meta.home.title,
   description: meta.home.description,
+  keywords: meta.home.keywords,
+  icons: {
+    icon: '/icon.svg',
+    apple: '/icon.svg',
+  },
   openGraph: {
     title: meta.home.title,
     description: meta.home.description,
@@ -42,7 +51,7 @@ export const metadata: Metadata = {
     siteName: `${strings.hero.groomName} & ${strings.hero.brideName}`,
     images: [
       {
-        url: '/images/og-image.png',
+        url: '/images/og-image.jpg',
         width: 1200,
         height: 630,
         alt: meta.home.ogImageAlt,
@@ -53,7 +62,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: meta.home.title,
     description: meta.home.description,
-    images: ['/images/og-image.png'],
+    images: ['/images/og-image.jpg'],
   },
 }
 

@@ -14,13 +14,14 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: storyMeta.title,
     description: storyMeta.description,
+    keywords: storyMeta.keywords,
     openGraph: {
       title: storyMeta.title,
       description: storyMeta.description,
       url: `${SITE_URL}/story`,
       images: [
         {
-          url: '/images/og-image.png',
+          url: '/images/og-image.jpg',
           width: 1200,
           height: 630,
           alt: storyMeta.title,
@@ -31,7 +32,7 @@ export async function generateMetadata(): Promise<Metadata> {
       card: 'summary_large_image',
       title: storyMeta.title,
       description: storyMeta.description,
-      images: ['/images/og-image.png'],
+      images: ['/images/og-image.jpg'],
     },
   }
 }
