@@ -1,3 +1,7 @@
+import { strings } from '@/lib/i18n'
+
+const e = strings.apiErrors
+
 export type RsvpFormData = {
   name: string
   eventDaiKhach: boolean
@@ -31,7 +35,7 @@ export type RsvpGetResponse = {
 export async function getRsvp(slug: string): Promise<RsvpGetResponse> {
   const url = process.env.NEXT_PUBLIC_APPS_SCRIPT_URL
   if (!url) {
-    return { status: 'error', data: null, message: 'Endpoint not configured' }
+    return { status: 'error', data: null, message: e.endpointNotConfigured }
   }
 
   try {
@@ -64,7 +68,7 @@ export async function submitRsvp(
   if (!url) {
     return {
       status: 'error',
-      message: 'Endpoint không được cấu hình. Vui lòng liên hệ ban tổ chức.',
+      message: e.endpointNotConfigured,
     }
   }
 
@@ -89,7 +93,7 @@ export async function submitRsvp(
     try {
       data = (await response.json()) as RsvpApiResponse
     } catch {
-      return { status: 'error', message: 'Phản hồi từ máy chủ không hợp lệ.' }
+      return { status: 'error', message: e.invalidResponse }
     }
 
     if (data.status === 'success') {
@@ -98,12 +102,12 @@ export async function submitRsvp(
 
     return {
       status: 'error',
-      message: data.message ?? 'Gửi thất bại. Vui lòng thử lại.',
+      message: data.message ?? e.submitFailed,
     }
   } catch {
     return {
       status: 'error',
-      message: 'Không thể kết nối. Vui lòng kiểm tra mạng và thử lại.',
+      message: e.networkError,
     }
   }
 }
