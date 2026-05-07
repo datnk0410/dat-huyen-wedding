@@ -96,7 +96,7 @@ export const HeroSection = ({ guest }: HeroSectionProps) => {
           </div>
 
           <motion.div
-            className='relative aspect-[3/4] w-full max-w-[400px] overflow-hidden rounded-2xl border border-cream/20 bg-cream/5 shadow-2xl md:w-2/5'
+            className='relative aspect-3/4 w-full max-w-100 overflow-hidden rounded-2xl border border-cream/20 bg-cream/5 shadow-2xl md:w-2/5'
             variants={itemVariants}>
             <div className='absolute inset-0 flex flex-col items-center justify-center gap-4 text-cream/30'>
               <svg
