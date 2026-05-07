@@ -9,10 +9,7 @@ const { family: s } = strings
 
 const FamilySide = ({ info }: { info: typeof s.groom | typeof s.bride }) => (
   <div className='flex flex-col items-center space-y-4 text-center'>
-    <h3 className='mb-8 font-serif text-3xl text-wine'>{info.title}</h3>
-    <p className='font-script text-4xl text-wine drop-shadow-sm sm:text-5xl'>
-      {info.name}
-    </p>
+    <h3 className='mb-2 font-serif text-3xl text-wine'>{info.title}</h3>
     <div className='h-px w-12 bg-gold/50' />
     <div className='space-y-2 text-text-secondary'>
       <p>
@@ -24,6 +21,9 @@ const FamilySide = ({ info }: { info: typeof s.groom | typeof s.bride }) => (
         <span className='font-medium text-text-primary'>{info.mother}</span>
       </p>
     </div>
+    <p className='font-script text-4xl text-wine drop-shadow-sm sm:text-5xl'>
+      {info.name}
+    </p>
     <p className='mt-2 text-sm text-text-muted'>{info.address}</p>
   </div>
 )

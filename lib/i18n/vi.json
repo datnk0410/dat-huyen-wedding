@@ -126,7 +126,7 @@
   "gallery": {
     "heading": "Khoảnh khắc hạnh phúc",
     "quote": "\"...anh đã tự nhủ sẽ nắm tay em đi hết quãng đời còn lại.\"",
-    "ctaStory": "Xem hành trình 10 năm của chúng mình",
+    "ctaStory": "Xem câu chuyện tình yêu của chúng mình",
     "photoAlt": "Ảnh cưới",
     "openPhotoLabel": "Mở"
   },
@@ -137,7 +137,7 @@
     "openMapsLabel": "Mở trong Google Maps"
   },
   "giftRegistry": {
-    "heading": "Mừng cưới",
+    "heading": "Gửi lời chúc phúc",
     "description": "Sự hiện diện của bạn là món quà quý giá nhất đối với chúng mình. Nếu bạn ở xa hoặc không tiện tới dự mà vẫn muốn gửi lời chúc phúc, chúng mình xin được trân trọng đón nhận tấm lòng của bạn.",
     "copyAccountLabel": "Sao chép số tài khoản",
     "qrCodeAlt": "Mã QR chuyển khoản",
@@ -180,7 +180,7 @@
     "weddingDate": "08 · 06 · 2026"
   },
   "floatingCta": {
-    "label": "Xem hành trình 10 năm"
+    "label": "Câu chuyện tình yêu 10 năm"
   },
   "guest": {
     "personalMessageLabel": "Lời nhắn gửi riêng",
