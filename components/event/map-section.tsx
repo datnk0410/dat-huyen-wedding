@@ -14,7 +14,7 @@ const MAPS_OPEN_URL = 'https://maps.app.goo.gl/xBVg6Gs3JPenCaC89'
 
 export const MapSection = () => {
   return (
-    <div className='relative overflow-hidden bg-cream'>
+    <div className='relative overflow-hidden bg-cream-dark'>
       <SectionWrapper className='relative z-10 px-6 py-12 sm:px-8 md:px-12 md:py-24'>
         <motion.div
           className='mx-auto max-w-4xl'

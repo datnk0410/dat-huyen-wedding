@@ -94,7 +94,7 @@ const AccountCard = ({ data }: { data: AccountData }) => {
 
 export const GiftRegistrySection = () => {
   return (
-    <div className='relative overflow-hidden bg-cream-dark'>
+    <div className='relative overflow-hidden bg-cream'>
       {/* Decorative background elements */}
       <div className='pointer-events-none absolute top-0 left-0 h-96 w-96 rounded-full bg-gold/5 blur-[100px]' />
       <div className='pointer-events-none absolute right-0 bottom-0 h-96 w-96 rounded-full bg-wine/5 blur-[100px]' />
