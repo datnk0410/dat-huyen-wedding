@@ -1,5 +1,18 @@
 # Progress Index
 
+## 2026-05-07 — feat-017: Add to Calendar Button
+
+- **Session**: feat-017-add-to-calendar-implement
+- **Status**: completed
+- **What was done**:
+  - Created `lib/calendar.ts` with `buildGoogleCalendarUrl()` (using all-day format for June 8-9).
+  - Added `events.addToCalendar` key to `lib/i18n/vi.json`.
+  - Added deeplink button below `<Calendar />` in `event-details-section.tsx`.
+  - Verified with `pnpm lint && pnpm typecheck && pnpm build` (all pass).
+  - Updated harness and plans index.
+- **Blockers**: none
+- **Next steps**: none
+
 ## 2026-05-07 — feat-016 Analytics & Speed Insights
 
 - **Session**: feat-016-analytics-implement
