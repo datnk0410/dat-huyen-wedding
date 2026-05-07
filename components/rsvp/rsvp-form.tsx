@@ -14,6 +14,7 @@ type FieldErrors = {
 
 type RsvpFormProps = {
   slug?: string
+  guestName?: string
 }
 
 const COPY = {
@@ -49,8 +50,11 @@ function validate(form: RsvpFormData): FieldErrors {
   return errors
 }
 
-export function RsvpForm({ slug }: RsvpFormProps) {
-  const [form, setForm] = useState<RsvpFormData>(INITIAL_FORM)
+export function RsvpForm({ slug, guestName }: RsvpFormProps) {
+  const [form, setForm] = useState<RsvpFormData>({
+    ...INITIAL_FORM,
+    name: guestName ?? '',
+  })
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({})
   const [submitState, setSubmitState] = useState<SubmitState>('idle')
   const [errorMessage, setErrorMessage] = useState<string>('')
@@ -72,6 +76,9 @@ export function RsvpForm({ slug }: RsvpFormProps) {
             eventDaiKhach: res.data.eventDaiKhach,
             eventThanhHon: res.data.eventThanhHon,
           })
+        } else if (guestName) {
+          // No prior RSVP — pre-fill name from guest list
+          setForm((prev) => ({ ...prev, name: guestName }))
         }
       })
       .catch(() => {
