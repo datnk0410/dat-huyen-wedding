@@ -2,7 +2,13 @@
 
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import Image from 'next/image'
-import { useCallback, useEffect, useRef, useState } from 'react'
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from 'react'
 import { createPortal } from 'react-dom'
 
 import { strings } from '@/lib/i18n'
@@ -47,7 +53,7 @@ export const ImageModal = ({
     setMounted(true)
   }, [])
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (isOpen) {
       setCurrentIndex(initialIndex)
       setScale(1)
@@ -342,6 +348,7 @@ export const ImageModal = ({
                     : 'transform 0.2s ease-out',
               }}>
               <Image
+                key={currentImage.src}
                 fill
                 priority
                 alt={currentImage.alt}

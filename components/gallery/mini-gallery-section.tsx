@@ -10,66 +10,70 @@ import { strings } from '@/lib/i18n'
 
 const { gallery: s } = strings
 
-const photos = [
+type GalleryPhoto = {
+  id: number
+  src: string
+  width: number
+  height: number
+  alt: string
+}
+
+const photos: GalleryPhoto[] = [
   {
     id: 1,
-    src: '/images/og-image.png',
-    ratio: 'aspect-4/5',
+    src: '/images/wedding/01.jpg',
+    width: 5182,
+    height: 7769,
     alt: `${s.photoAlt} 1`,
   },
   {
     id: 2,
-    src: '/images/og-image.png',
-    ratio: 'aspect-square',
+    src: '/images/wedding/02.jpg',
+    width: 5155,
+    height: 7728,
     alt: `${s.photoAlt} 2`,
   },
   {
     id: 3,
-    src: '/images/og-image.png',
-    ratio: 'aspect-4/5',
+    src: '/images/wedding/04.jpg',
+    width: 5152,
+    height: 7728,
     alt: `${s.photoAlt} 3`,
   },
   {
     id: 4,
-    src: '/images/og-image.png',
-    ratio: 'aspect-3/2',
+    src: '/images/wedding/06.jpg',
+    width: 5182,
+    height: 7769,
     alt: `${s.photoAlt} 4`,
   },
   {
     id: 5,
-    src: '/images/og-image.png',
-    ratio: 'aspect-square',
+    src: '/images/wedding/07.jpg',
+    width: 5304,
+    height: 7952,
     alt: `${s.photoAlt} 5`,
   },
   {
     id: 6,
-    src: '/images/og-image.png',
-    ratio: 'aspect-4/5',
+    src: '/images/wedding/08.jpg',
+    width: 5304,
+    height: 7952,
     alt: `${s.photoAlt} 6`,
   },
   {
     id: 7,
-    src: '/images/og-image.png',
-    ratio: 'aspect-square',
+    src: '/images/wedding/09.jpg',
+    width: 5304,
+    height: 7952,
     alt: `${s.photoAlt} 7`,
   },
   {
     id: 8,
-    src: '/images/og-image.png',
-    ratio: 'aspect-3/4',
+    src: '/images/wedding/10.jpg',
+    width: 5304,
+    height: 7952,
     alt: `${s.photoAlt} 8`,
-  },
-  {
-    id: 9,
-    src: '/images/og-image.png',
-    ratio: 'aspect-4/5',
-    alt: `${s.photoAlt} 9`,
-  },
-  {
-    id: 10,
-    src: '/images/og-image.png',
-    ratio: 'aspect-square',
-    alt: `${s.photoAlt} 10`,
   },
 ]
 
@@ -105,13 +109,12 @@ export const PhotoGallerySection = () => {
             </p>
           </div>
 
-          {/* Masonry Grid */}
-          <div className='mb-12 columns-2 gap-4 space-y-4 md:columns-3 lg:columns-4'>
+          <div className='mb-12 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-5'>
             {photos.map((photo, index) => (
               <motion.div
                 key={photo.id}
                 aria-label={`${s.openPhotoLabel} ${photo.alt}`}
-                className={`group relative cursor-pointer overflow-hidden rounded-2xl border border-gold/20 bg-wine-dark/50 shadow-lg`}
+                className='group relative cursor-pointer overflow-hidden rounded-2xl border border-gold/20 bg-wine-dark/50 shadow-lg'
                 initial={{ opacity: 0, y: 20 }}
                 role='button'
                 tabIndex={0}
@@ -125,12 +128,14 @@ export const PhotoGallerySection = () => {
                     openModal(index)
                   }
                 }}>
-                <div className={`${photo.ratio} relative w-full`}>
+                <div className='relative aspect-[2/3] w-full'>
                   <Image
-                    fill
                     alt={photo.alt}
-                    className='object-cover opacity-85 transition-all duration-700 group-hover:scale-110 group-hover:rotate-1 group-hover:opacity-100'
+                    className='h-full w-full object-cover opacity-85 transition-all duration-700 group-hover:scale-110 group-hover:rotate-1 group-hover:opacity-100'
+                    height={photo.height}
+                    sizes='(max-width: 767px) 50vw, (max-width: 1023px) 25vw, 20vw'
                     src={photo.src}
+                    width={photo.width}
                   />
                   <div className='absolute inset-0 bg-linear-to-t from-wine-dark/40 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100' />
                 </div>
@@ -165,12 +170,14 @@ export const PhotoGallerySection = () => {
         </motion.div>
       </SectionWrapper>
 
-      <ImageModal
-        images={photos}
-        initialIndex={selectedIndex}
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-      />
+      {isModalOpen ? (
+        <ImageModal
+          images={photos}
+          initialIndex={selectedIndex}
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+        />
+      ) : null}
     </div>
   )
 }

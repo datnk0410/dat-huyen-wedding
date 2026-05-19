@@ -1,6 +1,6 @@
 {
   "project": "tx-va-wedding",
-  "lastUpdated": "2026-05-06",
+  "lastUpdated": "2026-05-19",
   "features": [
     {
       "id": "feat-001",
@@ -8,7 +8,7 @@
       "description": "Hero section with couple names (Xuân Tùng & Vân Anh), event details (tiệc đãi khách 08/06/2026, lễ thành hôn 09/06/2026, Sân đình thôn Gia Lương, Đông Anh, Hà Nội), Google Maps embed, and CTAs for RSVP and Our Story",
       "dependencies": [],
       "status": "done",
-      "evidence": "Landing page hero, event cards, venue map embed, RSVP anchor section, and /story placeholder route implemented. Verified with pnpm lint, pnpm typecheck, and ./init.sh on 2026-05-05."
+      "evidence": "Landing page hero, event cards, venue map embed, RSVP anchor section, /story placeholder route, and a responsive curated 8-photo real gallery treatment in PhotoGallerySection are implemented. Verified with pnpm lint and pnpm build on 2026-05-19."
     },
     {
       "id": "feat-002",

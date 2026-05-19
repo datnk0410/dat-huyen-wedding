@@ -1,5 +1,55 @@
 # Progress Index
 
+## 2026-05-19 — feat-001: Gallery Modal Flicker Fix
+
+- **Session**: feat-001-gallery-modal-flicker-fix
+- **Status**: completed
+- **What was done**:
+  - Investigated the gallery modal preview bug where the previously viewed photo could flash before the newly selected photo.
+  - Identified stale modal state across close/reopen cycles as the main cause, especially after navigating inside the modal and reopening from the same thumbnail.
+  - Updated the landing gallery to only mount `ImageModal` while open, ensuring modal state resets on every open.
+  - Added a `key` on the modal `<Image>` by `currentImage.src` so image swaps remount cleanly when the selected photo changes.
+  - Verified with `pnpm lint` and `pnpm build` on 2026-05-19.
+- **Blockers**: none
+- **Next steps**: if flicker is still observable, run browser QA to capture an exact reproduction path.
+
+## 2026-05-19 — feat-001: Gallery Photo Count Reduce
+
+- **Session**: feat-001-gallery-photo-count-reduce
+- **Status**: completed
+- **What was done**:
+  - Removed `public/images/wedding/03.jpg` and `public/images/wedding/05.jpg` from `PhotoGallerySection`.
+  - Reduced the gallery set from 10 photos to 8 photos and renumbered the remaining items consistently.
+  - Kept the existing desktop/mobile grid behavior and modal interaction unchanged.
+  - Verified with `pnpm lint` and `pnpm build` on 2026-05-19.
+- **Blockers**: none
+- **Next steps**: none
+
+## 2026-05-19 — feat-001: Desktop Gallery Layout Tidy
+
+- **Session**: feat-001-desktop-gallery-layout-tidy
+- **Status**: completed
+- **What was done**:
+  - Reviewed the desktop gallery against the provided screenshot and identified the empty-gap issue caused by mixed-width cards in the first desktop row.
+  - Simplified the desktop gallery treatment so every card uses the same single-column portrait ratio, removing the awkward vertical dead space while keeping the mobile 2-column gallery intact.
+  - Preserved the existing image set and modal behavior.
+  - Verified with `pnpm lint` and `pnpm build` on 2026-05-19.
+- **Blockers**: none
+- **Next steps**: none
+
+## 2026-05-19 — feat-001: Gallery Photo Layout Refresh
+
+- **Session**: feat-001-gallery-photo-layout-refresh
+- **Status**: completed
+- **What was done**:
+  - Replaced the `PhotoGallerySection` placeholder gallery sources with the 10 real photos in `public/images/wedding/01.jpg` through `10.jpg`.
+  - Read image metadata first and confirmed the full set is consistently portrait-oriented at roughly 2:3, then reshaped the section from masonry columns to a more stable responsive grid.
+  - Implemented a 2-column mobile grid with consistent `2/3` cards and added 2 featured desktop cards that span 2 columns with a slightly wider portrait crop for visual rhythm.
+  - Added real `width`/`height` metadata and responsive `sizes` to the gallery images while preserving existing modal behavior.
+  - Verified with `pnpm lint` and `pnpm build` on 2026-05-19.
+- **Blockers**: none
+- **Next steps**: none
+
 ## 2026-05-07 — feat-017: Add to Calendar Button
 
 - **Session**: feat-017-add-to-calendar-implement
