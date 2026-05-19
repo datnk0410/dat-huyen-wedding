@@ -1,5 +1,17 @@
 # Progress Index
 
+## 2026-05-19 — feat-001: Gallery Preview Tint Fix
+
+- **Session**: feat-001-gallery-preview-tint-fix
+- **Status**: completed
+- **What was done**:
+  - Investigated the red tint visible on gallery preview thumbnails before hover.
+  - Identified the cause as reduced image opacity (`opacity-85`), which let the wine background bleed through the photos.
+  - Removed the preview opacity treatment while keeping the existing hover zoom/rotate interaction.
+  - Verified with `pnpm lint` and `pnpm build` on 2026-05-19.
+- **Blockers**: none
+- **Next steps**: none
+
 ## 2026-05-19 — feat-001: Gallery Modal Flicker Fix
 
 - **Session**: feat-001-gallery-modal-flicker-fix

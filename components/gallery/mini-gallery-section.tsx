@@ -131,7 +131,7 @@ export const PhotoGallerySection = () => {
                 <div className='relative aspect-[2/3] w-full'>
                   <Image
                     alt={photo.alt}
-                    className='h-full w-full object-cover opacity-85 transition-all duration-700 group-hover:scale-110 group-hover:rotate-1 group-hover:opacity-100'
+                    className='h-full w-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-1'
                     height={photo.height}
                     sizes='(max-width: 767px) 50vw, (max-width: 1023px) 25vw, 20vw'
                     src={photo.src}
