@@ -2,7 +2,7 @@
   "meta": {
     "home": {
       "title": "Xuân Tùng & Vân Anh — Thiệp cưới",
-      "description": "Thiệp cưới Xuân Tùng & Vân Anh. Trân trọng kính mời tới dự tiệc cưới ngày 08/06/2026 và lễ thành hôn ngày 09/06/2026 tại Sân đình Thôn Gia Lương, Xã Đông Anh, Hà Nội.",
+      "description": "Thiệp cưới Xuân Tùng & Vân Anh. Trân trọng kính mời tới dự bữa cơm thân mật ngày 08/06/2026 và lễ thành hôn ngày 09/06/2026 tại Sân đình Thôn Gia Lương, Xã Đông Anh, Hà Nội.",
       "ogImageAlt": "Thiệp cưới Xuân Tùng & Vân Anh",
       "keywords": "đám cưới Xuân Tùng Vân Anh, thiệp cưới online, thiệp mời đám cưới, Gia Lương Đông Anh, thiệp cưới Xuân Tùng, thiệp cưới Vân Anh"
     },
@@ -79,7 +79,7 @@
     "attendInvitation": "Trân trọng kính mời tới dự lễ thành hôn của chúng mình",
     "groomSide": "Lịch trình nhà trai",
     "brideSide": "Lịch trình nhà gái",
-    "partyLabel": "Tiệc cưới",
+    "partyLabel": "Bữa cơm thân mật",
     "sectionTitle": "Lịch trình",
     "sectionEyebrow": "Chương trình sự kiện",
     "calendarMonth": "Tháng 6",
@@ -88,7 +88,7 @@
     "titleCalendar": "Đám cưới Xuân Tùng & Vân Anh",
     "groom": {
       "party": {
-        "label": "Tiệc cưới",
+        "label": "Bữa cơm thân mật",
         "time": "16:30",
         "date": "Thứ Hai",
         "fullDate": "08/06/2026",
@@ -106,7 +106,7 @@
     },
     "bride": {
       "party": {
-        "label": "Tiệc cưới",
+        "label": "Bữa cơm thân mật",
         "time": "16:30",
         "date": "Thứ Hai",
         "fullDate": "08/06/2026",
@@ -163,7 +163,7 @@
     "nameLabel": "Họ tên khách mời",
     "nameLoading": "Đang tải...",
     "eventsLegend": "Sự kiện tham dự",
-    "eventDaiKhach": "Tiệc cưới (08/06)",
+    "eventDaiKhach": "Bữa cơm thân mật (08/06)",
     "eventThanhHon": "Lễ thành hôn (09/06)",
     "submit": "Gửi thông tin xác nhận",
     "submitting": "Đang gửi thông tin...",
