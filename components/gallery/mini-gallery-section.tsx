@@ -42,10 +42,24 @@ const photos: GalleryPhoto[] = [
   },
   {
     id: 4,
-    src: '/images/wedding/06.jpg',
+    src: '/images/wedding/15.jpg',
     width: 5182,
     height: 7769,
     alt: `${s.photoAlt} 4`,
+  },
+  {
+    id: 9,
+    src: '/images/wedding/13.jpg',
+    width: 1591,
+    height: 2448,
+    alt: `${s.photoAlt} 9`,
+  },
+  {
+    id: 10,
+    src: '/images/wedding/14.jpg',
+    width: 1632,
+    height: 2485,
+    alt: `${s.photoAlt} 10`,
   },
   {
     id: 5,
@@ -74,20 +88,6 @@ const photos: GalleryPhoto[] = [
     width: 5304,
     height: 7952,
     alt: `${s.photoAlt} 8`,
-  },
-  {
-    id: 9,
-    src: '/images/wedding/03.jpg',
-    width: 1591,
-    height: 2448,
-    alt: `${s.photoAlt} 9`,
-  },
-  {
-    id: 10,
-    src: '/images/wedding/05.jpg',
-    width: 1632,
-    height: 2485,
-    alt: `${s.photoAlt} 10`,
   },
   {
     id: 11,
@@ -156,7 +156,7 @@ export const PhotoGallerySection = () => {
                     openModal(index)
                   }
                 }}>
-                <div className='relative aspect-[2/3] w-full'>
+                <div className='relative aspect-2/3 w-full'>
                   <Image
                     alt={photo.alt}
                     className='h-full w-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-1'
