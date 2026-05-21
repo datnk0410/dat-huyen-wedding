@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { useState } from 'react'
 
 import { SectionWrapper } from '@/components/shared'
@@ -63,11 +64,11 @@ const AccountCard = ({ data }: { data: AccountData }) => {
     <div className='flex flex-col items-center rounded-3xl border border-gold/20 bg-white/60 p-8 shadow-[0_0_40px_rgba(212,175,55,0.05)] backdrop-blur-md'>
       <h4 className='mb-6 font-serif text-2xl text-wine'>{data.title}</h4>
       <div className='relative mb-8 aspect-4/5 w-52 overflow-hidden rounded-2xl border border-gold/20 bg-white shadow-md'>
-        {/* Replace src with real QR image path when available */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
+          fill
           alt={`${s.qrCodeAlt} - ${data.bankName} - ${data.accountName}`}
-          className='h-full w-full object-contain'
+          className='object-contain'
+          sizes='208px'
           src={data.qrImage}
         />
       </div>

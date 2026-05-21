@@ -10,6 +10,26 @@ const { countdown: s } = strings
 
 const TARGET_DATE = new Date('2026-06-08T16:30:00+07:00').getTime()
 
+const getTimeLeft = () => {
+  const difference = TARGET_DATE - Date.now()
+
+  if (difference <= 0) {
+    return {
+      days: 0,
+      hours: 0,
+      minutes: 0,
+      seconds: 0,
+    }
+  }
+
+  return {
+    days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+    hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+    minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+    seconds: Math.floor((difference % (1000 * 60)) / 1000),
+  }
+}
+
 export const CountdownSection = () => {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -17,33 +37,26 @@ export const CountdownSection = () => {
     minutes: 0,
     seconds: 0,
   })
-  const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
-    setIsMounted(true)
+    setTimeLeft(getTimeLeft())
 
     const interval = setInterval(() => {
-      const now = new Date().getTime()
-      const difference = TARGET_DATE - now
+      const nextTimeLeft = getTimeLeft()
+      setTimeLeft(nextTimeLeft)
 
-      if (difference > 0) {
-        setTimeLeft({
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor(
-            (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
-          ),
-          minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
-          seconds: Math.floor((difference % (1000 * 60)) / 1000),
-        })
-      } else {
+      if (
+        nextTimeLeft.days === 0 &&
+        nextTimeLeft.hours === 0 &&
+        nextTimeLeft.minutes === 0 &&
+        nextTimeLeft.seconds === 0
+      ) {
         clearInterval(interval)
       }
     }, 1000)
 
     return () => clearInterval(interval)
   }, [])
-
-  if (!isMounted) return null
 
   const timeUnits = [
     { label: s.units.days, value: timeLeft.days },

@@ -1,8 +1,3 @@
-'use client'
-
-import { motion } from 'framer-motion'
-
-import { SectionWrapper } from '@/components/shared'
 import { MapPinIcon } from '@/components/shared/icons'
 import { strings } from '@/lib/i18n'
 
@@ -15,13 +10,8 @@ const MAPS_OPEN_URL = 'https://maps.app.goo.gl/xBVg6Gs3JPenCaC89'
 export const MapSection = () => {
   return (
     <div className='relative overflow-hidden bg-cream-dark'>
-      <SectionWrapper className='relative z-10 px-6 py-12 sm:px-8 md:px-12 md:py-24'>
-        <motion.div
-          className='mx-auto max-w-4xl'
-          initial={{ opacity: 0, y: 20 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          whileInView={{ opacity: 1, y: 0 }}>
+      <section className='relative z-10 px-6 py-12 sm:px-8 md:px-12 md:py-24'>
+        <div className='mx-auto max-w-4xl'>
           <div className='mb-10 text-center'>
             <div className='mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-wine/10'>
               <MapPinIcon className='text-wine' />
@@ -56,8 +46,8 @@ export const MapSection = () => {
               {s.openMapsLabel}
             </a>
           </div>
-        </motion.div>
-      </SectionWrapper>
+        </div>
+      </section>
     </div>
   )
 }

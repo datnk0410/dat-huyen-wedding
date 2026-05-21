@@ -1,8 +1,3 @@
-'use client'
-
-import { motion } from 'framer-motion'
-
-import { SectionWrapper } from '@/components/shared'
 import { buildGoogleCalendarUrl } from '@/lib/calendar'
 import { strings } from '@/lib/i18n'
 
@@ -90,13 +85,8 @@ export const EventDetailsSection = () => {
   return (
     <div className='relative bg-cream-dark'>
       <div className='pointer-events-none absolute top-0 right-0 h-64 w-64 rounded-full bg-gold/5 blur-[80px]' />
-      <SectionWrapper className='relative z-10 overflow-hidden px-6 py-12 sm:px-8 md:px-12 md:py-24'>
-        <motion.div
-          className='mx-auto max-w-6xl'
-          initial={{ opacity: 0, y: 20 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          whileInView={{ opacity: 1, y: 0 }}>
+      <section className='relative z-10 overflow-hidden px-6 py-12 sm:px-8 md:px-12 md:py-24'>
+        <div className='mx-auto max-w-6xl'>
           <div className='mb-16 text-center'>
             <p className='font-script text-5xl text-wine sm:text-6xl'>
               {s.saveTheDate}
@@ -218,8 +208,8 @@ export const EventDetailsSection = () => {
               </div>
             </div>
           </div>
-        </motion.div>
-      </SectionWrapper>
+        </div>
+      </section>
     </div>
   )
 }

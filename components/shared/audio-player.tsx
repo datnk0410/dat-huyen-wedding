@@ -63,7 +63,7 @@ export const AudioPlayer = () => {
 
   return (
     <>
-      <audio ref={audioRef} loop src={AUDIO_SRC} />
+      <audio ref={audioRef} loop preload='none' src={AUDIO_SRC} />
       <button
         aria-label={
           isPlaying ? 'Pause background music' : 'Play background music'

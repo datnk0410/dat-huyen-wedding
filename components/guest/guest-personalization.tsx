@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 import type { GuestData } from '@/lib/guests'
 import { strings } from '@/lib/i18n'
 
@@ -27,11 +29,13 @@ export const GuestPersonalization = ({ guest }: GuestPersonalizationProps) => {
 
       {guest.photo ? (
         <div className='mx-auto w-full max-w-60 overflow-hidden rounded-[1.75rem] border border-cream/20 bg-cream/5'>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             alt={`${strings.guestPhotoAlt} - ${guest.name}`}
-            className='h-full w-full object-contain'
+            className='object-contain'
+            height={guest.photo.height}
+            sizes='(max-width: 767px) min(100vw - 5rem, 15rem), 160px'
             src={guest.photo.src}
+            width={guest.photo.width}
           />
         </div>
       ) : null}
