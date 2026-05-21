@@ -4,7 +4,7 @@
   "description": "Chapter-based scroll storytelling with 11 chapters covering 2016–2026, each with title, text, responsive photo grids, and Framer Motion reveals",
   "dependencies": [],
   "status": "done",
-  "evidence": "Story page now renders 11 scroll-based chapters for 2016-2026 with 55 real photos sourced from `public/images/story`, measured metadata for `next/image`, responsive 2-column mobile / 3-column desktop grids, and count-aware hero spans to balance portrait/landscape mixes. Verified with pnpm lint, pnpm typecheck, pnpm build, and ./init.sh on 2026-05-21.",
+  "evidence": "Story page now renders 11 scroll-based chapters for 2016-2026 with 55 real photos sourced from `public/images/story`, measured metadata for `next/image`, uniform square photo grids, centered cover crops, and per-chapter click-to-zoom modals. Verified with pnpm lint, pnpm typecheck, pnpm build, and ./init.sh on 2026-05-21.",
   "plan": "docs/exec-plans/plans/feat-002-our-story.md",
   "acceptanceCriteria": [
     "11 story chapters displayed in scroll-based layout",
@@ -12,7 +12,7 @@
     "Framer Motion animations: fade-in, slide-up, zoom on scroll",
     "prefers-reduced-motion support with reduced animation variant",
     "Lazy-loaded via next/dynamic for performance",
-    "Mobile-first responsive layout with 2 columns on mobile and 3 columns on desktop"
+    "Mobile-first responsive layout with 2 columns on mobile, 3 columns on desktop, and chapter-scoped modal viewing"
   ],
   "content": {
     "template": "11 chapters for 2016-2026. Story copy lives in `lib/i18n/vi.json`; real story photos live in `public/images/story/<year>/` and are mapped in `components/story/story-images.ts`.",
@@ -85,5 +85,5 @@
       }
     ]
   },
-  "notes": "Story copy and real images are now wired. Layout intentionally keeps a fixed 4:3 grid and uses at most one hero span per year to balance mixed portrait/landscape sets without masonry."
+  "notes": "Story copy and real images are now wired. Layout intentionally uses a uniform square grid with centered cover crops for all thumbnails, while modal viewing stays scoped to the chapter the guest clicked."
 }

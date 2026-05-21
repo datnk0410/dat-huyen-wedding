@@ -4,26 +4,17 @@ import { motion, useReducedMotion } from 'framer-motion'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
-import type { StoryImage, StoryImageHeroMode } from './story-types'
+import type { StoryImage } from './story-types'
 
 type StoryImageSlotProps = {
   image: StoryImage
-  heroMode: StoryImageHeroMode
+  onOpen: () => void
 }
 
-const getStoryImageSizes = (heroMode: StoryImageHeroMode) => {
-  if (heroMode === 'mobile') {
-    return '(max-width: 639px) 100vw, 33vw'
-  }
+const STORY_IMAGE_SIZES =
+  '(max-width: 639px) 50vw, (max-width: 1024px) 33vw, 290px'
 
-  if (heroMode === 'desktop') {
-    return '(max-width: 639px) 50vw, 66vw'
-  }
-
-  return '(max-width: 639px) 50vw, 33vw'
-}
-
-export const StoryImageSlot = ({ image, heroMode }: StoryImageSlotProps) => {
+export const StoryImageSlot = ({ image, onOpen }: StoryImageSlotProps) => {
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
@@ -34,29 +25,26 @@ export const StoryImageSlot = ({ image, heroMode }: StoryImageSlotProps) => {
   const shouldAnimate = mounted && !shouldReduceMotion
 
   return (
-    <motion.div
-      className={`group relative overflow-hidden rounded-2xl bg-cream-dark ${
-        heroMode === 'mobile'
-          ? 'col-span-2 sm:col-span-1'
-          : heroMode === 'desktop'
-            ? 'col-span-1 sm:col-span-2'
-            : ''
-      }`}
+    <motion.button
+      aria-label={image.alt}
+      className='group relative overflow-hidden rounded-2xl bg-cream-dark text-left focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-wine'
       initial={shouldAnimate ? { opacity: 0, scale: 1.03 } : false}
       transition={{ duration: 0.5, ease: 'easeOut' }}
+      type='button'
       viewport={{ once: true, amount: 0.2 }}
-      whileInView={shouldAnimate ? { opacity: 1, scale: 1 } : undefined}>
-      <div className='relative aspect-4/3 w-full'>
+      whileInView={shouldAnimate ? { opacity: 1, scale: 1 } : undefined}
+      onClick={onOpen}>
+      <div className='relative aspect-square w-full'>
         <Image
-          fill
-          alt={image.alt}
-          className={`object-cover transition-transform duration-700 group-hover:scale-[1.03] ${
-            image.orientation === 'portrait' ? 'object-top' : 'object-center'
-          }`}
-          sizes={getStoryImageSizes(heroMode)}
+          alt=''
+          className='h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-110 group-hover:rotate-1'
+          height={image.height}
+          sizes={STORY_IMAGE_SIZES}
           src={image.src}
+          width={image.width}
         />
+        <div className='absolute inset-0 bg-linear-to-t from-wine-dark/25 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100' />
       </div>
-    </motion.div>
+    </motion.button>
   )
 }

@@ -1,4 +1,4 @@
-import type { StoryImage, StoryImageHeroMode } from './story-types'
+import type { StoryImage } from './story-types'
 
 const STORY_IMAGES_BY_YEAR: Record<number, StoryImage[]> = {
   2016: [
@@ -410,33 +410,6 @@ const STORY_IMAGES_BY_YEAR: Record<number, StoryImage[]> = {
   ],
 }
 
-const STORY_CARD_RATIO = 4 / 3
-
-const getStoryImageScore = (image: StoryImage) => {
-  const ratio = image.width / image.height
-  const ratioDistance = Math.abs(ratio - STORY_CARD_RATIO)
-
-  if (image.orientation === 'landscape') {
-    return ratioDistance
-  }
-
-  if (image.orientation === 'square') {
-    return ratioDistance + 0.25
-  }
-
-  return ratioDistance + 2
-}
-
-const getPreferredHeroIndex = (images: StoryImage[]) => {
-  return images.reduce((bestIndex, image, index, collection) => {
-    const bestImage = collection[bestIndex]
-
-    return getStoryImageScore(image) < getStoryImageScore(bestImage)
-      ? index
-      : bestIndex
-  }, 0)
-}
-
 const interleaveStoryImages = (images: StoryImage[]) => {
   const landscapes = images.filter((image) => image.orientation === 'landscape')
   const others = images.filter((image) => image.orientation !== 'landscape')
@@ -468,43 +441,11 @@ const interleaveStoryImages = (images: StoryImage[]) => {
   return ordered
 }
 
-export const getStoryImageHeroMode = (
-  imageCount: number,
-): StoryImageHeroMode => {
-  // Keep the grid balanced without introducing masonry:
-  // - odd counts get a mobile hero so the last mobile row does not end with a single tile
-  // - counts like 4 or 10 get a desktop hero so the 3-column layout avoids a weak final orphan
-  if (imageCount % 2 === 1) {
-    return 'mobile'
-  }
-
-  if (imageCount % 3 === 1) {
-    return 'desktop'
-  }
-
-  return null
-}
-
 export const getStoryImagesForYear = (year: number) => {
   const images = STORY_IMAGES_BY_YEAR[year] ?? []
-  const heroMode = getStoryImageHeroMode(images.length)
-
-  if (images.length <= 1 || !heroMode) {
+  if (images.length <= 1) {
     return images
   }
 
-  const heroIndex = getPreferredHeroIndex(images)
-  const heroImage = images[heroIndex]
-  const remainingImages = images.filter((_, index) => index !== heroIndex)
-
-  return [heroImage, ...interleaveStoryImages(remainingImages)]
-}
-
-export const getStoryChapterAssets = (year: number) => {
-  const images = getStoryImagesForYear(year)
-
-  return {
-    heroMode: getStoryImageHeroMode(images.length),
-    images,
-  }
+  return interleaveStoryImages(images)
 }

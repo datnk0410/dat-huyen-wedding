@@ -1,5 +1,18 @@
 # Progress Index
 
+## 2026-05-21 — feat-002: Story Square Gallery + Chapter Modal
+
+- **Session**: feat-002-story-square-gallery-modal
+- **Status**: completed
+- **What was done**:
+  - Reworked story thumbnails from mixed 4:3/hero treatment to a uniform square grid while keeping the existing 2-column mobile / 3-column desktop layout.
+  - Changed story image crops to centered `object-cover` so thumbnails crop from the middle instead of biasing toward the top.
+  - Added `StoryChapterGallery` so each year now opens its own `ImageModal`, matching the gallery interaction pattern while keeping navigation scoped to the clicked chapter.
+  - Kept the reduced-motion-safe Framer Motion reveal on each thumbnail and aligned the hover treatment with `components/gallery/mini-gallery-section.tsx`.
+  - Verified with `pnpm lint`, `pnpm typecheck`, `pnpm build`, and `./init.sh` on 2026-05-21.
+- **Blockers**: none
+- **Next steps**: optional follow-up cleanup for stale `story.imageSlot*` and `imageSlotCount` keys still left in `lib/i18n/vi.json`.
+
 ## 2026-05-21 — feat-002: Story Real Images Wire-up
 
 - **Session**: feat-002-story-real-images-wire-up

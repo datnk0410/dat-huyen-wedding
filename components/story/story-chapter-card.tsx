@@ -1,7 +1,7 @@
 import { SectionWrapper } from '@/components/shared/section-wrapper'
 import { strings } from '@/lib/i18n'
 
-import { StoryImageSlot } from './story-image-slot'
+import { StoryChapterGallery } from './story-chapter-gallery'
 import type { StoryChapter } from './story-types'
 
 const { story: s } = strings
@@ -45,15 +45,7 @@ export const StoryChapterCard = ({ chapter, index }: StoryChapterCardProps) => {
             ))}
           </div>
 
-          <div className='grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4'>
-            {chapter.images.map((image, imageIndex) => (
-              <StoryImageSlot
-                key={image.src}
-                heroMode={imageIndex === 0 ? chapter.heroMode : null}
-                image={image}
-              />
-            ))}
-          </div>
+          <StoryChapterGallery images={chapter.images} />
         </div>
       </div>
     </SectionWrapper>
