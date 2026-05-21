@@ -1,22 +1,21 @@
 {
   "id": "feat-002",
   "name": "Our Story",
-  "description": "Chapter-based scroll storytelling with 10 chapters covering 10 years (2016–2025), each with title, images, text, and Framer Motion animations (fade-in, slide-up, zoom)",
+  "description": "Chapter-based scroll storytelling with 11 chapters covering 2016–2026, each with title, text, responsive photo grids, and Framer Motion reveals",
   "dependencies": [],
   "status": "done",
-  "evidence": "Story page now renders 10 scroll-based chapters for 2016-2025 with Vietnamese placeholder copy, 39 image slots, reduced-motion-safe Framer Motion reveals, and lazy-loaded route shell. Verified with pnpm lint, pnpm typecheck, pnpm build, and ./init.sh on 2026-05-05.",
+  "evidence": "Story page now renders 11 scroll-based chapters for 2016-2026 with 55 real photos sourced from `public/images/story`, measured metadata for `next/image`, responsive 2-column mobile / 3-column desktop grids, and count-aware hero spans to balance portrait/landscape mixes. Verified with pnpm lint, pnpm typecheck, pnpm build, and ./init.sh on 2026-05-21.",
   "plan": "docs/exec-plans/plans/feat-002-our-story.md",
   "acceptanceCriteria": [
-    "10 story chapters displayed in scroll-based layout",
-    "Each chapter has: year, title, 1-2 paragraphs of text, 3-5 images",
+    "11 story chapters displayed in scroll-based layout",
+    "Each chapter has: year, title, 1-2 paragraphs of text, and all provided story photos for that year",
     "Framer Motion animations: fade-in, slide-up, zoom on scroll",
     "prefers-reduced-motion support with reduced animation variant",
     "Lazy-loaded via next/dynamic for performance",
-    "Mobile-first responsive layout",
-    "Max 40 images total across all chapters"
+    "Mobile-first responsive layout with 2 columns on mobile and 3 columns on desktop"
   ],
   "content": {
-    "template": "10 chapters for 10 years (2016-2025). Content TBD — create template with placeholder text and image slots.",
+    "template": "11 chapters for 2016-2026. Story copy lives in `lib/i18n/vi.json`; real story photos live in `public/images/story/<year>/` and are mapped in `components/story/story-images.ts`.",
     "chapters": [
       {
         "year": 2016,
@@ -77,8 +76,14 @@
         "title": "PLACEHOLDER",
         "text": "PLACEHOLDER",
         "images": []
+      },
+      {
+        "year": 2026,
+        "title": "PLACEHOLDER",
+        "text": "PLACEHOLDER",
+        "images": []
       }
     ]
   },
-  "notes": "Content to be provided later. Build template with 10 chapters for 10 years. Real story copy and real images remain future content work."
+  "notes": "Story copy and real images are now wired. Layout intentionally keeps a fixed 4:3 grid and uses at most one hero span per year to balance mixed portrait/landscape sets without masonry."
 }

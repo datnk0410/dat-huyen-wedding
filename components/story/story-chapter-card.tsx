@@ -2,18 +2,12 @@ import { SectionWrapper } from '@/components/shared/section-wrapper'
 import { strings } from '@/lib/i18n'
 
 import { StoryImageSlot } from './story-image-slot'
+import type { StoryChapter } from './story-types'
 
 const { story: s } = strings
 
-type ChapterData = {
-  year: number
-  title: string
-  paragraphs: string[]
-  imageSlotCount: number
-}
-
 type StoryChapterCardProps = {
-  chapter: ChapterData
+  chapter: StoryChapter
   index: number
 }
 
@@ -51,13 +45,12 @@ export const StoryChapterCard = ({ chapter, index }: StoryChapterCardProps) => {
             ))}
           </div>
 
-          {/* Image placeholder grid */}
           <div className='grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4'>
-            {Array.from({ length: chapter.imageSlotCount }).map((_, sIndex) => (
+            {chapter.images.map((image, imageIndex) => (
               <StoryImageSlot
-                key={sIndex}
-                chapterIndex={index}
-                slotIndex={sIndex}
+                key={image.src}
+                heroMode={imageIndex === 0 ? chapter.heroMode : null}
+                image={image}
               />
             ))}
           </div>

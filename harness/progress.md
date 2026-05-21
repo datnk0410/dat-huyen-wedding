@@ -1,5 +1,18 @@
 # Progress Index
 
+## 2026-05-21 — feat-002: Story Real Images Wire-up
+
+- **Session**: feat-002-story-real-images-wire-up
+- **Status**: completed
+- **What was done**:
+  - Replaced the story-page placeholder slots with all 55 real photos found under `public/images/story/<year>/` across 11 chapters (2016–2026).
+  - Measured image dimensions first, added explicit metadata in `components/story/story-images.ts`, and switched `StoryImageSlot` to real `next/image` rendering with fixed 4:3 cards.
+  - Kept the existing 2-column mobile / 3-column desktop grid, then added count-aware hero spans so odd or awkward chapter counts render more intentionally without masonry.
+  - Tightened the story component structure by moving the image animation shell to the client only (`StoryImageSlot`) while keeping `StoryPageShell` server-rendered.
+  - Verified with `pnpm lint`, `pnpm typecheck`, `pnpm build`, and `./init.sh` on 2026-05-21.
+- **Blockers**: none
+- **Next steps**: optional follow-up cleanup for stale `story.imageSlot*` and `imageSlotCount` keys still left in `lib/i18n/vi.json`.
+
 ## 2026-05-21 — feat-001: Gallery Photo List Expand
 
 - **Session**: feat-001-gallery-photo-list-expand

@@ -13,10 +13,10 @@
     {
       "id": "feat-002",
       "name": "Our Story",
-      "description": "Chapter-based scroll storytelling with 10 chapters covering 10 years (2016–2025), each with title, images, text, and Framer Motion animations (fade-in, slide-up, zoom)",
+      "description": "Chapter-based scroll storytelling with 11 chapters covering 2016–2026, each with title, text, responsive photo grids, and Framer Motion reveals",
       "dependencies": [],
       "status": "done",
-      "evidence": "Story page now renders 10 scroll-based chapters for 2016-2025 with Vietnamese placeholder copy, 39 image slots, reduced-motion-safe Framer Motion reveals, and lazy-loaded route shell. Verified with pnpm lint, pnpm typecheck, pnpm build, and ./init.sh on 2026-05-05."
+      "evidence": "Story page now renders 11 scroll-based chapters for 2016-2026 with 55 real photos sourced from `public/images/story`, measured metadata for `next/image`, responsive 2-column mobile / 3-column desktop grids, and count-aware hero spans to balance portrait/landscape mixes. Verified with pnpm lint, pnpm typecheck, pnpm build, and ./init.sh on 2026-05-21."
     },
     {
       "id": "feat-003",
@@ -64,7 +64,7 @@
       "description": "Per-image reveal animations (fade-in, gentle zoom) for story chapter photos with scroll-triggered Framer Motion effects, deferred from feat-005 for mobile performance",
       "dependencies": ["feat-002", "feat-005"],
       "status": "done",
-      "evidence": "Per-image fade-in + gentle zoom animation in StoryImageSlot using Framer Motion whileInView with useReducedMotion() guard. No stagger. Verified with pnpm lint, pnpm typecheck, pnpm build, and ./init.sh on 2026-05-05."
+      "evidence": "StoryImageSlot now animates real `next/image` chapter photos with reduced-motion-safe fade-in + gentle zoom, no stagger, fixed 4:3 cards, and responsive hero-span placement for awkward image counts. Verified with pnpm lint, pnpm typecheck, pnpm build, and ./init.sh on 2026-05-21."
     },
     {
       "id": "feat-009",

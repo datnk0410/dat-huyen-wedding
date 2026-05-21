@@ -1,5 +1,3 @@
-'use client'
-
 import Link from 'next/link'
 
 import { strings } from '@/lib/i18n'
@@ -32,7 +30,7 @@ export const StoryPageShell = () => {
 
       {/* Decorative divider */}
       <div className='mx-auto max-w-3xl px-6 sm:px-8 md:px-12'>
-        <div className='h-px w-full bg-gradient-to-r from-transparent via-beige-dark to-transparent' />
+        <div className='h-px w-full bg-linear-to-r from-transparent via-beige-dark to-transparent' />
       </div>
 
       {/* Chapter list */}
@@ -47,7 +45,7 @@ export const StoryPageShell = () => {
       {/* Footer / back link */}
       <section className='px-6 pb-16 sm:px-8 sm:pb-20 md:px-12 md:pb-24'>
         <div className='mx-auto max-w-4xl text-center'>
-          <div className='mb-8 h-px w-full bg-gradient-to-r from-transparent via-beige-dark to-transparent' />
+          <div className='mb-8 h-px w-full bg-linear-to-r from-transparent via-beige-dark to-transparent' />
           <Link
             className='inline-flex min-h-12 items-center justify-center rounded-full border border-wine bg-transparent px-6 py-3 text-sm font-semibold text-wine transition hover:bg-wine hover:text-cream focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-wine'
             href='/'>

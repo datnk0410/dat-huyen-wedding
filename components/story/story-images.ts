@@ -1,0 +1,510 @@
+import type { StoryImage, StoryImageHeroMode } from './story-types'
+
+const STORY_IMAGES_BY_YEAR: Record<number, StoryImage[]> = {
+  2016: [
+    {
+      src: '/images/story/2016/01.jpg',
+      width: 3265,
+      height: 4898,
+      orientation: 'portrait',
+      alt: 'Ảnh kỷ niệm năm 2016 · 01',
+    },
+    {
+      src: '/images/story/2016/2016 1.jpg',
+      width: 4898,
+      height: 3265,
+      orientation: 'landscape',
+      alt: 'Ảnh kỷ niệm năm 2016 · 02',
+    },
+    {
+      src: '/images/story/2016/2016.1.jpg',
+      width: 4898,
+      height: 3265,
+      orientation: 'landscape',
+      alt: 'Ảnh kỷ niệm năm 2016 · 03',
+    },
+    {
+      src: '/images/story/2016/2016.jpg',
+      width: 720,
+      height: 720,
+      orientation: 'square',
+      alt: 'Ảnh kỷ niệm năm 2016 · 04',
+    },
+  ],
+  2017: [
+    {
+      src: '/images/story/2017/2017.1.jpeg',
+      width: 1136,
+      height: 852,
+      orientation: 'landscape',
+      alt: 'Ảnh kỷ niệm năm 2017 · 01',
+    },
+    {
+      src: '/images/story/2017/2017.3 (2).JPG',
+      width: 1136,
+      height: 852,
+      orientation: 'landscape',
+      alt: 'Ảnh kỷ niệm năm 2017 · 02',
+    },
+    {
+      src: '/images/story/2017/2017.3.jpg',
+      width: 648,
+      height: 864,
+      orientation: 'portrait',
+      alt: 'Ảnh kỷ niệm năm 2017 · 03',
+    },
+  ],
+  2018: [
+    {
+      src: '/images/story/2018/2018.1.jpg',
+      width: 1440,
+      height: 1080,
+      orientation: 'landscape',
+      alt: 'Ảnh kỷ niệm năm 2018 · 01',
+    },
+    {
+      src: '/images/story/2018/2018.2.jpg',
+      width: 3264,
+      height: 2448,
+      orientation: 'landscape',
+      alt: 'Ảnh kỷ niệm năm 2018 · 02',
+    },
+  ],
+  2019: [
+    {
+      src: '/images/story/2019/2019.2.jpg',
+      width: 4898,
+      height: 3265,
+      orientation: 'landscape',
+      alt: 'Ảnh kỷ niệm năm 2019 · 01',
+    },
+    {
+      src: '/images/story/2019/2019.3.jpg',
+      width: 720,
+      height: 1280,
+      orientation: 'portrait',
+      alt: 'Ảnh kỷ niệm năm 2019 · 02',
+    },
+    {
+      src: '/images/story/2019/2019.4.jpg',
+      width: 1137,
+      height: 640,
+      orientation: 'landscape',
+      alt: 'Ảnh kỷ niệm năm 2019 · 03',
+    },
+    {
+      src: '/images/story/2019/2019.5.jpg',
+      width: 960,
+      height: 1280,
+      orientation: 'portrait',
+      alt: 'Ảnh kỷ niệm năm 2019 · 04',
+    },
+  ],
+  2020: [
+    {
+      src: '/images/story/2020/2020.1.jpeg',
+      width: 2160,
+      height: 2880,
+      orientation: 'portrait',
+      alt: 'Ảnh kỷ niệm năm 2020 · 01',
+    },
+    {
+      src: '/images/story/2020/2020.2.jpg',
+      width: 3266,
+      height: 4898,
+      orientation: 'portrait',
+      alt: 'Ảnh kỷ niệm năm 2020 · 02',
+    },
+    {
+      src: '/images/story/2020/2020.3.jpg',
+      width: 4898,
+      height: 3265,
+      orientation: 'landscape',
+      alt: 'Ảnh kỷ niệm năm 2020 · 03',
+    },
+    {
+      src: '/images/story/2020/2020.4.jpg',
+      width: 1242,
+      height: 2208,
+      orientation: 'portrait',
+      alt: 'Ảnh kỷ niệm năm 2020 · 04',
+    },
+    {
+      src: '/images/story/2020/2020.jpg',
+      width: 960,
+      height: 720,
+      orientation: 'landscape',
+      alt: 'Ảnh kỷ niệm năm 2020 · 05',
+    },
+  ],
+  2021: [
+    {
+      src: '/images/story/2021/2021.1.jpg',
+      width: 2208,
+      height: 1242,
+      orientation: 'landscape',
+      alt: 'Ảnh kỷ niệm năm 2021 · 01',
+    },
+    {
+      src: '/images/story/2021/2021.2.jpg',
+      width: 1080,
+      height: 1921,
+      orientation: 'portrait',
+      alt: 'Ảnh kỷ niệm năm 2021 · 02',
+    },
+    {
+      src: '/images/story/2021/2021.jpg',
+      width: 720,
+      height: 1280,
+      orientation: 'portrait',
+      alt: 'Ảnh kỷ niệm năm 2021 · 03',
+    },
+  ],
+  2022: [
+    {
+      src: '/images/story/2022/2022.1.jpg',
+      width: 2208,
+      height: 1242,
+      orientation: 'landscape',
+      alt: 'Ảnh kỷ niệm năm 2022 · 01',
+    },
+    {
+      src: '/images/story/2022/2022.2.jpg',
+      width: 2208,
+      height: 1242,
+      orientation: 'landscape',
+      alt: 'Ảnh kỷ niệm năm 2022 · 02',
+    },
+    {
+      src: '/images/story/2022/2022.3.jpeg',
+      width: 2316,
+      height: 3088,
+      orientation: 'portrait',
+      alt: 'Ảnh kỷ niệm năm 2022 · 03',
+    },
+    {
+      src: '/images/story/2022/2022.4.jpeg',
+      width: 2316,
+      height: 3088,
+      orientation: 'portrait',
+      alt: 'Ảnh kỷ niệm năm 2022 · 04',
+    },
+    {
+      src: '/images/story/2022/2022.jpg',
+      width: 4032,
+      height: 3024,
+      orientation: 'landscape',
+      alt: 'Ảnh kỷ niệm năm 2022 · 05',
+    },
+  ],
+  2023: [
+    {
+      src: '/images/story/2023/2023.1.jpg',
+      width: 1536,
+      height: 2049,
+      orientation: 'portrait',
+      alt: 'Ảnh kỷ niệm năm 2023 · 01',
+    },
+    {
+      src: '/images/story/2023/2023.10.jpeg',
+      width: 1656,
+      height: 1654,
+      orientation: 'square',
+      alt: 'Ảnh kỷ niệm năm 2023 · 02',
+    },
+    {
+      src: '/images/story/2023/2023.11.jpg',
+      width: 4032,
+      height: 2691,
+      orientation: 'landscape',
+      alt: 'Ảnh kỷ niệm năm 2023 · 03',
+    },
+    {
+      src: '/images/story/2023/2023.2.jpg',
+      width: 3024,
+      height: 4032,
+      orientation: 'portrait',
+      alt: 'Ảnh kỷ niệm năm 2023 · 04',
+    },
+    {
+      src: '/images/story/2023/2023.3.jpg',
+      width: 1170,
+      height: 2080,
+      orientation: 'portrait',
+      alt: 'Ảnh kỷ niệm năm 2023 · 05',
+    },
+    {
+      src: '/images/story/2023/2023.4.jpg',
+      width: 2080,
+      height: 1170,
+      orientation: 'landscape',
+      alt: 'Ảnh kỷ niệm năm 2023 · 06',
+    },
+    {
+      src: '/images/story/2023/2023.5.jpg',
+      width: 828,
+      height: 1472,
+      orientation: 'portrait',
+      alt: 'Ảnh kỷ niệm năm 2023 · 07',
+    },
+    {
+      src: '/images/story/2023/2023.6.jpg',
+      width: 1534,
+      height: 1735,
+      orientation: 'portrait',
+      alt: 'Ảnh kỷ niệm năm 2023 · 08',
+    },
+    {
+      src: '/images/story/2023/2023.7.jpg',
+      width: 1391,
+      height: 1855,
+      orientation: 'portrait',
+      alt: 'Ảnh kỷ niệm năm 2023 · 09',
+    },
+    {
+      src: '/images/story/2023/2023.8.jpeg',
+      width: 768,
+      height: 1722,
+      orientation: 'portrait',
+      alt: 'Ảnh kỷ niệm năm 2023 · 10',
+    },
+  ],
+  2024: [
+    {
+      src: '/images/story/2024/2024.1.jpeg',
+      width: 1280,
+      height: 854,
+      orientation: 'landscape',
+      alt: 'Ảnh kỷ niệm năm 2024 · 01',
+    },
+    {
+      src: '/images/story/2024/2024.10.jpg',
+      width: 798,
+      height: 1418,
+      orientation: 'portrait',
+      alt: 'Ảnh kỷ niệm năm 2024 · 02',
+    },
+    {
+      src: '/images/story/2024/2024.11.jpg',
+      width: 2080,
+      height: 1170,
+      orientation: 'landscape',
+      alt: 'Ảnh kỷ niệm năm 2024 · 03',
+    },
+    {
+      src: '/images/story/2024/2024.13.jpg',
+      width: 1825,
+      height: 2433,
+      orientation: 'portrait',
+      alt: 'Ảnh kỷ niệm năm 2024 · 04',
+    },
+    {
+      src: '/images/story/2024/2024.3.jpg',
+      width: 2372,
+      height: 1714,
+      orientation: 'landscape',
+      alt: 'Ảnh kỷ niệm năm 2024 · 05',
+    },
+    {
+      src: '/images/story/2024/2024.6.jpg',
+      width: 1179,
+      height: 2096,
+      orientation: 'portrait',
+      alt: 'Ảnh kỷ niệm năm 2024 · 06',
+    },
+  ],
+  2025: [
+    {
+      src: '/images/story/2025/2025.1 2.jpg',
+      width: 1179,
+      height: 2096,
+      orientation: 'portrait',
+      alt: 'Ảnh kỷ niệm năm 2025 · 01',
+    },
+    {
+      src: '/images/story/2025/2025.1.jpg',
+      width: 1825,
+      height: 2433,
+      orientation: 'portrait',
+      alt: 'Ảnh kỷ niệm năm 2025 · 02',
+    },
+    {
+      src: '/images/story/2025/2025.4.jpg',
+      width: 2094,
+      height: 1178,
+      orientation: 'landscape',
+      alt: 'Ảnh kỷ niệm năm 2025 · 03',
+    },
+    {
+      src: '/images/story/2025/2025.6.jpg',
+      width: 1180,
+      height: 2098,
+      orientation: 'portrait',
+      alt: 'Ảnh kỷ niệm năm 2025 · 04',
+    },
+    {
+      src: '/images/story/2025/2025.7.jpg',
+      width: 2094,
+      height: 1178,
+      orientation: 'landscape',
+      alt: 'Ảnh kỷ niệm năm 2025 · 05',
+    },
+  ],
+  2026: [
+    {
+      src: '/images/story/2026/2026.11.jpg',
+      width: 3024,
+      height: 4032,
+      orientation: 'portrait',
+      alt: 'Ảnh kỷ niệm năm 2026 · 01',
+    },
+    {
+      src: '/images/story/2026/2026.14.jpg',
+      width: 4032,
+      height: 3024,
+      orientation: 'landscape',
+      alt: 'Ảnh kỷ niệm năm 2026 · 02',
+    },
+    {
+      src: '/images/story/2026/2026.8.jpg',
+      width: 2092,
+      height: 1177,
+      orientation: 'landscape',
+      alt: 'Ảnh kỷ niệm năm 2026 · 03',
+    },
+    {
+      src: '/images/story/2026/IMG_8363.jpg',
+      width: 3800,
+      height: 2850,
+      orientation: 'landscape',
+      alt: 'Ảnh kỷ niệm năm 2026 · 04',
+    },
+    {
+      src: '/images/story/2026/IMG_8385.jpg',
+      width: 4032,
+      height: 3024,
+      orientation: 'landscape',
+      alt: 'Ảnh kỷ niệm năm 2026 · 05',
+    },
+    {
+      src: '/images/story/2026/IMG_8699.jpg',
+      width: 1836,
+      height: 2486,
+      orientation: 'portrait',
+      alt: 'Ảnh kỷ niệm năm 2026 · 06',
+    },
+    {
+      src: '/images/story/2026/IMG_8701.jpg',
+      width: 2568,
+      height: 1926,
+      orientation: 'landscape',
+      alt: 'Ảnh kỷ niệm năm 2026 · 07',
+    },
+    {
+      src: '/images/story/2026/IMG_8710.jpg',
+      width: 1836,
+      height: 2448,
+      orientation: 'portrait',
+      alt: 'Ảnh kỷ niệm năm 2026 · 08',
+    },
+  ],
+}
+
+const STORY_CARD_RATIO = 4 / 3
+
+const getStoryImageScore = (image: StoryImage) => {
+  const ratio = image.width / image.height
+  const ratioDistance = Math.abs(ratio - STORY_CARD_RATIO)
+
+  if (image.orientation === 'landscape') {
+    return ratioDistance
+  }
+
+  if (image.orientation === 'square') {
+    return ratioDistance + 0.25
+  }
+
+  return ratioDistance + 2
+}
+
+const getPreferredHeroIndex = (images: StoryImage[]) => {
+  return images.reduce((bestIndex, image, index, collection) => {
+    const bestImage = collection[bestIndex]
+
+    return getStoryImageScore(image) < getStoryImageScore(bestImage)
+      ? index
+      : bestIndex
+  }, 0)
+}
+
+const interleaveStoryImages = (images: StoryImage[]) => {
+  const landscapes = images.filter((image) => image.orientation === 'landscape')
+  const others = images.filter((image) => image.orientation !== 'landscape')
+  const ordered: StoryImage[] = []
+
+  let shouldPickLandscapeFirst = landscapes.length >= others.length
+
+  while (landscapes.length > 0 || others.length > 0) {
+    const primaryBucket = shouldPickLandscapeFirst ? landscapes : others
+    const secondaryBucket = shouldPickLandscapeFirst ? others : landscapes
+
+    if (primaryBucket.length > 0) {
+      const nextImage = primaryBucket.shift()
+
+      if (nextImage) {
+        ordered.push(nextImage)
+      }
+    } else if (secondaryBucket.length > 0) {
+      const nextImage = secondaryBucket.shift()
+
+      if (nextImage) {
+        ordered.push(nextImage)
+      }
+    }
+
+    shouldPickLandscapeFirst = !shouldPickLandscapeFirst
+  }
+
+  return ordered
+}
+
+export const getStoryImageHeroMode = (
+  imageCount: number,
+): StoryImageHeroMode => {
+  // Keep the grid balanced without introducing masonry:
+  // - odd counts get a mobile hero so the last mobile row does not end with a single tile
+  // - counts like 4 or 10 get a desktop hero so the 3-column layout avoids a weak final orphan
+  if (imageCount % 2 === 1) {
+    return 'mobile'
+  }
+
+  if (imageCount % 3 === 1) {
+    return 'desktop'
+  }
+
+  return null
+}
+
+export const getStoryImagesForYear = (year: number) => {
+  const images = STORY_IMAGES_BY_YEAR[year] ?? []
+  const heroMode = getStoryImageHeroMode(images.length)
+
+  if (images.length <= 1 || !heroMode) {
+    return images
+  }
+
+  const heroIndex = getPreferredHeroIndex(images)
+  const heroImage = images[heroIndex]
+  const remainingImages = images.filter((_, index) => index !== heroIndex)
+
+  return [heroImage, ...interleaveStoryImages(remainingImages)]
+}
+
+export const getStoryChapterAssets = (year: number) => {
+  const images = getStoryImagesForYear(year)
+
+  return {
+    heroMode: getStoryImageHeroMode(images.length),
+    images,
+  }
+}
