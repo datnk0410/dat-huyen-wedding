@@ -75,6 +75,34 @@ const photos: GalleryPhoto[] = [
     height: 7952,
     alt: `${s.photoAlt} 8`,
   },
+  {
+    id: 9,
+    src: '/images/wedding/03.jpg',
+    width: 1591,
+    height: 2448,
+    alt: `${s.photoAlt} 9`,
+  },
+  {
+    id: 10,
+    src: '/images/wedding/05.jpg',
+    width: 1632,
+    height: 2485,
+    alt: `${s.photoAlt} 10`,
+  },
+  {
+    id: 11,
+    src: '/images/wedding/11.jpg',
+    width: 5304,
+    height: 7952,
+    alt: `${s.photoAlt} 11`,
+  },
+  {
+    id: 12,
+    src: '/images/wedding/12.jpg',
+    width: 5304,
+    height: 7952,
+    alt: `${s.photoAlt} 12`,
+  },
 ]
 
 export const PhotoGallerySection = () => {

@@ -1,5 +1,17 @@
 # Progress Index
 
+## 2026-05-21 — feat-001: Gallery Photo List Expand
+
+- **Session**: feat-001-gallery-photo-list-expand
+- **Status**: completed
+- **What was done**:
+  - Added `03.jpg`, `05.jpg`, `11.jpg`, and `12.jpg` to the end of the `PhotoGallerySection` image list as requested.
+  - Kept the existing uniform portrait grid layout and modal behavior unchanged.
+  - Added intrinsic dimensions for all newly reintroduced images so `next/image` sizing stays stable.
+  - Verified with `pnpm lint` and `pnpm build` on 2026-05-21.
+- **Blockers**: none
+- **Next steps**: none
+
 ## 2026-05-19 — feat-001: Gallery Preview Tint Fix
 
 - **Session**: feat-001-gallery-preview-tint-fix
