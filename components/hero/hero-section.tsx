@@ -68,14 +68,13 @@ export const HeroSection = ({ guest }: HeroSectionProps) => {
                   {s.brideName}
                 </h1>
                 <div className='h-px w-24 bg-gold/70' />
-                <p className='max-w-2xl text-base leading-7 text-cream/85 sm:text-lg'>
+                <p className='max-w-2xl text-lg leading-7 text-cream/85 sm:text-lg'>
                   {guest ? (
                     <>
-                      {s.invitation.leading}{' '}
-                      <span className='font-semibold text-gold-light'>
+                      {strings.guest.greeting}{' '}
+                      <span className='text-lg font-semibold text-gold-light'>
                         {guest.name}
                       </span>{' '}
-                      {s.invitation.trailing}
                     </>
                   ) : (
                     s.intro
