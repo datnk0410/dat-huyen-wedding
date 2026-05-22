@@ -561,7 +561,13 @@
     "name": "Bạn Tuyết Mai"
   },
   "q0z6s3n8": {
-    "name": "Bạn Trang"
+    "name": "Bạn Trang",
+    "photo": {
+      "src": "/guests/9a-thutrang.png",
+      "alt": "Guest photo - Bạn Trang",
+      "width": 320,
+      "height": 320
+    }
   },
   "m1h8b4c9": {
     "name": "Bạn Giang"
