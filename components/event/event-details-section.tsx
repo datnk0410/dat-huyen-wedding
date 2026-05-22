@@ -145,7 +145,7 @@ export const EventDetailsSection = () => {
               <Calendar />
               <a
                 aria-label={s.addToCalendar}
-                className='inline-flex items-center gap-2 rounded-full border border-wine/30 bg-white/70 px-5 py-2 text-sm font-medium text-wine shadow-sm backdrop-blur-sm transition-colors hover:bg-wine hover:text-cream'
+                className='inline-flex items-center gap-2 rounded-full border border-wine/30 bg-wine/90 px-5 py-2 text-sm font-medium text-cream shadow-sm backdrop-blur-sm transition-colors hover:bg-wine hover:text-cream'
                 href={buildGoogleCalendarUrl()}
                 rel='noopener noreferrer'
                 target='_blank'>
