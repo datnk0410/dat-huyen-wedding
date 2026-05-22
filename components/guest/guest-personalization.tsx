@@ -19,7 +19,7 @@ export const GuestPersonalization = ({ guest }: GuestPersonalizationProps) => {
           {s.personalMessageLabel}
         </p>
         <div className='space-y-2'>
-          <p className='text-2xl text-cream sm:text-3xl'>
+          <p className='text-xl text-cream sm:text-2xl'>
             {strings.hero.invitation.leading}{' '}
             <span className='font-bold text-gold-light'>{guest.name}</span>{' '}
             {strings.hero.invitation.trailing}
