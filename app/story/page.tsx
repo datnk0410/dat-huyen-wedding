@@ -15,6 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description: storyMeta.description,
     keywords: storyMeta.keywords,
     openGraph: {
+      type: 'website',
       title: storyMeta.title,
       description: storyMeta.description,
       url: `${SITE_URL}/story`,
