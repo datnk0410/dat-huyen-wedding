@@ -333,7 +333,13 @@
     }
   },
   "j0n4v9k3": {
-    "name": "Bạn Lan"
+    "name": "Bạn Lan",
+    "photo": {
+      "src": "/guests/a3-lanta.png",
+      "alt": "Guest photo - Bạn Lan",
+      "width": 320,
+      "height": 320
+    }
   },
   "h6c1x7d5": {
     "name": "Bạn Phượng"
@@ -378,7 +384,13 @@
     }
   },
   "v8m3d7h1": {
-    "name": "Bạn Thảo"
+    "name": "Bạn Thảo",
+    "photo": {
+      "src": "/guests/9a-thaodu.png",
+      "alt": "Guest photo - Bạn Thảo",
+      "width": 320,
+      "height": 320
+    }
   },
   "k3q1w6p9": {
     "name": "Bạn Thơi",
@@ -405,16 +417,40 @@
     "name": "Bạn Hào"
   },
   "b9k2t6g0": {
-    "name": "Bạn Hoàng"
+    "name": "Bạn Hoàng",
+    "photo": {
+      "src": "/guests/9a-hoangkim.png",
+      "alt": "Guest photo - Bạn Hoàng",
+      "width": 320,
+      "height": 320
+    }
   },
   "t3p8n1s5": {
-    "name": "Bạn Đức Anh"
+    "name": "Bạn Đức Anh",
+    "photo": {
+      "src": "/guests/9a-ducnhat.png",
+      "alt": "Guest photo - Bạn Đức Anh",
+      "width": 320,
+      "height": 320
+    }
   },
   "p0c6x4m2": {
-    "name": "Bạn Hiếu"
+    "name": "Bạn Hiếu",
+    "photo": {
+      "src": "/guests/9a-hieumanh.jpeg",
+      "alt": "Guest photo - Bạn Hiếu",
+      "width": 320,
+      "height": 320
+    }
   },
   "n7w3h9q1": {
-    "name": "Bạn Tú"
+    "name": "Bạn Tú",
+    "photo": {
+      "src": "/guests/9a-tutham.png",
+      "alt": "Guest photo - Bạn Tú",
+      "width": 320,
+      "height": 320
+    }
   },
   "u4d1s5v9": {
     "name": "Bạn Luận",
@@ -462,7 +498,13 @@
     }
   },
   "j6n2v4k8": {
-    "name": "Bạn Hoài Anh"
+    "name": "Bạn Hoài Anh",
+    "photo": {
+      "src": "/guests/9a-hoaianh.png",
+      "alt": "Guest photo - Bạn Hoài Anh",
+      "width": 320,
+      "height": 320
+    }
   },
   "h3c8x2d0": {
     "name": "Bạn Oanh Minh",
@@ -483,7 +525,13 @@
     }
   },
   "w0b5s9y3": {
-    "name": "Bạn Thoa"
+    "name": "Bạn Thoa",
+    "photo": {
+      "src": "/guests/9a-thoalong.png",
+      "alt": "Guest photo - Bạn Thoa",
+      "width": 320,
+      "height": 320
+    }
   },
   "l7k3h1z4": {
     "name": "Bạn Huyền",
