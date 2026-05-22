@@ -69,6 +69,20 @@ const STORY_IMAGES_BY_YEAR: Record<number, StoryImage[]> = {
       orientation: 'landscape',
       alt: 'Ảnh kỷ niệm năm 2018 · 02',
     },
+    {
+      src: '/images/story/2018/2018.3.jpg',
+      width: 720,
+      height: 1280,
+      orientation: 'portrait',
+      alt: 'Ảnh kỷ niệm năm 2018 · 03',
+    },
+    {
+      src: '/images/story/2018/2018.4.jpg',
+      width: 1137,
+      height: 640,
+      orientation: 'landscape',
+      alt: 'Ảnh kỷ niệm năm 2018 · 04',
+    },
   ],
   2019: [
     {
@@ -77,20 +91,6 @@ const STORY_IMAGES_BY_YEAR: Record<number, StoryImage[]> = {
       height: 3265,
       orientation: 'landscape',
       alt: 'Ảnh kỷ niệm năm 2019 · 01',
-    },
-    {
-      src: '/images/story/2019/2019.3.jpg',
-      width: 720,
-      height: 1280,
-      orientation: 'portrait',
-      alt: 'Ảnh kỷ niệm năm 2019 · 02',
-    },
-    {
-      src: '/images/story/2019/2019.4.jpg',
-      width: 1137,
-      height: 640,
-      orientation: 'landscape',
-      alt: 'Ảnh kỷ niệm năm 2019 · 03',
     },
     {
       src: '/images/story/2019/2019.5.jpg',
@@ -183,18 +183,11 @@ const STORY_IMAGES_BY_YEAR: Record<number, StoryImage[]> = {
       alt: 'Ảnh kỷ niệm năm 2022 · 03',
     },
     {
-      src: '/images/story/2022/2022.4.jpeg',
-      width: 2316,
-      height: 3088,
-      orientation: 'portrait',
-      alt: 'Ảnh kỷ niệm năm 2022 · 04',
-    },
-    {
       src: '/images/story/2022/2022.jpg',
       width: 4032,
       height: 3024,
       orientation: 'landscape',
-      alt: 'Ảnh kỷ niệm năm 2022 · 05',
+      alt: 'Ảnh kỷ niệm năm 2022 · 04',
     },
   ],
   2023: [
@@ -213,7 +206,7 @@ const STORY_IMAGES_BY_YEAR: Record<number, StoryImage[]> = {
       alt: 'Ảnh kỷ niệm năm 2023 · 02',
     },
     {
-      src: '/images/story/2023/2023.11.jpg',
+      src: '/images/story/2023/2023.12.jpg',
       width: 4032,
       height: 2691,
       orientation: 'landscape',
