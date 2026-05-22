@@ -44,12 +44,18 @@ export const GUESTS: GuestMap = Object.fromEntries(
   ]),
 )
 
-export const getGuestById = (guestId?: string | string[]) => {
+export const normalizeGuestId = (guestId?: string | string[]) => {
   if (typeof guestId !== 'string') {
     return null
   }
 
   const normalizedGuestId = guestId.trim().toLowerCase()
+
+  return normalizedGuestId || null
+}
+
+export const getGuestById = (guestId?: string | string[]) => {
+  const normalizedGuestId = normalizeGuestId(guestId)
 
   if (!normalizedGuestId) {
     return null
