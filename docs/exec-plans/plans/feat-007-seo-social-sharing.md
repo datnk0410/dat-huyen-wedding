@@ -102,7 +102,7 @@ Create a minimal placeholder OG image at `public/images/og-image.png` (1200×630
 ### Step 4: Enhance root layout metadata in `app/layout.tsx`
 
 Update the existing `metadata` export in `app/layout.tsx`:
-- Add `metadataBase` with the production URL (use `NEXT_PUBLIC_SITE_URL` env var or default to `https://tx-va-wedding.vercel.app`)
+- Add `metadataBase` with the production URL (use `NEXT_PUBLIC_SITE_URL` env var or default to `https://txva.vercel.app`)
 - Add `openGraph.images` pointing to `/images/og-image.png`
 - Add `openGraph.locale` set to `vi_VN`
 - Add `openGraph.siteName` set to couple names
