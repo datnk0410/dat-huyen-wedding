@@ -31,8 +31,7 @@ const greatVibes = Great_Vibes({
   display: 'swap',
 })
 
-const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || 'https://tx-va-wedding.vercel.app'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://txva.vercel.app'
 
 export const viewport: Viewport = {
   themeColor: '#8b1a2b',
@@ -40,6 +39,9 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+  alternates: {
+    canonical: SITE_URL,
+  },
   title: meta.home.title,
   description: meta.home.description,
   keywords: meta.home.keywords,
