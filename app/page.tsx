@@ -16,7 +16,7 @@ type HomePageProps = {
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://txva.vercel.app'
 
 export async function generateMetadata(): Promise<Metadata> {
-  const title = `${hero.groomName} & ${hero.brideName} — Wedding Invitation`
+  const title = `${hero.groomName} & ${hero.brideName} — Lễ cưới 8-9/6 DL`
   const description = hero.intro
 
   return {

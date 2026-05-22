@@ -19,7 +19,7 @@ export async function generateMetadata({
 }: GuestPageProps): Promise<Metadata> {
   const resolvedParams = await params
   const slug = normalizeGuestId(resolvedParams.id)
-  const title = `${hero.groomName} & ${hero.brideName} — Wedding Invitation`
+  const title = `${hero.groomName} & ${hero.brideName} — Lễ cưới 8-9/6 DL`
   const description = hero.intro
   const guestUrl = slug ? `${SITE_URL}/g/${slug}` : SITE_URL
 
