@@ -681,7 +681,13 @@
     "name": "Anh Khanh"
   },
   "h7c0x4d3": {
-    "name": "Quỳnh Trang xinh gái"
+    "name": "Quỳnh Trang xinh gái",
+    "photo": {
+      "src": "/guests/k61-quynhtrang.png",
+      "alt": "Guest photo - Quỳnh Trang xinh gái",
+      "width": 320,
+      "height": 320
+    }
   },
   "d5t2m9p1": {
     "name": "Em Duyên xinh gái"
