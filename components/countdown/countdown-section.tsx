@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
 import { SectionWrapper } from '@/components/shared'
 import { strings } from '@/lib/i18n'
 
-const { countdown: s } = strings
+const { countdown: s, hero } = strings
 
 const TARGET_DATE = new Date('2026-06-08T16:30:00+07:00').getTime()
 
@@ -93,6 +93,13 @@ export const CountdownSection = () => {
                 </span>
               </div>
             ))}
+          </div>
+          <div className='relative mt-8 sm:mt-10'>
+            <a
+              className='inline-flex min-h-10 items-center justify-center rounded-full border border-gold bg-gold-light px-8 py-2 text-sm font-semibold text-wine shadow-lg shadow-black/10 transition-colors hover:bg-gold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold'
+              href='#rsvp'>
+              {hero.ctaRsvp} ngay nhé!
+            </a>
           </div>
         </motion.div>
       </SectionWrapper>
