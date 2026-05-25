@@ -3,13 +3,6 @@ import type { StoryImage } from './story-types'
 const STORY_IMAGES_BY_YEAR: Record<number, StoryImage[]> = {
   2016: [
     {
-      src: '/images/story/2016/01.jpg',
-      width: 3265,
-      height: 4898,
-      orientation: 'portrait',
-      alt: 'Ảnh kỷ niệm năm 2016 · 01',
-    },
-    {
       src: '/images/story/2016/2016.1.jpg',
       width: 4898,
       height: 3265,
