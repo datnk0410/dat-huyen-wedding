@@ -278,15 +278,6 @@
       "height": 320
     }
   },
-  "n3w1s8g5": {
-    "name": "Bạn Vinh",
-    "photo": {
-      "src": "/guests/a1-vinh.png",
-      "alt": "Guest photo - Bạn Vinh",
-      "width": 320,
-      "height": 320
-    }
-  },
   "u9d6h0v2": {
     "name": "Bạn Thảo Lớp trưởng",
     "photo": {
@@ -340,9 +331,6 @@
       "width": 320,
       "height": 320
     }
-  },
-  "h6c1x7d5": {
-    "name": "Bạn Phượng"
   },
   "d3t8m0p6": {
     "name": "Bạn Ly"
@@ -659,9 +647,6 @@
   "p6c1x3m8": {
     "name": "Anh Huy Nông"
   },
-  "n5w9h4q2": {
-    "name": "Em Mai Anh"
-  },
   "u0d8s6v1": {
     "name": "Em Huy"
   },
@@ -760,5 +745,8 @@
   },
   "g3k8d6t5": {
     "name": "Gia đình Thành Đạt"
+  },
+  "ty377bhd": {
+    "name": "BS. Gấu và người thương"
   }
 }
