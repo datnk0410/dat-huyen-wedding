@@ -835,5 +835,14 @@
   },
   "habcu178b": {
     "name": "Anh Tuấn Kiệt"
+  },
+  "kl19a7123s": {
+    "name": "Anh Việt Hùng",
+    "photo": {
+      "src": "/guests/g_viethung.jpg",
+      "alt": "Guest photo - Anh Việt Hùng",
+      "width": 320,
+      "height": 320
+    }
   }
 }
