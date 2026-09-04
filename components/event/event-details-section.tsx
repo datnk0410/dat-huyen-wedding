@@ -4,9 +4,9 @@ import { strings } from '@/lib/i18n'
 const { events: s } = strings
 
 const MAPS_URLS = {
-  groom: 'https://maps.app.goo.gl/xBVg6Gs3JPenCaC89',
-  brideParty: 'https://maps.app.goo.gl/MXZQYyDs5KQZcRbK7',
-  brideCeremony: 'https://maps.app.goo.gl/86qSi22YiJLT7XkR6',
+  groom: 'https://maps.app.goo.gl/MXZQYyDs5KQZcRbK7',
+  brideParty: 'https://maps.app.goo.gl/mQVJXkQtQPsxDMZg7',
+  brideCeremony: 'https://maps.app.goo.gl/mQVJXkQtQPsxDMZg7',
 } as const
 
 const LocationLink = ({
@@ -39,7 +39,7 @@ const LocationLink = ({
 
 const Calendar = () => {
   const days = s.calendarDays
-  // June 2026 starts on Monday. 01 = Mon.
+  // September 2026 starts on Tuesday, so Monday is left blank.
   const dates = Array.from({ length: 30 }, (_, i) => i + 1)
 
   return (
@@ -59,8 +59,9 @@ const Calendar = () => {
             {d}
           </div>
         ))}
+        <div aria-hidden='true' />
         {dates.map((d) => {
-          const isWeddingDay = d === 8 || d === 9
+          const isWeddingDay = d === 19 || d === 20
 
           return (
             <div
@@ -105,23 +106,6 @@ export const EventDetailsSection = () => {
 
               <div className='space-y-2'>
                 <p className='text-gold-dark text-sm font-semibold tracking-widest uppercase'>
-                  {s.partyLabel}
-                </p>
-                <p className='font-serif text-3xl text-wine'>
-                  {s.groom.party.time}
-                </p>
-                <p className='text-text-secondary'>
-                  {s.groom.party.date} | {s.groom.party.fullDate}
-                </p>
-                <p className='text-sm text-text-muted'>{s.groom.party.lunar}</p>
-                <LocationLink
-                  location={s.groom.party.location}
-                  mapsUrl={MAPS_URLS.groom}
-                />
-              </div>
-
-              <div className='space-y-2'>
-                <p className='text-gold-dark text-sm font-semibold tracking-widest uppercase'>
                   {s.groom.ceremony.label}
                 </p>
                 <p className='font-serif text-3xl text-wine'>
@@ -135,6 +119,23 @@ export const EventDetailsSection = () => {
                 </p>
                 <LocationLink
                   location={s.groom.ceremony.location}
+                  mapsUrl={MAPS_URLS.groom}
+                />
+              </div>
+
+              <div className='space-y-2'>
+                <p className='text-gold-dark text-sm font-semibold tracking-widest uppercase'>
+                  {s.partyLabel}
+                </p>
+                <p className='font-serif text-3xl text-wine'>
+                  {s.groom.party.time}
+                </p>
+                <p className='text-text-secondary'>
+                  {s.groom.party.date} | {s.groom.party.fullDate}
+                </p>
+                <p className='text-sm text-text-muted'>{s.groom.party.lunar}</p>
+                <LocationLink
+                  location={s.groom.party.location}
                   mapsUrl={MAPS_URLS.groom}
                 />
               </div>

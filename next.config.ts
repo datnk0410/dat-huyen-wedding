@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 60 * 60 * 24 * 7, // 7 days
+    qualities: [70, 75],
   },
 }
 

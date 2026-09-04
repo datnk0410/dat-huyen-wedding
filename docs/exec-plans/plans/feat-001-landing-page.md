@@ -2,7 +2,7 @@
 
 ## Purpose / Big Picture
 
-Build the wedding landing page — the first thing guests see when they open the invitation. The page must convey emotion immediately: couple names (Xuân Tùng & Vân Anh), event dates, venue with an embedded Google Map, and two clear CTAs (RSVP and Our Story). The hero section should feel elegant and personal, using the established wine/cream/gold palette with subtle Framer Motion animations.
+Build the wedding landing page — the first thing guests see when they open the invitation. The page must convey emotion immediately: couple names (Kim Đạt & Thanh Huyền), event dates, venue with an embedded Google Map, and two clear CTAs (RSVP and Our Story). The hero section should feel elegant and personal, using the established wine/cream/gold palette with subtle Framer Motion animations.
 
 **User-visible behaviour**: A guest opens the URL and sees a full-screen hero with the couple's names in serif typography, event details (tiệc đãi khách 08/06/2026, lễ thành hôn 09/06/2026), venue address with an embedded Google Map, and two buttons — "Xác nhận tham dự" (scrolls to RSVP) and "Xem hành trình" (navigates to /story). On mobile, everything is readable and tappable. Animations are subtle and respect reduced-motion preferences.
 
@@ -129,7 +129,7 @@ Create `components/hero/hero-copy.ts` with `HERO_COPY` constant containing all V
 
 ```ts
 export const HERO_COPY = {
-  coupleNames: 'Xuân Tùng & Vân Anh',
+  coupleNames: 'Kim Đạt & Thanh Huyền',
   eventReception: 'Tiệc đãi khách',
   eventReceptionDate: '08/06/2026',
   eventCeremony: 'Lễ thành hôn',
@@ -201,7 +201,7 @@ Expected output from `./init.sh`:
 
 ### Acceptance Criteria
 
-1. **Hero renders**: Landing page displays couple names "Xuân Tùng & Vân Anh" in serif font on a wine-gradient background.
+1. **Hero renders**: Landing page displays couple names "Kim Đạt & Thanh Huyền" in serif font on a wine-gradient background.
 2. **Event details visible**: Both events shown — "Tiệc đãi khách 08/06/2026" and "Lễ thành hôn 09/06/2026".
 3. **Venue with map**: Address "Sân đình thôn Gia Lương, Đông Anh, Hà Nội" displayed with an embedded Google Maps iframe.
 4. **CTA buttons**: "Xác nhận tham dự" links to `#rsvp`, "Xem hành trình" links to `/story`.

@@ -113,7 +113,7 @@ Update the existing `metadata` export in `app/layout.tsx`:
 ### Step 5: Add `generateMetadata` to `app/page.tsx`
 
 Add a `generateMetadata` export to the landing page:
-- Title: `Xuân Tùng & Vân Anh — Thiệp cưới`
+- Title: `Kim Đạt & Thanh Huyền — Thiệp cưới`
 - Description: Vietnamese invitation text from `HERO_COPY`
 - OG title, description, image (override root defaults with page-specific values)
 - Twitter card override with page-specific values
@@ -128,7 +128,7 @@ Add a JSON-LD `<script>` tag in the landing page component body:
 ### Step 7: Add `generateMetadata` to `app/story/page.tsx`
 
 Add a `generateMetadata` export to the story page:
-- Title: `Hành trình yêu — Xuân Tùng & Vân Anh`
+- Title: `Hành trình yêu — Kim Đạt & Thanh Huyền`
 - Description: Vietnamese story description
 - OG title, description, image
 - Twitter card override
@@ -167,7 +167,7 @@ pnpm build
 
 # 7. Verify metadata in HTML
 # After starting dev server: curl http://localhost:3000 | grep og:title
-# Expected: <meta property="og:title" content="Xuân Tùng & Vân Anh — Thiệp cưới">
+# Expected: <meta property="og:title" content="Kim Đạt & Thanh Huyền — Thiệp cưới">
 ```
 
 ## Validation and Acceptance

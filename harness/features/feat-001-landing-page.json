@@ -1,13 +1,13 @@
 {
   "id": "feat-001",
   "name": "Landing Page",
-  "description": "Hero section with couple names (Xuân Tùng & Vân Anh), event details (tiệc đãi khách 08/06/2026, lễ thành hôn 09/06/2026, Sân đình thôn Gia Lương, Đông Anh, Hà Nội), Google Maps embed, and CTAs for RSVP and Our Story",
+  "description": "Hero section with couple names (Kim Đạt & Thanh Huyền), event details (tiệc đãi khách 19/09/2026, lễ thành hôn 20/09/2026, Sân đình thôn Gia Lương, Đông Anh, Hà Nội), Google Maps embed, and CTAs for RSVP and Our Story",
   "dependencies": [],
   "status": "done",
   "evidence": "Landing page hero, event cards, venue map embed, RSVP anchor section, /story placeholder route, and PhotoGallerySection with a curated 12-photo real wedding gallery, intrinsic image metadata, uniform portrait grid treatment across mobile and desktop, and ImageModal lightbox (portal-rendered, keyboard navigation, pinch/wheel zoom, panning, reduced-motion safe). Verified with pnpm lint and pnpm build on 2026-05-21.",
   "plan": "docs/exec-plans/plans/feat-001-landing-page.md",
   "acceptanceCriteria": [
-    "Hero section displays 'Xuân Tùng & Vân Anh' and wedding dates",
+    "Hero section displays 'Kim Đạt & Thanh Huyền' and wedding dates",
     "Event details section shows venue 'Sân đình thôn Gia Lương, xã Đông Anh, TP Hà Nội' with Google Maps embed",
     "CTA buttons for 'Xác nhận tham dự' (RSVP) and 'Xem hành trình' (Our Story)",
     "Mobile-first responsive layout, light mode only",
@@ -17,16 +17,16 @@
     "Fonts: Inter (body) + Noto Serif (headings)"
   ],
   "content": {
-    "coupleNames": "Xuân Tùng & Vân Anh",
+    "coupleNames": "Kim Đạt & Thanh Huyền",
     "dates": {
       "daiKhach": {
-        "duongLich": "08/06/2026",
-        "amLich": "23/4 âm lịch (Bính Ngọ)",
+        "duongLich": "19/09/2026",
+        "amLich": "9/8 âm lịch (Bính Ngọ)",
         "label": "Tiệc đãi khách"
       },
       "thanhHon": {
-        "duongLich": "09/06/2026",
-        "amLich": "24/4 âm lịch",
+        "duongLich": "20/09/2026",
+        "amLich": "10/8 âm lịch",
         "label": "Lễ thành hôn"
       }
     },

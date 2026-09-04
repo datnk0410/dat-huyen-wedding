@@ -1,15 +1,15 @@
 {
   "meta": {
     "home": {
-      "title": "Xuân Tùng & Vân Anh — Thiệp cưới",
-      "description": "Thiệp cưới Xuân Tùng & Vân Anh. Trân trọng kính mời tới dự bữa cơm thân mật ngày 08/06/2026 và lễ thành hôn ngày 09/06/2026 tại Sân đình Thôn Gia Lương, Xã Đông Anh, Hà Nội.",
-      "ogImageAlt": "Thiệp cưới Xuân Tùng & Vân Anh",
-      "keywords": "đám cưới Xuân Tùng Vân Anh, thiệp cưới online, thiệp mời đám cưới, Gia Lương Đông Anh, thiệp cưới Xuân Tùng, thiệp cưới Vân Anh"
+      "title": "Kim Đạt & Thanh Huyền — Thiệp cưới",
+      "description": "Thiệp cưới Kim Đạt & Thanh Huyền. Trân trọng kính mời tới dự bữa cơm thân mật ngày 19/09/2026 và lễ thành hôn ngày 20/09/2026 tại Sân đình Thôn Gia Lương, Xã Đông Anh, Hà Nội.",
+      "ogImageAlt": "Thiệp cưới Kim Đạt & Thanh Huyền",
+      "keywords": "đám cưới Kim Đạt Thanh Huyền, thiệp cưới online, thiệp mời đám cưới, Gia Lương Đông Anh, thiệp cưới Kim Đạt, thiệp cưới Thanh Huyền"
     },
     "story": {
-      "title": "Hành trình yêu — Xuân Tùng & Vân Anh",
-      "description": "Câu chuyện tình yêu của Xuân Tùng & Vân Anh — từ những ngày đầu gặp gỡ đến ngày về chung một nhà.",
-      "keywords": "hành trình yêu, câu chuyện tình yêu, Xuân Tùng Vân Anh, kỷ niệm 10 năm, hành trình 10 năm"
+      "title": "Hành trình yêu — Kim Đạt & Thanh Huyền",
+      "description": "Câu chuyện tình yêu của Kim Đạt & Thanh Huyền — từ những ngày đầu gặp gỡ đến ngày về chung một nhà.",
+      "keywords": "hành trình yêu, câu chuyện tình yêu, Kim Đạt Thanh Huyền, kỷ niệm 10 năm, hành trình 10 năm"
     }
   },
   "shared": {
@@ -17,8 +17,8 @@
   },
   "hero": {
     "eyebrow": "Thiệp mời đám cưới",
-    "groomName": "Xuân Tùng",
-    "brideName": "Vân Anh",
+    "groomName": "Kim Đạt",
+    "brideName": "Thanh Huyền",
     "intro": "Trân trọng kính mời bạn cùng gia đình tới dự và chung vui cùng chúng mình trong ngày trọng đại.",
     "invitation": {
       "leading": "Thân mời",
@@ -26,13 +26,13 @@
     },
     "reception": {
       "label": "Tiệc đãi khách",
-      "solarDate": "08/06/2026",
-      "lunarDate": "23 tháng 4 năm Bính Ngọ"
+      "solarDate": "19/09/2026",
+      "lunarDate": "9 tháng 8 năm Bính Ngọ"
     },
     "ceremony": {
       "label": "Lễ thành hôn",
-      "solarDate": "09/06/2026",
-      "lunarDate": "24 tháng 4 năm Bính Ngọ"
+      "solarDate": "20/09/2026",
+      "lunarDate": "10 tháng 8 năm Bính Ngọ"
     },
     "venue": {
       "label": "Địa điểm",
@@ -61,17 +61,17 @@
     },
     "groom": {
       "title": "Nhà Trai",
-      "name": "Đoàn Xuân Tùng",
-      "father": "Đoàn Xuân Phung",
-      "mother": "Nguyễn Thị Thành",
-      "address": "Thôn Gia Lương, Xã Đông Anh, Hà Nội"
+      "name": "Nguyễn Kim Đạt",
+      "father": "Nguyễn Kim Hòa",
+      "mother": "Nguyễn Thị Hà",
+      "address": "Thôn Gia Lương, Xã Đông Anh, TP Hà Nội"
     },
     "bride": {
       "title": "Nhà Gái",
-      "name": "Nguyễn Vân Anh",
-      "father": "Nguyễn Trọng Ngọc",
-      "mother": "Trần Thị Tuyết Lăng",
-      "address": "Thôn Gia Lương, Xã Đông Anh, Hà Nội"
+      "name": "Lại Thị Thanh Huyền",
+      "father": "Lại Văn Sỹ",
+      "mother": "Vũ Thị Phương",
+      "address": "Thôn Lê Mỹ, Xã Thanh Bình, Tỉnh Ninh Bình"
     }
   },
   "events": {
@@ -82,44 +82,44 @@
     "partyLabel": "Bữa cơm thân mật",
     "sectionTitle": "Lịch trình",
     "sectionEyebrow": "Chương trình sự kiện",
-    "calendarMonth": "Tháng 6",
+    "calendarMonth": "Tháng 9",
     "calendarDays": ["T2", "T3", "T4", "T5", "T6", "T7", "CN"],
     "addToCalendar": "Nhấn vào đây để thêm vào lịch nhé! 😘",
-    "titleCalendar": "Đám cưới Xuân Tùng & Vân Anh",
+    "titleCalendar": "Đám cưới Kim Đạt & Thanh Huyền",
     "groom": {
       "party": {
         "label": "Bữa cơm thân mật",
         "time": "16:30",
-        "date": "Thứ Hai",
-        "fullDate": "08/06/2026",
-        "lunar": "23 tháng 4 năm Bính Ngọ",
-        "location": "Sân đình Thôn Gia Lương, Xã Đông Anh, HN"
+        "date": "Chủ Nhật",
+        "fullDate": "20/09/2026",
+        "lunar": "10 tháng 8 năm Bính Ngọ",
+        "location": "Nhà văn hóa Thôn Gia Lương, Xã Đông Anh, Hà Nội"
       },
       "ceremony": {
         "label": "Lễ thành hôn",
-        "time": "10:30",
-        "date": "Thứ Ba",
-        "fullDate": "09/06/2026",
-        "lunar": "24 tháng 4 năm Bính Ngọ",
-        "location": "Sân đình Thôn Gia Lương, Xã Đông Anh, HN"
+        "time": "16:00",
+        "date": "Chủ Nhật",
+        "fullDate": "20/09/2026",
+        "lunar": "10 tháng 8 năm Bính Ngọ",
+        "location": "Nhà văn hóa Thôn Gia Lương, Xã Đông Anh, Hà Nội"
       }
     },
     "bride": {
       "party": {
         "label": "Bữa cơm thân mật",
         "time": "16:30",
-        "date": "Thứ Hai",
-        "fullDate": "08/06/2026",
-        "lunar": "23 tháng 4 năm Bính Ngọ",
-        "location": "Nhà văn hóa Thôn Gia Lương, Xã Đông Anh, HN"
+        "date": "Thứ Bảy",
+        "fullDate": "19/09/2026",
+        "lunar": "9 tháng 8 năm Bính Ngọ",
+        "location": "Tư gia nhà gái, Thôn Lê Mỹ, Xã Thanh Bình, Tỉnh Ninh Bình"
       },
       "ceremony": {
         "label": "Lễ Vu Quy",
-        "time": "09:00",
-        "date": "Thứ Ba",
-        "fullDate": "09/06/2026",
-        "lunar": "24 tháng 4 năm Bính Ngọ",
-        "location": "Tư gia nhà gái, Thôn Gia Lương, Xã Đông Anh, HN"
+        "time": "11:00",
+        "date": "Chủ Nhật",
+        "fullDate": "20/09/2026",
+        "lunar": "10 tháng 8 năm Bính Ngọ",
+        "location": "Tư gia nhà gái, Thôn Lê Mỹ, Xã Thanh Bình, Tỉnh Ninh Bình"
       }
     }
   },
@@ -132,8 +132,16 @@
   },
   "map": {
     "heading": "Bản đồ chỉ đường",
-    "address": "Sân đình Thôn Gia Lương, Xã Đông Anh, HN",
-    "iframeTitle": "Bản đồ đường đi",
+    "groom": {
+      "title": "Nhà trai - Kim Đạt",
+      "address": "Nhà văn hóa Thôn Gia Lương, Xã Đông Anh, TP Hà Nội",
+      "iframeTitle": "Bản đồ đường đi nhà trai"
+    },
+    "bride": {
+      "title": "Nhà gái - Thanh Huyền",
+      "address": "Thôn Lê Mỹ, Xã Thanh Bình, Tỉnh Ninh Bình",
+      "iframeTitle": "Bản đồ đường đi nhà gái"
+    },
     "openMapsLabel": "Mở trong Google Maps"
   },
   "giftRegistry": {
@@ -143,15 +151,15 @@
     "qrCodeAlt": "Mã QR chuyển khoản",
     "groom": {
       "title": "Nhà Trai",
-      "bankName": "Techcombank",
-      "accountName": "DOAN XUAN TUNG",
+      "bankName": "BIDV",
+      "accountName": "NGUYEN KIM DAT",
       "accountNumber": "9668866889",
       "qrImage": "/images/qr-groom.jpg"
     },
     "bride": {
       "title": "Nhà Gái",
-      "bankName": "Techcombank",
-      "accountName": "NGUYEN VAN ANH",
+      "bankName": "BIDV",
+      "accountName": "LAI THI HUYEN",
       "accountNumber": "6339866431",
       "qrImage": "/images/qr-bride.jpg"
     }
@@ -163,8 +171,8 @@
     "nameLabel": "Họ tên khách mời",
     "nameLoading": "Đang tải...",
     "eventsLegend": "Sự kiện tham dự",
-    "eventDaiKhach": "Bữa cơm thân mật (08/06)",
-    "eventThanhHon": "Lễ thành hôn (09/06)",
+    "eventDaiKhach": "Bữa cơm thân mật (19/09)",
+    "eventThanhHon": "Lễ thành hôn (20/09)",
     "submit": "Gửi thông tin xác nhận",
     "submitting": "Đang gửi thông tin...",
     "successTitle": "Gửi thành công!",
@@ -177,7 +185,7 @@
   },
   "footer": {
     "thankYou": "Cảm ơn bạn đã ghé thăm trang thiệp cưới của chúng mình. Sự hiện diện và tình cảm của bạn là món quà quý giá nhất trong ngày trọng đại này. Chúng mình rất mong được đón tiếp bạn trong ngày vui của gia đình.",
-    "weddingDate": "08 · 06 · 2026"
+    "weddingDate": "20 · 09 · 2026"
   },
   "floatingCta": {
     "label": "Câu chuyện tình yêu 10 năm"
@@ -194,7 +202,7 @@
   },
   "story": {
     "eyebrow": "Hành trình 11 năm",
-    "title": "Xuân Tùng & Vân Anh",
+    "title": "Kim Đạt & Thanh Huyền",
     "intro": "Từ những ngày đầu gặp gỡ đến khi quyết định về chung một nhà — đây là câu chuyện của chúng mình.",
     "backLink": "Quay lại thiệp cưới",
     "chapterLabel": "Chương",
@@ -225,8 +233,8 @@
         "year": 2018,
         "title": "Những giấc mơ tuổi 18",
         "paragraphs": [
-          "Đó là năm có rất nhiều áp lực và cũng có rất nhiều hy vọng. Vân Anh bước vào kỳ thi đại học với nhiều cố gắng, mang theo ước mơ vào Đại học Y Hà Nội. Chúng mình khi ấy vẫn còn giữ một niềm tin rất dễ thương rằng biết đâu sau này sẽ lại có dịp học gần nhau hơn.",
-          "Kỳ thi ấy đi qua không hẳn nhẹ nhàng. Vân Anh không đỗ Y Hà Nội, đã có những lúc buồn đến phát khóc, nhưng rồi sau đó lại chọn học ở Học viện Quân y. Cũng chính từ quãng thời gian ấy, chúng mình học cách ở bên nhau không chỉ trong lúc vui, mà cả những lúc mệt mỏi và chông chênh nhất."
+          "Đó là năm có rất nhiều áp lực và cũng có rất nhiều hy vọng. Thanh Huyền bước vào kỳ thi đại học với nhiều cố gắng, mang theo ước mơ vào Đại học Y Hà Nội. Chúng mình khi ấy vẫn còn giữ một niềm tin rất dễ thương rằng biết đâu sau này sẽ lại có dịp học gần nhau hơn.",
+          "Kỳ thi ấy đi qua không hẳn nhẹ nhàng. Thanh Huyền không đỗ Y Hà Nội, đã có những lúc buồn đến phát khóc, nhưng rồi sau đó lại chọn học ở Học viện Quân y. Cũng chính từ quãng thời gian ấy, chúng mình học cách ở bên nhau không chỉ trong lúc vui, mà cả những lúc mệt mỏi và chông chênh nhất."
         ],
         "imageSlotCount": 5
       },

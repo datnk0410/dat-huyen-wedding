@@ -1,5 +1,60 @@
 # Progress Index
 
+## 2026-09-03 — Groom QR LCP Loading
+
+- **Session**: groom-qr-lcp-loading
+- **Status**: completed
+- **What was done**:
+  - Set the groom QR image to eager loading because it is detected as the page LCP image.
+  - Kept the bride QR image lazy-loaded.
+- **Verification**: targeted ESLint passed with 0 errors (pre-existing CRLF warnings), TypeScript passed, and the production build passed on 2026-09-03.
+- **Blockers**: none
+- **Next steps**: none
+
+## 2026-09-03 — Next Image Quality Allowlist
+
+- **Session**: next-image-quality-allowlist
+- **Status**: completed
+- **What was done**:
+  - Added image qualities 70 and 75 to the Next.js image optimizer allowlist.
+- **Verification**: TypeScript and production build passed on 2026-09-03.
+- **Blockers**: none
+- **Next steps**: none
+
+## 2026-09-03 — Split Directions Maps
+
+- **Session**: split-directions-maps
+- **Status**: completed
+- **What was done**:
+  - Split “Bản đồ chỉ đường” into separate Nhà trai and Nhà gái map cards.
+  - Added individual embedded coordinates, addresses, accessible titles, and Google Maps links.
+  - Kept the cards side by side on desktop and stacked on mobile.
+- **Verification**: targeted ESLint passed with 0 errors (pre-existing CRLF warnings), TypeScript passed, and the production build passed on 2026-09-03.
+- **Blockers**: none
+- **Next steps**: none
+
+## 2026-09-03 — September Wedding Calendar Update
+
+- **Session**: september-wedding-calendar-update
+- **Status**: completed
+- **What was done**:
+  - Changed the calendar to September 2026, aligned its first day under Tuesday, and highlighted September 19–20.
+  - Updated invitation dates, weekday labels, lunar dates, RSVP labels, countdown, structured data, footer, and Google Calendar link.
+- **Verification**: targeted ESLint passed with 0 errors (pre-existing CRLF warnings), TypeScript passed, and the production build passed on 2026-09-03.
+- **Blockers**: none
+- **Next steps**: none
+
+## 2026-09-03 — Couple Name Update
+
+- **Session**: couple-name-update
+- **Status**: completed
+- **What was done**:
+  - Replaced “Xuân Tùng” with “Kim Đạt” and “Vân Anh” with “Thanh Huyền” across UI copy, SEO metadata, calendar content, story text, and project documentation.
+  - Updated full names to “Đoàn Kim Đạt” and “Nguyễn Thanh Huyền”.
+- **Verification**: ESLint passed with 0 errors (pre-existing CRLF formatting warnings), TypeScript passed, and the production build passed on 2026-09-03.
+- **Blockers**: none
+- **Next steps**: none
+
 ## 2026-05-21 — feat-002: Story Square Gallery + Chapter Modal
 
 - **Session**: feat-002-story-square-gallery-modal
@@ -489,7 +544,7 @@
 - **Session**: setup-content
 - **Status**: completed
 - **What was done**:
-  - Replaced Next.js boilerplate with wedding landing page (Xuân Tùng & Vân Anh)
+  - Replaced Next.js boilerplate with wedding landing page (Kim Đạt & Thanh Huyền)
   - Set up wedding design tokens in globals.css (wine/cream/beige/gold palette, Inter + Noto Serif fonts)
   - Updated layout.tsx: lang="vi", wedding metadata, Inter + Noto Serif fonts, light mode only
   - Created directory structure: components/{hero,story,rsvp,guest,shared}/, lib/, public/{images,guests}/

@@ -5,7 +5,7 @@
     {
       "id": "feat-001",
       "name": "Landing Page",
-      "description": "Hero section with couple names (Xuân Tùng & Vân Anh), event details (tiệc đãi khách 08/06/2026, lễ thành hôn 09/06/2026, Sân đình thôn Gia Lương, Đông Anh, Hà Nội), Google Maps embed, and CTAs for RSVP and Our Story",
+      "description": "Hero section with couple names (Kim Đạt & Thanh Huyền), event details (tiệc đãi khách 19/09/2026, lễ thành hôn 20/09/2026, Sân đình thôn Gia Lương, Đông Anh, Hà Nội), Google Maps embed, and CTAs for RSVP and Our Story",
       "dependencies": [],
       "status": "done",
       "evidence": "Landing page hero, event cards, venue map embed, RSVP anchor section, /story placeholder route, and a responsive curated 12-photo real gallery treatment in PhotoGallerySection are implemented. Verified with pnpm lint and pnpm build on 2026-05-21."
@@ -29,7 +29,7 @@
     {
       "id": "feat-004",
       "name": "RSVP System",
-      "description": "RSVP form with name + 2 event checkboxes (tiệc đãi khách 8/6, lễ thành hôn 9/6), submitting to Google Apps Script, with success/error feedback",
+      "description": "RSVP form with name + 2 event checkboxes (tiệc đãi khách 19/9, lễ thành hôn 20/9), submitting to Google Apps Script, with success/error feedback",
       "dependencies": ["feat-001"],
       "status": "done",
       "evidence": "Implemented lib/api.ts (submitRsvp, RsvpFormData, RsvpPayload, RsvpApiResponse), components/rsvp/rsvp-form.tsx (validation, submit states, success/error UI), components/rsvp/index.ts barrel. Replaced placeholder in rsvp-section.tsx with real form. Apps Script contract documented in docs/product-specs/feat-004-rsvp-system.md. Verified pnpm lint, pnpm typecheck, pnpm build on 2026-05-06."
@@ -145,7 +145,7 @@
     {
       "id": "feat-017",
       "name": "Add to Calendar Button",
-      "description": "Google Calendar deeplink button in EventDetailsSection that pre-fills the wedding event (08/06/2026 17:00 – 09/06/2026 11:45 ICT, venue location link).",
+      "description": "Google Calendar deeplink button in EventDetailsSection that pre-fills the wedding event (19/09/2026–20/09/2026, venue location link).",
       "dependencies": ["feat-001", "feat-015"],
       "status": "done",
       "evidence": "lib/calendar.ts buildGoogleCalendarUrl util (all-day format), events.addToCalendar i18n key, and <a> button in event-details-section.tsx. Verified with pnpm lint, typecheck, build."

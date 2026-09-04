@@ -24,8 +24,8 @@ export const HomePageContent = ({ guest, slug }: HomePageContentProps) => {
     eventType: 'WeddingEvent',
     name: `Wedding of ${hero.groomName} & ${hero.brideName}`,
     description: hero.intro,
-    startDate: '2026-06-08',
-    endDate: '2026-06-09',
+    startDate: '2026-09-19',
+    endDate: '2026-09-20',
     location: {
       '@type': 'Place',
       name: hero.venue.name,

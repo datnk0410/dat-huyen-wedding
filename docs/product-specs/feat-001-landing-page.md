@@ -12,7 +12,7 @@
 
 ## User Flow
 
-1. `Guest lands on / and immediately sees Xuân Tùng & Vân Anh with wedding introduction.`
+1. `Guest lands on / and immediately sees Kim Đạt & Thanh Huyền with wedding introduction.`
 2. `Guest reads event schedule, venue details, and embedded Google Map.`
 3. `Guest taps Xác nhận tham dự to scroll toward RSVP area or taps Xem hành trình to open /story.`
 

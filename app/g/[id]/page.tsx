@@ -21,8 +21,8 @@ export async function generateMetadata({
   const slug = normalizeGuestId(resolvedParams.id)
   const guest = getGuestById(slug ?? undefined)
   const title = guest
-    ? `8-9/6 － Thân mời ${guest.name} tham dự lễ cưới ${hero.groomName} & ${hero.brideName}`
-    : `8-9/6 － Thiệp mời lễ cưới ${hero.groomName} & ${hero.brideName}`
+    ? `19-20/9 － Thân mời ${guest.name} tham dự lễ cưới ${hero.groomName} & ${hero.brideName}`
+    : `19-20/9 － Thiệp mời lễ cưới ${hero.groomName} & ${hero.brideName}`
   const description = guest
     ? hero.intro.replace('bạn cùng gia đình', guest.name)
     : hero.intro

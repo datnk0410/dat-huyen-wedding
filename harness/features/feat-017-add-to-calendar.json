@@ -1,7 +1,7 @@
 {
   "id": "feat-017",
   "name": "Add to Calendar Button",
-  "description": "Google Calendar deeplink button in EventDetailsSection that pre-fills the wedding event (08/06/2026 17:00 – 09/06/2026 11:45 ICT, venue location).",
+  "description": "Google Calendar deeplink button in EventDetailsSection that pre-fills the wedding event (19/09/2026–20/09/2026, venue location).",
   "dependencies": ["feat-001", "feat-015"],
   "status": "done",
   "evidence": "lib/calendar.ts (all-day format), vi.json#events.addToCalendar, event-details-section.tsx button. Verified: pnpm lint + typecheck + build passing.",

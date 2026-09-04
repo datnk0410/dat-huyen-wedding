@@ -13,7 +13,7 @@ Clicking it opens a new browser tab directly to the Google Calendar "Create Even
 No form is shown to the guest — the deeplink does all the work client-side.
 
 **Event data (fixed):**
-- Title: `Đám cưới Xuân Tùng & Vân Anh`
+- Title: `Đám cưới Kim Đạt & Thanh Huyền`
 - Start: `2026-06-08T17:00:00` (UTC+7 → UTC: `2026-06-08T10:00:00Z`)
 - End: `2026-06-09T11:45:00` (UTC+7 → UTC: `2026-06-09T04:45:00Z`)
 - Location: `https://maps.app.goo.gl/xBVg6Gs3JPenCaC89`
@@ -68,7 +68,7 @@ export function buildGoogleCalendarUrl(): string {
   // Google Calendar format: YYYYMMDDTHHmmssZ (UTC)
   const start = '20260608T100000Z' // 17:00 ICT = 10:00 UTC
   const end   = '20260609T044500Z' // 11:45 ICT = 04:45 UTC
-  const title = encodeURIComponent('Đám cưới Xuân Tùng & Vân Anh')
+  const title = encodeURIComponent('Đám cưới Kim Đạt & Thanh Huyền')
   const location = encodeURIComponent('https://maps.app.goo.gl/xBVg6Gs3JPenCaC89')
 
   return (
@@ -176,7 +176,7 @@ Expected output after implementation:
 2. Scroll to the "Save The Date" section.
 3. Below the calendar grid, a button "Thêm vào lịch" is visible.
 4. Click it → a new tab opens to `https://calendar.google.com/calendar/render?action=TEMPLATE&...` with:
-   - Title: `Đám cưới Xuân Tùng & Vân Anh`
+   - Title: `Đám cưới Kim Đạt & Thanh Huyền`
    - Start: 8 June 2026, 17:00 (ICT / UTC+7)
    - End: 9 June 2026, 11:45 (ICT / UTC+7)
    - Location prefilled with the Google Maps link

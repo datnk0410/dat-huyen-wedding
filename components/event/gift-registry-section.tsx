@@ -47,7 +47,13 @@ type AccountData = {
   qrImage: string
 }
 
-const AccountCard = ({ data }: { data: AccountData }) => {
+const AccountCard = ({
+  data,
+  eager = false,
+}: {
+  data: AccountData
+  eager?: boolean
+}) => {
   const [copied, setCopied] = useState(false)
 
   const handleCopy = async () => {
@@ -68,6 +74,7 @@ const AccountCard = ({ data }: { data: AccountData }) => {
           fill
           alt={`${s.qrCodeAlt} - ${data.bankName} - ${data.accountName}`}
           className='object-contain'
+          loading={eager ? 'eager' : 'lazy'}
           sizes='208px'
           src={data.qrImage}
         />
@@ -118,8 +125,8 @@ export const GiftRegistrySection = () => {
           </div>
 
           <div className='grid gap-8 md:grid-cols-2 md:gap-12'>
-            <AccountCard data={s.groom} />
-            <AccountCard data={s.bride} />
+            <AccountCard eager data={s.groom} />
+            <AccountCard eager data={s.bride} />
           </div>
         </motion.div>
       </SectionWrapper>

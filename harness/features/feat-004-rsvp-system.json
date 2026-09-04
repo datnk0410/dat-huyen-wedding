@@ -8,8 +8,8 @@
   "plan": "docs/exec-plans/plans/feat-004-rsvp-system.md",
   "acceptanceCriteria": [
     "RSVP form with fields: Họ tên (name) + 2 event checkboxes",
-    "Checkbox 1: Đi ăn ngày 8/6 dương lịch (23/4 âm lịch Bính Ngọ) — tiệc đãi khách",
-    "Checkbox 2: Đi đưa đón dâu ngày 9/6 dương lịch (24/4 âm lịch) — lễ thành hôn",
+    "Checkbox 1: Đi ăn ngày 19/9 dương lịch (9/8 âm lịch Bính Ngọ) — tiệc đãi khách",
+    "Checkbox 2: Đi đưa đón dâu ngày 20/9 dương lịch (10/8 âm lịch) — lễ thành hôn",
     "Form submits via POST to Google Apps Script URL",
     "Success feedback shown after submission",
     "Error feedback shown on failure with retry option",
@@ -21,11 +21,11 @@
     "fields": {
       "name": { "label": "Họ tên", "type": "text", "required": true },
       "eventDaiKhach": {
-        "label": "Đi ăn ngày 8/6 dương lịch (23/4 âm lịch Bính Ngọ)",
+        "label": "Đi ăn ngày 19/9 dương lịch (9/8 âm lịch Bính Ngọ)",
         "type": "checkbox"
       },
       "eventThanhHon": {
-        "label": "Đi đưa đón dâu ngày 9/6 dương lịch (24/4 âm lịch)",
+        "label": "Đi đưa đón dâu ngày 20/9 dương lịch (10/8 âm lịch)",
         "type": "checkbox"
       }
     },
