@@ -1,8 +1,7 @@
 'use client'
 
-import { motion, useReducedMotion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
-import Link from 'next/link'
 import { useState } from 'react'
 
 import { ImageModal, SectionWrapper } from '@/components/shared'
@@ -106,7 +105,6 @@ const photos: GalleryPhoto[] = [
 ]
 
 export const PhotoGallerySection = () => {
-  const shouldReduceMotion = useReducedMotion()
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [selectedIndex, setSelectedIndex] = useState(0)
 
@@ -161,6 +159,7 @@ export const PhotoGallerySection = () => {
                     alt={photo.alt}
                     className='h-full w-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-1'
                     height={photo.height}
+                    loading={index === 0 ? 'eager' : 'lazy'}
                     sizes='(max-width: 767px) 50vw, (max-width: 1023px) 25vw, 20vw'
                     src={photo.src}
                     width={photo.width}
@@ -171,30 +170,6 @@ export const PhotoGallerySection = () => {
             ))}
           </div>
 
-          <div className='text-center'>
-            <motion.div
-              animate={
-                shouldReduceMotion
-                  ? undefined
-                  : {
-                      boxShadow: [
-                        '0 0 20px rgba(223,192,138,0.25)',
-                        '0 0 45px rgba(223,192,138,0.45)',
-                        '0 0 20px rgba(223,192,138,0.25)',
-                      ],
-                    }
-              }
-              className='inline-block rounded-full'
-              transition={{ duration: 3, ease: 'easeInOut', repeat: Infinity }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}>
-              <Link
-                className='inline-flex min-h-14 items-center justify-center rounded-full border-2 border-gold bg-gold-light px-10 py-4 text-base font-semibold text-wine backdrop-blur-sm transition-colors hover:bg-gold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold'
-                href='/story'>
-                {s.ctaStory}
-              </Link>
-            </motion.div>
-          </div>
         </motion.div>
       </SectionWrapper>
 
