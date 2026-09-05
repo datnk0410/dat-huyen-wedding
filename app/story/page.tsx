@@ -7,8 +7,7 @@ const {
   meta: { story: storyMeta },
 } = strings
 
-const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || 'https://datxhuyen-wedding.vercel.app'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://dat-huyen.wedding'
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
