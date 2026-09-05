@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { GuestPersonalization } from '@/components/guest'
 import type { GuestData } from '@/lib/guests'
 import { strings } from '@/lib/i18n'
-import heroPortrait from '@/public/images/hero-portrait.webp'
+import heroPortrait from '@/public/images/hero-portrait.png'
 
 const { hero: s } = strings
 
@@ -61,9 +61,9 @@ export const HeroSection = ({ guest }: HeroSectionProps) => {
               fill
               priority
               alt='Tùng & Vân — Ảnh cưới'
-              className='object-contain p-10 pb-4 transition-transform duration-700'
+              className='object-contain p-3 pb-2 transition-transform duration-700'
               quality={70}
-              sizes='(max-width: 768px) min(100vw - 3rem, 25rem), 40vw'
+              sizes='(max-width: 768px) min(100vw - 3rem, 28rem), 45vw'
               src={heroPortrait}
             />
             {/* Subtle color-correcting overlay to unify the red tones */}

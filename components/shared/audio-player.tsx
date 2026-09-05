@@ -2,8 +2,8 @@
 
 import { useEffect, useRef, useState } from 'react'
 
-const AUDIO_SRC = '/audios/beautiful-in-white-westlife.mp3'
-const VOLUME = 0.15
+const AUDIO_SRC = '/audios/em-dong-y-duc-phuc.mp3'
+const VOLUME = 0.2
 
 export const AudioPlayer = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null)
