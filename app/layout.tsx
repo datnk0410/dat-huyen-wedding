@@ -31,7 +31,8 @@ const greatVibes = Great_Vibes({
   display: 'swap',
 })
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://dat-huyen.wedding'
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL || 'https://dat-huyen.wedding.vercel.app'
 
 export const viewport: Viewport = {
   themeColor: '#8b1a2b',
