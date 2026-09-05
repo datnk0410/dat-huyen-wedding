@@ -38,7 +38,7 @@ export async function generateMetadata({
       url: guestUrl,
       images: [
         {
-          url: '/images/og-image-2.jpg',
+          url: '/images/og-image-2.jpg?v=2',
           width: 1200,
           height: 630,
           alt: `${meta.home.ogImageAlt}`,
@@ -49,7 +49,7 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title,
       description,
-      images: ['/images/og-image-2.jpg'],
+      images: ['/images/og-image-2.jpg?v=2'],
     },
   }
 }
