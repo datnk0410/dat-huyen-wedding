@@ -6,7 +6,7 @@ import { FamilySection } from '@/components/family/family-section'
 import { PhotoGallerySection } from '@/components/gallery/mini-gallery-section'
 import { HeroSection } from '@/components/hero'
 import { RsvpSection } from '@/components/rsvp/rsvp-section'
-import { FloatingCta, Footer } from '@/components/shared'
+import { Footer } from '@/components/shared'
 import type { GuestData } from '@/lib/guests'
 import { strings } from '@/lib/i18n'
 
@@ -54,7 +54,6 @@ export const HomePageContent = ({ guest, slug }: HomePageContentProps) => {
       <MapSection />
       <GiftRegistrySection />
       <Footer />
-      <FloatingCta />
     </main>
   )
 }
