@@ -13,7 +13,8 @@ type HomePageProps = {
   }>
 }
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://txva.vercel.app'
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL || 'https://datxhuyen-wedding.vercel.app'
 
 export async function generateMetadata(): Promise<Metadata> {
   const title = `${hero.groomName} & ${hero.brideName} — Lễ cưới 19-20/9 DL`
