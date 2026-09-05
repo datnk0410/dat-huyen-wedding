@@ -57,20 +57,19 @@ export const HeroSection = ({ guest }: HeroSectionProps) => {
           </div>
 
           <div className='group relative aspect-4/5 w-full max-w-100 overflow-hidden rounded-2xl border border-white/10 bg-[#8b1a2b] shadow-[0_20px_50px_rgba(0,0,0,0.3)] md:w-2/5'>
-            <Image
-              fill
-              priority
-              alt='Tùng & Vân — Ảnh cưới'
-              className='object-contain p-3 pb-2 transition-transform duration-700'
-              quality={70}
-              sizes='(max-width: 768px) min(100vw - 3rem, 28rem), 45vw'
-              src={heroPortrait}
-            />
+            <div className='absolute inset-3 overflow-hidden rounded-2xl border border-gold/20'>
+              <Image
+                fill
+                priority
+                alt='Đạt & Huyền — Ảnh cưới'
+                className='object-cover transition-transform duration-700'
+                quality={70}
+                sizes='(max-width: 768px) min(100vw - 3rem, 28rem), 45vw'
+                src={heroPortrait}
+              />
+            </div>
             {/* Subtle color-correcting overlay to unify the red tones */}
             <div className='pointer-events-none absolute inset-0 bg-wine/5 mix-blend-multiply' />
-
-            {/* Premium inner border decoration */}
-            <div className='pointer-events-none absolute inset-3 rounded-xl border border-gold/20' />
 
             {/* Glossy overlay for a glass-like finish */}
             <div className='pointer-events-none absolute inset-0 bg-linear-to-tr from-white/5 via-transparent to-white/10' />
