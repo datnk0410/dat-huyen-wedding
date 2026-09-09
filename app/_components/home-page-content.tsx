@@ -5,7 +5,6 @@ import { MapSection } from '@/components/event/map-section'
 import { FamilySection } from '@/components/family/family-section'
 import { PhotoGallerySection } from '@/components/gallery/mini-gallery-section'
 import { HeroSection } from '@/components/hero'
-import { RsvpSection } from '@/components/rsvp/rsvp-section'
 import { Footer } from '@/components/shared'
 import type { GuestData } from '@/lib/guests'
 import { strings } from '@/lib/i18n'
@@ -14,10 +13,9 @@ const { hero } = strings
 
 type HomePageContentProps = {
   guest: GuestData | null
-  slug?: string
 }
 
-export const HomePageContent = ({ guest, slug }: HomePageContentProps) => {
+export const HomePageContent = ({ guest }: HomePageContentProps) => {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Event',
@@ -50,7 +48,6 @@ export const HomePageContent = ({ guest, slug }: HomePageContentProps) => {
       <FamilySection />
       <EventDetailsSection />
       <PhotoGallerySection />
-      <RsvpSection guestName={guest?.name} slug={slug} />
       <MapSection />
       <GiftRegistrySection />
       <Footer />

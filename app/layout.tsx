@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     siteName: `${strings.hero.groomName} & ${strings.hero.brideName}`,
     images: [
       {
-        url: '/images/og-image-new.jpg?v=4',
+        url: '/images/og-image-new-new.jpg?v=5',
         width: 1200,
         height: 630,
         alt: meta.home.ogImageAlt,
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: meta.home.title,
     description: meta.home.description,
-    images: ['/images/og-image-new.jpg?v=4'],
+    images: ['/images/og-image-new-new.jpg?v=5'],
   },
 }
 

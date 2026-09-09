@@ -39,7 +39,7 @@ export async function generateMetadata({
       url: guestUrl,
       images: [
         {
-          url: '/images/og-image-new.jpg?v=4',
+          url: '/images/og-image-new-new.jpg?v=5',
           width: 1200,
           height: 630,
           alt: `${meta.home.ogImageAlt}`,
@@ -50,7 +50,7 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title,
       description,
-      images: ['/images/og-image-new.jpg?v=4'],
+      images: ['/images/og-image-new-new.jpg?v=5'],
     },
   }
 }
@@ -60,5 +60,5 @@ export default async function GuestPage({ params }: GuestPageProps) {
   const slug = normalizeGuestId(resolvedParams.id) ?? undefined
   const guest = getGuestById(slug)
 
-  return <HomePageContent guest={guest} slug={slug} />
+  return <HomePageContent guest={guest} />
 }
