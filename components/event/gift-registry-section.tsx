@@ -9,6 +9,9 @@ import { strings } from '@/lib/i18n'
 
 const { giftRegistry: s } = strings
 
+// Tạm thời ẩn phần QR chúc phúc. Đổi sang true để mở lại sau này.
+const SHOW_GIFT_QR = false
+
 const CopyIcon = () => (
   <svg
     className='h-4 w-4'
@@ -101,6 +104,10 @@ const AccountCard = ({
 }
 
 export const GiftRegistrySection = () => {
+  if (!SHOW_GIFT_QR) {
+    return null
+  }
+
   return (
     <div className='relative overflow-hidden bg-cream'>
       {/* Decorative background elements */}
