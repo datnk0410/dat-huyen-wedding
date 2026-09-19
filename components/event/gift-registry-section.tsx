@@ -9,8 +9,7 @@ import { strings } from '@/lib/i18n'
 
 const { giftRegistry: s } = strings
 
-// Tạm thời ẩn phần QR chúc phúc. Đổi sang true để mở lại sau này.
-const SHOW_GIFT_QR = false
+const SHOW_GIFT_QR = true
 
 const CopyIcon = () => (
   <svg
